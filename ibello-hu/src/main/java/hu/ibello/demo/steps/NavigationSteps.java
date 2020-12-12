@@ -74,7 +74,7 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_am_on_services_page() {
-        String url = "/#home-services";
+        String url = "/#services";
         servicesPage.expect_url_is_$(url);
         servicesPage.expect_services_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
