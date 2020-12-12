@@ -2,12 +2,10 @@
   "id": "Texts",
   "englishTexts": [
     "ibello Test Framework",
-    "Our reasonableness strengthens our customers",
-    "If you need some good tests"
+    "Our reasonableness strengthens our customers"
   ],
   "hungarianTexts": [
     "ibello teszt keretrendszer",
-    "Észszerűségünk erőt ad ügyfeleinknek",
-    "Ha kell néhány jó teszt"
+    "Észszerűségünk erőt ad ügyfeleinknek"
   ]
 }
