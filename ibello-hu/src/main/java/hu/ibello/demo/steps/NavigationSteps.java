@@ -55,6 +55,7 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_navigate_from_homepage_header_to_services_page() {
         navigationBar.click_services_link();
+        homePage.click_work_with_us_button();
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
