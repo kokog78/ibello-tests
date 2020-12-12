@@ -39,7 +39,9 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_homepage_to_the_order_page() {
-        homePage.click_our_product_button();
+        navigationBar.click_product_link();
+        homePage.click_learn_more_button();
+        homePage.click_product_button();
         navigationBar.expect_menu_component_is_displayed();
         ibelloPage.expect_ibello_lane_is_displayed();
         ibelloPage.click_order_button();
@@ -48,11 +50,11 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_homepage_header_to_product_page() {
-        homePage.click_our_product_button();
+        homePage.click_learn_more_button();
     }
 
     public void i_navigate_from_homepage_header_to_services_page() {
-        homePage.click_our_services_button();
+        navigationBar.click_services_link();
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
@@ -72,7 +74,7 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_am_on_services_page() {
-        String url = "/#services";
+        String url = "/#home-services";
         servicesPage.expect_url_is_$(url);
         servicesPage.expect_services_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
@@ -267,6 +269,7 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_order_an_outpost_product() {
+        ibelloPage.click_order_button();
         ibelloPage.click_order_outpost_button();
     }
 

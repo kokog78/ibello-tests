@@ -1,14 +1,55 @@
-docLane = element {
-    cssSelector 'doc-lane'
-    expect_doc_lane_is_displayed = expect toBe displayed
-    hidden
-}
-
-moreDocumentationButton = clickable {
-    cssSelector 'a[href=\'#all-docs\']'
-    descendantOf {
-        className 'lane-doc-footer'
+{
+  "name": "ChangelogPage",
+  "namespace": "",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "docLane",
+      "selected": true,
+      "kind": "ELEMENT",
+      "by": "CSS_SELECTOR",
+      "selector": "doc-lane"
+    },
+    {
+      "fieldName": "moreDocumentationButton",
+      "xpath": "/html[1]/body[1]/router-view[1]/doc-footer-lane[1]/div[1]/a[1]",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-doc-footer"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#all-docs\u0027]"
     }
-    xpath '/html[1]/body[1]/router-view[1]/doc-footer-lane[1]/div[1]/a[1]'
-    click_more_documentation_button = action click
+  ],
+  "methods": [
+    {
+      "name": "expect_doc_lane_is_displayed",
+      "selected": true,
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "docLane"
+        }
+      ]
+    },
+    {
+      "name": "click_more_documentation_button",
+      "selected": true,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "moreDocumentationButton"
+        }
+      ]
+    }
+  ]
 }

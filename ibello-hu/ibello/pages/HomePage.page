@@ -1,139 +1,357 @@
-mainLane = element {
-    cssSelector 'welcome-main-lane'
-    expect_main_lane_is_displayed = expect toBe displayed
-    hidden
-}
-
-text = element {
-    text '${0}'
-    descendantOf {
-        cssSelector 'welcome-main-lane'
+{
+  "name": "HomePage",
+  "namespace": "",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "mainLane",
+      "selected": false,
+      "kind": "ELEMENT",
+      "by": "CSS_SELECTOR",
+      "selector": "welcome-main-lane"
+    },
+    {
+      "fieldName": "text",
+      "selected": false,
+      "kind": "ELEMENT",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "welcome-main-lane"
+        }
+      ],
+      "by": "TEXT",
+      "selector": "${0}"
+    },
+    {
+      "fieldName": "sendMessageButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "contact-lane"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": " a[href\u003d\u0027#\u0027]"
+    },
+    {
+      "fieldName": "contactNameField",
+      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/input[1]",
+      "selected": false,
+      "kind": "TEXTBOX",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "contact-info"
+        }
+      ],
+      "by": "ID",
+      "selector": "contactName"
+    },
+    {
+      "fieldName": "contactEmailField",
+      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/input[2]",
+      "selected": false,
+      "kind": "TEXTBOX",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "contact-info"
+        }
+      ],
+      "by": "ID",
+      "selector": "contactEmail"
+    },
+    {
+      "fieldName": "contactSubjectField",
+      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/input[3]",
+      "selected": false,
+      "kind": "TEXTBOX",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "contact-info"
+        }
+      ],
+      "by": "ID",
+      "selector": "contactSubject"
+    },
+    {
+      "fieldName": "contactTextField",
+      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/textarea[1]",
+      "selected": false,
+      "kind": "TEXTBOX",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "contact-info"
+        }
+      ],
+      "by": "ID",
+      "selector": "contactText"
+    },
+    {
+      "fieldName": "meetUsButton",
+      "xpath": "/html[1]/body[1]/router-view[1]/about-summary-lane[1]/div[1]/a[1]",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-about-summary"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#about\u0027]"
+    },
+    {
+      "fieldName": "documentationsButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-support-summary"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#all-docs\u0027]"
+    },
+    {
+      "fieldName": "learnMoreButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-ibello-summary"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#ibello\u0027]"
+    },
+    {
+      "fieldName": "tryItButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-ibello-summary"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#interest\u0027]"
+    },
+    {
+      "fieldName": "workWithUsButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-services-summary"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#services\u0027]"
+    },
+    {
+      "fieldName": "moreOptionsButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-support-summary"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#support\u0027]"
     }
-    assume_text_is_displayed = assume toBe displayed
-    assume_text_is_not_displayed = assume toNotBe displayed
-    hidden
-}
-
-ourProductButton = clickable {
-    cssSelector 'a[href=\'#ibello\']'
-    descendantOf {
-        className 'lane-welcome-main'
+  ],
+  "methods": [
+    {
+      "name": "expect_main_lane_is_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "mainLane"
+        }
+      ]
+    },
+    {
+      "name": "assume_text_is_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": true,
+          "negate": false,
+          "kind": "displayed",
+          "target": "text"
+        }
+      ]
+    },
+    {
+      "name": "assume_text_is_not_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": true,
+          "negate": true,
+          "kind": "displayed",
+          "target": "text"
+        }
+      ]
+    },
+    {
+      "name": "click_our_product_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "ourProductButton"
+        }
+      ]
+    },
+    {
+      "name": "click_send_message_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "sendMessageButton"
+        }
+      ]
+    },
+    {
+      "name": "set_contact_name_field_to_",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "setValue",
+          "target": "contactNameField"
+        }
+      ]
+    },
+    {
+      "name": "set_contact_email_field_to_",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "setValue",
+          "target": "contactEmailField"
+        }
+      ]
+    },
+    {
+      "name": "set_contact_subject_field_to_",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "setValue",
+          "target": "contactSubjectField"
+        }
+      ]
+    },
+    {
+      "name": "set_contact_text_field_to_",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "setValue",
+          "target": "contactTextField"
+        }
+      ]
+    },
+    {
+      "name": "click_our_services_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "ourServicesButton"
+        }
+      ]
+    },
+    {
+      "name": "click_meet_us_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "meetUsButton"
+        }
+      ]
+    },
+    {
+      "name": "click_documentations_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "documentationsButton"
+        }
+      ]
+    },
+    {
+      "name": "click_learn_more_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "learnMoreButton"
+        }
+      ]
+    },
+    {
+      "name": "click_try_it_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "tryItButton"
+        }
+      ]
+    },
+    {
+      "name": "click_work_with_us_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "workWithUsButton"
+        }
+      ]
+    },
+    {
+      "name": "click_more_options_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "moreOptionsButton"
+        }
+      ]
     }
-    xpath '/html[1]/body[1]/router-view[1]/welcome-main-lane[1]/div[1]/div[2]/a[1]'
-    click_our_product_button = action click
-    hidden
-}
-
-sendMessageButton = clickable {
-    cssSelector ' a[href=\'#\']'
-    descendantOf {
-        cssSelector 'contact-lane'
-    }
-    click_send_message_button = action click
-    hidden
-}
-
-contactNameField = textbox {
-    id 'contactName'
-    descendantOf {
-        className 'contact-info'
-    }
-    xpath '/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/input[1]'
-    set_contact_name_field_to_ = action setValue
-    hidden
-}
-
-contactEmailField = textbox {
-    id 'contactEmail'
-    descendantOf {
-        className 'contact-info'
-    }
-    xpath '/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/input[2]'
-    set_contact_email_field_to_ = action setValue
-    hidden
-}
-
-contactSubjectField = textbox {
-    id 'contactSubject'
-    descendantOf {
-        className 'contact-info'
-    }
-    xpath '/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/input[3]'
-    set_contact_subject_field_to_ = action setValue
-    hidden
-}
-
-contactTextField = textbox {
-    id 'contactText'
-    descendantOf {
-        className 'contact-info'
-    }
-    xpath '/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/textarea[1]'
-    set_contact_text_field_to_ = action setValue
-    hidden
-}
-
-ourServicesButton = clickable {
-    cssSelector 'a[href=\'#services\']'
-    descendantOf {
-        className 'lane-welcome-main'
-    }
-    xpath '/html[1]/body[1]/router-view[1]/welcome-main-lane[1]/div[1]/div[3]/a[1]'
-    click_our_services_button = action click
-    hidden
-}
-
-meetUsButton = clickable {
-    cssSelector 'a[href=\'#about\']'
-    descendantOf {
-        className 'lane-about-summary'
-    }
-    xpath '/html[1]/body[1]/router-view[1]/about-summary-lane[1]/div[1]/a[1]'
-    click_meet_us_button = action click
-    hidden
-}
-
-documentationsButton = clickable {
-    cssSelector 'a[href=\'#all-docs\']'
-    descendantOf {
-        className 'lane-support-summary'
-    }
-    click_documentations_button = action click
-    hidden
-}
-
-learnMoreButton = clickable {
-    cssSelector 'a[href=\'#ibello\']'
-    descendantOf {
-        className 'lane-ibello-summary'
-    }
-    click_learn_more_button = action click
-    hidden
-}
-
-tryItButton = clickable {
-    cssSelector 'a[href=\'#interest\']'
-    descendantOf {
-        className 'lane-ibello-summary'
-    }
-    click_try_it_button = action click
-    hidden
-}
-
-workWithUsButton = clickable {
-    cssSelector 'a[href=\'#services\']'
-    descendantOf {
-        className 'lane-services-summary'
-    }
-    click_work_with_us_button = action click
-    hidden
-}
-
-moreOptionsButton = clickable {
-    cssSelector 'a[href=\'#support\']'
-    descendantOf {
-        className 'lane-support-summary'
-    }
-    click_more_options_button = action click
-    hidden
+  ]
 }
