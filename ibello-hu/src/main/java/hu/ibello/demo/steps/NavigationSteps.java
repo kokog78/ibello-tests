@@ -41,10 +41,9 @@ public class NavigationSteps extends StepLibrary {
     public void i_navigate_from_homepage_to_the_order_page() {
         navigationBar.click_product_link();
         homePage.click_learn_more_button();
-        homePage.click_product_button();
-        navigationBar.expect_menu_component_is_displayed();
         ibelloPage.expect_ibello_lane_is_displayed();
         ibelloPage.click_order_button();
+        navigationBar.expect_menu_component_is_displayed();
         orderPage.expect_order_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }

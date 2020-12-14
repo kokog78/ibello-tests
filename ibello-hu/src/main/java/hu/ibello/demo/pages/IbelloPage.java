@@ -1,11 +1,13 @@
 package hu.ibello.demo.pages;
 
+import hu.ibello.core.Name;
 import hu.ibello.elements.WebElement;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
+@Name("Ibello Page")
 public class IbelloPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-ibello-lane")
