@@ -1,74 +1,217 @@
-menuComponent = element {
-    cssSelector 'menu-component'
-    expect_menu_component_is_displayed = expect toBe displayed
-    hidden
-}
-
-orderLane = element {
-    cssSelector 'order-pack-lane'
-    expect_order_lane_is_displayed = expect toBe displayed
-    hidden
-}
-
-sendingOrderButton = clickable {
-    buttonClass 'send'
-    descendantOf {
-        cssSelector 'order-pack-lane'
+{
+  "name": "OrderPage",
+  "namespace": "",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "menuComponent",
+      "selected": false,
+      "kind": "ELEMENT",
+      "by": "CSS_SELECTOR",
+      "selector": "menu-component"
+    },
+    {
+      "fieldName": "orderLane",
+      "selected": false,
+      "kind": "ELEMENT",
+      "by": "CSS_SELECTOR",
+      "selector": "order-pack-lane"
+    },
+    {
+      "fieldName": "sendingOrderButton",
+      "xpath": "/html[1]/body[1]/router-view[1]/order-pack-lane[1]/div[1]/button[1]",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "order-pack-lane"
+        }
+      ],
+      "by": "BUTTON_CLASS",
+      "selector": "send"
+    },
+    {
+      "fieldName": "existingUserRadioButton",
+      "selected": false,
+      "kind": "RADIO",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "user"
+        }
+      ],
+      "by": "ID",
+      "selector": "existing-user"
+    },
+    {
+      "fieldName": "usernameOrEmailField",
+      "selected": false,
+      "kind": "TEXTBOX",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "user"
+        }
+      ],
+      "by": "NAME",
+      "selector": "usernameOrEmail"
+    },
+    {
+      "fieldName": "passwordField",
+      "selected": false,
+      "kind": "TEXTBOX",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "user"
+        }
+      ],
+      "by": "NAME",
+      "selector": "password"
+    },
+    {
+      "fieldName": "decreaseButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "products"
+        }
+      ],
+      "by": "BUTTON_TEXT",
+      "selector": "−"
+    },
+    {
+      "fieldName": "increaseButton",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "products"
+        }
+      ],
+      "by": "BUTTON_TEXT",
+      "selector": "+"
+    },
+    {
+      "fieldName": "numberOfProduct",
+      "selected": false,
+      "kind": "ELEMENT",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "products"
+        }
+      ],
+      "by": "CLASS_NAME",
+      "selector": "number"
+    },
+    {
+      "fieldName": "",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ""
     }
-    xpath '/html[1]/body[1]/router-view[1]/order-pack-lane[1]/div[1]/button[1]'
-    click_sending_order_button = action click
-    hidden
-}
-
-existingUserRadioButton = radio {
-    id 'existing-user'
-    descendantOf {
-        className 'user'
+  ],
+  "methods": [
+    {
+      "name": "expect_menu_component_is_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "menuComponent"
+        }
+      ]
+    },
+    {
+      "name": "expect_order_lane_is_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "orderLane"
+        }
+      ]
+    },
+    {
+      "name": "click_sending_order_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "sendingOrderButton"
+        }
+      ]
+    },
+    {
+      "name": "click_existing_user_radio_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "existingUserRadioButton"
+        }
+      ]
+    },
+    {
+      "name": "set_username_or_email_field_to_",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "setValue",
+          "target": "usernameOrEmailField"
+        }
+      ]
+    },
+    {
+      "name": "set_password_field_to_",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "setValue",
+          "target": "passwordField"
+        }
+      ]
+    },
+    {
+      "name": "click_decrease_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "decreaseButton"
+        }
+      ]
+    },
+    {
+      "name": "click_increase_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "increaseButton"
+        }
+      ]
     }
-    click_existing_user_radio_button = action click
-    hidden
-}
-
-usernameOrEmailField = textbox {
-    name 'usernameOrEmail'
-    descendantOf {
-        className 'user'
-    }
-    set_username_or_email_field_to_ = action setValue
-    hidden
-}
-
-passwordField = textbox {
-    name 'password'
-    descendantOf {
-        className 'user'
-    }
-    set_password_field_to_ = action setValue
-    hidden
-}
-
-decreaseButton = clickable {
-    buttonText '−'
-    descendantOf {
-        className 'products'
-    }
-    click_decrease_button = action click
-    hidden
-}
-
-increaseButton = clickable {
-    buttonText '+'
-    descendantOf {
-        className 'products'
-    }
-    click_increase_button = action click
-    hidden
-}
-
-numberOfProduct = element {
-    className 'number'
-    descendantOf {
-        className 'products'
-    }
-    hidden
+  ]
 }

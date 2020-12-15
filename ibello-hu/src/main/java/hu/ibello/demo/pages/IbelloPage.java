@@ -16,22 +16,6 @@ public class IbelloPage extends AbstractPage {
     @Find(by = By.CSS_SELECTOR, using = "a[href='#order']")
     private WebElement orderButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=OUTPOST']")
-    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attribute-details")
-    private WebElement orderOutpostButton;
-
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=SENTINEL']")
-    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attribute-details")
-    private WebElement orderSentintelButton;
-
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=HUNTER']")
-    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attribute-details")
-    private WebElement orderHunterButton;
-
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=MASTER_HUNTER']")
-    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attribute-details")
-    private WebElement orderMasterHunterButton;
-
     @Find(by = By.CSS_SELECTOR, using = "a[href='#ibello_technics']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-welcome-ibello")
     private WebElement detailsTechnicsButton;
@@ -46,22 +30,6 @@ public class IbelloPage extends AbstractPage {
 
     public void click_order_button() {
         doWith(orderButton).click();
-    }
-
-    public void click_order_outpost_button() {
-        doWith(orderOutpostButton).click();
-    }
-
-    public void click_order_sentintel_button() {
-        doWith(orderSentintelButton).click();
-    }
-
-    public void click_order_hunter_button() {
-        doWith(orderHunterButton).click();
-    }
-
-    public void click_order_master_hunter_button() {
-        doWith(orderMasterHunterButton).click();
     }
 
     public void click_details_technics_button() {

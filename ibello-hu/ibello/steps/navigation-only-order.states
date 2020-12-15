@@ -4,22 +4,20 @@ title = Testing navigation to different order pages of products
 
 state TEST INIT
 state HOME PAGE
-state PRODUCT PAGE
-state ORDER PAGE WITH 1 OUTPOST
-state ORDER PAGE WITH 1 SENTINEL
-state ORDER PAGE WITH 1 HUNTER
-state ORDER PAGE WITH 1 MASTER HUNTER
+state ORDER PAGE WITH 1 SERVER
+state ORDER PAGE WITH 1 ANALYZER
+state ORDER PAGE WITH 1 CREATOR
+state ORDER PAGE WITH 1 TEAM 10
 
 TEST INIT -> HOME PAGE
-HOME PAGE + header our product -> PRODUCT PAGE
-ORDER PAGE WITH 1 OUTPOST + navbar product button -> PRODUCT PAGE
-ORDER PAGE WITH 1 SENTINEL + navbar product button -> PRODUCT PAGE
-ORDER PAGE WITH 1 HUNTER + navbar product button -> PRODUCT PAGE
-ORDER PAGE WITH 1 MASTER HUNTER + navbar product button -> PRODUCT PAGE
-PRODUCT PAGE + order outpost button -> ORDER PAGE WITH 1 OUTPOST
-PRODUCT PAGE + order sentinel button -> ORDER PAGE WITH 1 SENTINEL
-PRODUCT PAGE + order hunter button -> ORDER PAGE WITH 1 HUNTER
-PRODUCT PAGE + order master hunter button -> ORDER PAGE WITH 1 MASTER HUNTER
+HOME PAGE + order button at server product -> ORDER PAGE WITH 1 SERVER
+HOME PAGE + order button at analyzer product -> ORDER PAGE WITH 1 ANALYZER
+HOME PAGE + order button at creator product -> ORDER PAGE WITH 1 CREATOR
+HOME PAGE + order button at team product -> ORDER PAGE WITH 1 TEAM 10
+ORDER PAGE WITH 1 SERVER + logo -> HOME PAGE
+ORDER PAGE WITH 1 ANALYZER + logo -> HOME PAGE
+ORDER PAGE WITH 1 CREATOR + logo -> HOME PAGE
+ORDER PAGE WITH 1 TEAM 10 + logo -> HOME PAGE
 
 [navigation order: test init]
     state TEST INIT
@@ -27,45 +25,43 @@ PRODUCT PAGE + order master hunter button -> ORDER PAGE WITH 1 MASTER HUNTER
 
 [navigation order: i am on homepage]
     state HOME PAGE
-    option header our product
+    option order button at analyzer product
+    option order button at creator product
+    option order button at server product
+    option order button at team product
 
-[navigation order: from homepage header i navigate to product page]
-    input header our product
+[navigation order: from home page i order a server product]
+    input order button at server product
 
-[navigation order: i am on product page]
-    state PRODUCT PAGE
-    option order hunter button
-    option order master hunter button
-    option order outpost button
-    option order sentinel button
+[navigation order: from home page i order an analyzer product]
+    input order button at analyzer product
 
-[navigation order: from product page i order an outpost product]
-    input order outpost button
+[navigation order: from home page i order a creator product]
+    input order button at creator product
 
-[navigation order: from product page i order a sentinel product]
-    input order sentinel button
+[navigation order: from home page i order a team product]
+    input order button at team product
 
-[navigation order: from product page i order a hunter product]
-    input order hunter button
+[navigation order: i am on order page and server is selected]
+    state ORDER PAGE WITH 1 SERVER
+    option logo
 
-[navigation order: from product page i order a master hunter product]
-    input order master hunter button
+[navigation order: i am on order page and analyzer is selected]
+    state ORDER PAGE WITH 1 ANALYZER
+    option logo
 
-[navigation order: i navigate directly to product page using the navbar]
-    input navbar product button
+[navigation order: i am on order page and creator is selected]
+    state ORDER PAGE WITH 1 CREATOR
+    option logo
 
-[navigation order: i am on order page and outpost is selected]
-    state ORDER PAGE WITH 1 OUTPOST
-    option navbar product button
+[navigation order: i am on order page and team 10 is selected]
+    state ORDER PAGE WITH 1 TEAM 10
+    option logo
 
-[navigation order: i am on order page and sentinel is selected]
-    state ORDER PAGE WITH 1 SENTINEL
-    option navbar product button
-
-[navigation order: i am on order page and hunter is selected]
-    state ORDER PAGE WITH 1 HUNTER
-    option navbar product button
-
-[navigation order: i am on order page and master hunter is selected]
-    state ORDER PAGE WITH 1 MASTER HUNTER
-    option navbar product button
+[navigation order: i navigate back to homepage]
+    input logo
+    state HOME PAGE
+    option order button at analyzer product
+    option order button at creator product
+    option order button at server product
+    option order button at team product

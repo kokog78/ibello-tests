@@ -256,22 +256,6 @@ public class NavigationSteps extends StepLibrary {
         ibelloPage.click_order_button();
     }
 
-    public void i_order_a_hunter_product() {
-        ibelloPage.click_order_hunter_button();
-    }
-
-    public void i_order_a_master_hunter_product() {
-        ibelloPage.click_order_master_hunter_button();
-    }
-
-    public void i_order_a_sentinel_product() {
-        ibelloPage.click_order_sentintel_button();
-    }
-
-    public void i_order_an_outpost_product() {
-        ibelloPage.click_order_button();
-        ibelloPage.click_order_outpost_button();
-    }
 
     public void i_see_that_no_product_is_selected() {
         for (int index = 0; index < 4; index++) {
@@ -282,8 +266,20 @@ public class NavigationSteps extends StepLibrary {
         }
     }
 
-    public void i_see_that_outpost_is_selected() {
-        check_if_order_with_$_index_is_selected(0);
+    public void i_see_that_server_is_selected() {
+        check_if_order_with_$_index_is_selected(1);
+    }
+
+    public void i_see_that_analyzer_is_selected() {
+        check_if_order_with_$_index_is_selected(2);
+    }
+
+    public void i_see_that_creator_is_selected() {
+        check_if_order_with_$_index_is_selected(3);
+    }
+
+    public void i_see_that_team_10_is_selected() {
+        check_if_order_with_$_index_is_selected(5);
     }
 
     public void i_see_that_sentinel_is_selected() {
@@ -375,6 +371,22 @@ public class NavigationSteps extends StepLibrary {
         quotationPage.assume_traingings_checkbox_is_not_selected();
     }
 
+    public void i_navigate_from_homepage_to_the_order_page_with_one_server_product() {
+        homePage.click_order_server_button();
+    }
+
+    public void i_navigate_from_homepage_to_the_order_page_with_one_analyzer_product() {
+        homePage.click_order_analyzer_button();
+    }
+
+    public void i_navigate_from_homepage_to_the_order_page_with_one_creator_product() {
+        homePage.click_order_creator_button();
+    }
+
+    public void i_navigate_from_homepage_to_the_order_page_with_one_team_product() {
+        homePage.click_order_team_button();
+    }
+
     private void check_if_order_with_$_index_is_selected(int productIndex) {
         String product = getProductName(productIndex);
         for (int index = 0; index < 4; index++) {
@@ -393,16 +405,19 @@ public class NavigationSteps extends StepLibrary {
     private String getProductName(int productIndex) {
         switch (productIndex) {
             case 0:
-                return "outpost";
+                return "evulation";
             case 1:
-                return "sentinel";
+                return "server";
             case 2:
-                return "hunter";
+                return "analyzer";
             case 3:
-                return "master hunter";
+                return "creator";
+            case 4:
+                return "team 5";
+            case 5:
+                return "team 10";
             default:
                 return "";
         }
     }
-
 }

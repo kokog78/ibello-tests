@@ -17,52 +17,43 @@ public class NavigationOrderWorkflow extends StepLibrary{
         navigationSteps.i_am_on_homepage();
     }
 
-    public void from_homepage_header_i_navigate_to_product_page() {
-        navigationSteps.i_navigate_from_homepage_header_to_product_page();
+    public void i_navigate_back_to_homepage(){
+        navigationSteps.i_navigate_to_homepage_directly_from_navbar();
     }
 
-    public void i_am_on_product_page() {
-        navigationSteps.i_am_on_product_page();
+    public void from_home_page_i_order_a_server_product(){
+        navigationSteps.i_navigate_from_homepage_to_the_order_page_with_one_server_product();
     }
 
-    public void from_product_page_i_order_an_outpost_product() {
-        navigationSteps.i_order_an_outpost_product();
-    }
-
-    public void from_product_page_i_order_a_sentinel_product() {
-        navigationSteps.i_order_a_sentinel_product();
-    }
-
-    public void from_product_page_i_order_a_hunter_product() {
-        navigationSteps.i_order_a_hunter_product();
-    }
-
-    public void from_product_page_i_order_a_master_hunter_product() {
-        navigationSteps.i_order_a_master_hunter_product();
-    }
-
-    public void i_navigate_directly_to_product_page_using_the_navbar() {
-        navigationSteps.i_navigate_to_product_page_directly_from_navbar();
-    }
-
-    public void i_am_on_order_page_and_outpost_is_selected() {
+    public void i_am_on_order_page_and_server_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_outpost_is_selected();
+        navigationSteps.i_see_that_server_is_selected();
     }
 
-    public void i_am_on_order_page_and_sentinel_is_selected() {
+    public void from_home_page_i_order_an_analyzer_product(){
+        navigationSteps.i_navigate_from_homepage_to_the_order_page_with_one_analyzer_product();
+    }
+
+    public void i_am_on_order_page_and_analyzer_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_sentinel_is_selected();
+        navigationSteps.i_see_that_analyzer_is_selected();
     }
 
-    public void i_am_on_order_page_and_hunter_is_selected() {
+    public void from_home_page_i_order_a_creator_product(){
+        navigationSteps.i_navigate_from_homepage_to_the_order_page_with_one_creator_product();
+    }
+
+    public void i_am_on_order_page_and_creator_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_hunter_is_selected();
+        navigationSteps.i_see_that_creator_is_selected();
     }
 
-    public void i_am_on_order_page_and_master_hunter_is_selected() {
+    public void from_home_page_i_order_a_team_product(){
+        navigationSteps.i_navigate_from_homepage_to_the_order_page_with_one_team_product();
+    }
+
+    public void i_am_on_order_page_and_team_10_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_master_hunter_is_selected();
+        navigationSteps.i_see_that_team_10_is_selected();
     }
-
 }

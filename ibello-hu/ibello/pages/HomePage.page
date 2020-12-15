@@ -184,6 +184,15 @@
       ],
       "by": "CSS_SELECTOR",
       "selector": "a[href\u003d\u0027#support\u0027]"
+    },
+    {
+      "fieldName": "",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ""
     }
   ],
   "methods": [

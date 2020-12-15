@@ -65,6 +65,19 @@ public class HomePage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-convert")
     private WebElement productButton;
 
+    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=SERVER']")
+    //@Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attribute-details")
+    private WebElement orderServerButton;
+
+    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=ANALYZER']")
+    private WebElement orderAnalyzerButton;
+
+    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=CREATOR']")
+    private WebElement orderCreatorButton;
+
+    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=TEAM_10']")
+    private WebElement orderTeamButton;
+
     public void assume_$_text_is_displayed(String textToCheck) {
         expectations().assume(text.applyParameters(textToCheck)).toBe().displayed();
     }
@@ -129,5 +142,21 @@ public class HomePage extends AbstractPage {
 
     public void click_product_button() {
         doWith(productButton).click();
+    }
+
+    public void click_order_server_button() {
+        doWith(orderServerButton).click();
+    }
+
+    public void click_order_analyzer_button() {
+        doWith(orderAnalyzerButton).click();
+    }
+
+    public void click_order_creator_button() {
+        doWith(orderCreatorButton).click();
+    }
+
+    public void click_order_team_button() {
+        doWith(orderTeamButton).click();
     }
 }
