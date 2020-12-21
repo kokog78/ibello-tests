@@ -5,7 +5,7 @@ import hu.ibello.elements.WebElement;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
-@Name("Manager Page")
+@Name("Manager page")
 public class ManagerPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "flow-lane")

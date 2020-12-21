@@ -8,7 +8,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Order Page")
+@Name("Order page")
 public class OrderPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "order-pack-lane")

@@ -7,7 +7,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Interest Page")
+@Name("Interest page")
 public class InterestPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "workflow-lane")

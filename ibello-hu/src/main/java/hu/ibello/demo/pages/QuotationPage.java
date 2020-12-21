@@ -7,7 +7,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Quotation Page")
+@Name("Quotation page")
 public class QuotationPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "quote-services-lane")

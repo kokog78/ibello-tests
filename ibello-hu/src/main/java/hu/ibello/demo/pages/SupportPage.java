@@ -7,7 +7,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Support Page")
+@Name("Support page")
 public class SupportPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")

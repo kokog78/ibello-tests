@@ -7,7 +7,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Changelog Page")
+@Name("Changelog page")
 public class ChangelogPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "doc-lane")

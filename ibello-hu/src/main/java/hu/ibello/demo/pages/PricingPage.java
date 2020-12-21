@@ -5,7 +5,7 @@ import hu.ibello.elements.WebElement;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
-@Name("Pricing Page")
+@Name("Pricing page")
 public class PricingPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "attribute-details-lane")

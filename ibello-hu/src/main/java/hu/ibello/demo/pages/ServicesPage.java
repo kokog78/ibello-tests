@@ -8,7 +8,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Services Page")
+@Name("Services page")
 public class ServicesPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-services-lane")
