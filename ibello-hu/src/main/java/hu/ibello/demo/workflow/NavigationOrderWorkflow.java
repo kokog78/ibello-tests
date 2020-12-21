@@ -1,6 +1,7 @@
 package hu.ibello.demo.workflow;
 
 import hu.ibello.core.Name;
+import hu.ibello.demo.steps.ChoosingProductSteps;
 import hu.ibello.demo.steps.NavigationSteps;
 import hu.ibello.steps.StepLibrary;
 
@@ -8,6 +9,7 @@ import hu.ibello.steps.StepLibrary;
 public class NavigationOrderWorkflow extends StepLibrary{
 
     private NavigationSteps navigationSteps;
+    private ChoosingProductSteps choosingProductSteps;
 
     public void test_init() {
         navigationSteps.i_open_the_homepage();
@@ -27,7 +29,7 @@ public class NavigationOrderWorkflow extends StepLibrary{
 
     public void i_am_on_order_page_and_server_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_server_is_selected();
+        choosingProductSteps.i_see_that_server_is_selected();
     }
 
     public void from_home_page_i_order_an_analyzer_product(){
@@ -36,7 +38,7 @@ public class NavigationOrderWorkflow extends StepLibrary{
 
     public void i_am_on_order_page_and_analyzer_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_analyzer_is_selected();
+        choosingProductSteps.i_see_that_analyzer_is_selected();
     }
 
     public void from_home_page_i_order_a_creator_product(){
@@ -45,7 +47,7 @@ public class NavigationOrderWorkflow extends StepLibrary{
 
     public void i_am_on_order_page_and_creator_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_creator_is_selected();
+        choosingProductSteps.i_see_that_creator_is_selected();
     }
 
     public void from_home_page_i_order_a_team_product(){
@@ -54,6 +56,6 @@ public class NavigationOrderWorkflow extends StepLibrary{
 
     public void i_am_on_order_page_and_team_10_is_selected(){
         navigationSteps.i_am_on_order_page();
-        navigationSteps.i_see_that_team_10_is_selected();
+        choosingProductSteps.i_see_that_team_10_is_selected();
     }
 }

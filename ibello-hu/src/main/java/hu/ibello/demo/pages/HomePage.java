@@ -7,7 +7,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Home Page")
+@Name("Home page")
 public class HomePage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")
@@ -66,16 +66,19 @@ public class HomePage extends AbstractPage {
     private WebElement productButton;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=SERVER']")
-    //@Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attribute-details")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderServerButton;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=ANALYZER']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderAnalyzerButton;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=CREATOR']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderCreatorButton;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=TEAM_10']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderTeamButton;
 
     public void assume_$_text_is_displayed(String textToCheck) {
