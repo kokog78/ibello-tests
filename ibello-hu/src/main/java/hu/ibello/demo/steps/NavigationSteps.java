@@ -229,8 +229,6 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_make_a_request_for_online_automated_testing() {
-        //quotationUrl = "/#quotation?service=online_testing";
-        //TODO kivezetés
         servicesPage.open_service_with_index_$(0);
         servicesPage.click_request_online_testing_button();
     }
