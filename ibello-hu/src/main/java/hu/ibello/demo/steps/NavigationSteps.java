@@ -72,14 +72,12 @@ public class NavigationSteps extends StepLibrary {
         navigationBar.click_services_link();
         homePage.click_work_with_us_button();
         servicesPage.expect_services_lane_is_displayed();
-        //TODO ellenőrzés (services page-en)
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
         navigationBar.click_home_link();
         homePage.i_expect_main_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
-        //TODO ellenőrzés
     }
 
     public void i_am_on_order_page() {
