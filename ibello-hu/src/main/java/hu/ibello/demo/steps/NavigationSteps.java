@@ -1,7 +1,6 @@
 package hu.ibello.demo.steps;
 
 import hu.ibello.core.Name;
-import hu.ibello.demo.model.LanguageSelection;
 import hu.ibello.demo.pages.*;
 import hu.ibello.demo.panel.NavigationBarPanel;
 import hu.ibello.steps.StepLibrary;
@@ -23,6 +22,20 @@ public class NavigationSteps extends StepLibrary {
     private ChangelogPage changelogPage;
     private InstallationDocPage installationDocPage;
     private QuotationPage quotationPage;
+    private static final String homeSupportUrl = "/#home-support";
+    private static final String homeServicesUrl = "/#home-services";
+    private static final String homeIbelloUrl = "/#home-ibello";
+    private static final String homeAboutUrl = "/#home-about";
+    private static final String installionUrl = "/#documentation-installation";
+    private static final String changelogUrl = "/#documentation-changelog";
+    private static final String supportUrl = "/#support";
+    private static final String interestUrl = "/#interest";
+    private static final String documentationUrl = "/#all-docs";
+    private static final String pricingUrl = "/#pricing-details";
+    private static final String managerUrl = "#flow?id=manager";
+    private static final String aboutUrl = "/#about";
+    private static final String servicesUrl = "/#services";
+    private static final String productPageUrl = "/#ibello";
 
     private String quotationUrl;
 
@@ -42,6 +55,7 @@ public class NavigationSteps extends StepLibrary {
         navigationBar.click_product_link();
         homePage.click_learn_more_button();
         ibelloPage.expect_ibello_lane_is_displayed();
+        //TODO külön method
         ibelloPage.click_order_button();
         navigationBar.expect_menu_component_is_displayed();
         orderPage.expect_order_lane_is_displayed();
@@ -55,84 +69,80 @@ public class NavigationSteps extends StepLibrary {
     public void i_navigate_from_homepage_header_to_services_page() {
         navigationBar.click_services_link();
         homePage.click_work_with_us_button();
+        servicesPage.expect_services_lane_is_displayed();
+        //TODO ellenőrzés (services page-en)
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
         navigationBar.click_home_link();
+        homePage.i_expect_main_lane_is_displayed();
+        navigationBar.expect_menu_component_is_displayed();
+        //TODO ellenőrzés
     }
 
     public void i_am_on_order_page() {
         orderPage.expect_order_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
+        orderPage.expect_order_lane_is_displayed();
     }
 
     public void i_am_on_product_page() {
-        String url = "/#ibello";
-        ibelloPage.expect_url_is_$(url);
+        ibelloPage.expect_url_is_$(productPageUrl);
         ibelloPage.expect_ibello_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_services_page() {
-        String url = "/#services";
-        servicesPage.expect_url_is_$(url);
+        servicesPage.expect_url_is_$(servicesUrl);
         servicesPage.expect_services_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_about_page() {
-        String url = "/#about";
-        aboutPage.expect_url_is_$(url);
+        aboutPage.expect_url_is_$(aboutUrl);
         aboutPage.expect_about_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_manager_page() {
-        String url = "#flow?id=manager";
-        managerPage.expect_url_is_$(url);
+        managerPage.expect_url_is_$(managerUrl);
         managerPage.expect_flow_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_pricing_page() {
-        String url = "/#pricing-details";
-        pricingPage.expect_url_is_$(url);
+        pricingPage.expect_url_is_$(pricingUrl);
         pricingPage.expect_details_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_documentations_page() {
-        String url = "/#all-docs";
-        documentationsPage.expect_url_is_$(url);
+        documentationsPage.expect_url_is_$(documentationUrl);
         documentationsPage.expect_docs_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_interest_page() {
-        String url = "/#interest";
-        interestPage.expect_url_is_$(url);
+        interestPage.expect_url_is_$(interestUrl);
         interestPage.expect_workflow_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_support_page() {
-        String url = "/#support";
-        supportPage.expect_url_is_$(url);
+        supportPage.expect_url_is_$(supportUrl);
         supportPage.expect_welcome_lane_is_displayed();
         supportPage.expect_login_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_changelog_page() {
-        String url = "/#documentation-changelog";
-        supportPage.expect_url_is_$(url);
+        supportPage.expect_url_is_$(changelogUrl);
         changelogPage.expect_doc_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_installation_documentation_page() {
-        String url = "/#documentation-installation";
-        installationDocPage.expect_url_is_$(url);
+        installationDocPage.expect_url_is_$(installionUrl);
         installationDocPage.expect_doc_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
@@ -145,43 +155,40 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_use_navbar_to_navigate_to_about_page() {
         navigationBar.click_about_us_link();
-        String url = "/#home-about";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeAboutUrl);
         homePage.click_meet_us_button();
+        aboutPage.expect_about_lane_is_displayed();
     }
 
     public void i_use_navbar_to_navigate_to_documentations_page() {
         navigationBar.click_support_link();
-        String url = "/#home-support";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeSupportUrl);
         homePage.click_documentations_button();
+        documentationsPage.expect_docs_lane_is_displayed();
     }
 
     public void i_use_navbar_to_navigate_to_interest_page() {
         navigationBar.click_product_link();
-        String url = "/#home-ibello";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeIbelloUrl);
         homePage.click_try_it_button();
+        interestPage.expect_workflow_lane_is_displayed();
     }
 
     public void i_use_navbar_to_navigate_to_product_page() {
         navigationBar.click_product_link();
-        String url = "/#home-ibello";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeIbelloUrl);
         homePage.click_learn_more_button();
     }
 
     public void i_use_navbar_to_navigate_to_services_page() {
         navigationBar.click_services_link();
-        String url = "/#home-services";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeServicesUrl);
         homePage.click_work_with_us_button();
     }
 
     public void i_use_navbar_to_navigate_to_support_page() {
         navigationBar.click_support_link();
-        String url = "/#home-support";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeSupportUrl);
         homePage.click_more_options_button();
     }
 
@@ -223,31 +230,32 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_make_a_request_for_online_automated_testing() {
-        quotationUrl = "/#/quotation?service=online_testing";
+        quotationUrl = "/#quotation?service=online_testing";
+        //TODO kivezetés
         servicesPage.open_service_with_index_$(0);
         servicesPage.click_request_online_testing_button();
     }
 
     public void i_make_a_request_for_automated_testing_for_applications() {
-        quotationUrl = "/#/quotation?service=test_apps";
+        quotationUrl = "/#quotation?service=test_apps";
         servicesPage.open_service_with_index_$(1);
         servicesPage.click_request_automated_test_button();
     }
 
     public void i_make_a_request_for_test_framework_building() {
-        quotationUrl = "/#/quotation?service=test_framework";
+        quotationUrl = "/#quotation?service=test_framework";
         servicesPage.open_service_with_index_$(2);
         servicesPage.click_request_test_framework_button();
     }
 
     public void i_make_a_request_for_consultancy() {
-        quotationUrl = "/#/quotation?service=consultancy";
+        quotationUrl = "/#quotation?service=consultancy";
         servicesPage.open_service_with_index_$(3);
         servicesPage.click_request_consultancy_button();
     }
 
     public void i_make_a_request_for_trainings() {
-        quotationUrl = "/#/quotation?service=trainings";
+        quotationUrl = "/#quotation?service=trainings";
         servicesPage.open_service_with_index_$(4);
         servicesPage.click_request_trainings_button();
     }
@@ -264,34 +272,6 @@ public class NavigationSteps extends StepLibrary {
                 throw new AssertionError("There is unexpected product selection!");
             }
         }
-    }
-
-    public void i_see_that_server_is_selected() {
-        check_if_order_with_$_index_is_selected(1);
-    }
-
-    public void i_see_that_analyzer_is_selected() {
-        check_if_order_with_$_index_is_selected(2);
-    }
-
-    public void i_see_that_creator_is_selected() {
-        check_if_order_with_$_index_is_selected(3);
-    }
-
-    public void i_see_that_team_10_is_selected() {
-        check_if_order_with_$_index_is_selected(5);
-    }
-
-    public void i_see_that_sentinel_is_selected() {
-        check_if_order_with_$_index_is_selected(1);
-    }
-
-    public void i_see_that_hunter_is_selected() {
-        check_if_order_with_$_index_is_selected(2);
-    }
-
-    public void i_see_that_master_hunter_is_selected() {
-        check_if_order_with_$_index_is_selected(3);
     }
 
     public void i_navigate_from_support_page_header_to_product_page() {
@@ -373,51 +353,21 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_server_product() {
         homePage.click_order_server_button();
+        orderPage.expect_order_lane_is_displayed();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_analyzer_product() {
         homePage.click_order_analyzer_button();
+        orderPage.expect_order_lane_is_displayed();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_creator_product() {
         homePage.click_order_creator_button();
+        orderPage.expect_order_lane_is_displayed();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_team_product() {
         homePage.click_order_team_button();
-    }
-
-    private void check_if_order_with_$_index_is_selected(int productIndex) {
-        String product = getProductName(productIndex);
-        for (int index = 0; index < 4; index++) {
-            int currentNum = Integer.parseInt(orderPage.getNumberOfProduct(index));
-            if (index == productIndex) {
-                if (currentNum != 1) {
-                    throw new AssertionError(String.format("The %s is not selected!", product));
-                }
-            }
-            if (currentNum > 0 && index != productIndex) {
-                throw new AssertionError("There is unexpected product selection!");
-            }
-        }
-    }
-
-    private String getProductName(int productIndex) {
-        switch (productIndex) {
-            case 0:
-                return "evulation";
-            case 1:
-                return "server";
-            case 2:
-                return "analyzer";
-            case 3:
-                return "creator";
-            case 4:
-                return "team 5";
-            case 5:
-                return "team 10";
-            default:
-                return "";
-        }
+        orderPage.expect_order_lane_is_displayed();
     }
 }
