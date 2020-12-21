@@ -51,11 +51,13 @@ public class NavigationSteps extends StepLibrary {
         navigationBar.expect_menu_component_is_displayed();
     }
 
-    public void i_navigate_from_homepage_to_the_order_page() {
+    public void i_navigate_from_homepage_to_ibello_page(){
         navigationBar.click_product_link();
         homePage.click_learn_more_button();
         ibelloPage.expect_ibello_lane_is_displayed();
-        //TODO külön method
+    }
+
+    public void i_navigate_from_ibello_page_to_order_page(){
         ibelloPage.click_order_button();
         navigationBar.expect_menu_component_is_displayed();
         orderPage.expect_order_lane_is_displayed();
