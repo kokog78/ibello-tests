@@ -13,14 +13,14 @@ public class IbelloPage extends AbstractPage {
     @Find(by = By.CSS_SELECTOR, using = "welcome-ibello-lane")
     private WebElement ibelloLane;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#order']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='order']")
     private WebElement orderButton;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#ibello_technics']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-welcome-ibello")
     private WebElement detailsTechnicsButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#interest']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='download']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attributes")
     private WebElement downloadButton;
 

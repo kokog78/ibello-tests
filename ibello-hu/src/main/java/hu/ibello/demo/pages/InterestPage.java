@@ -17,7 +17,7 @@ public class InterestPage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-docs")
     private WebElement readItButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#documentation-installation']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='documentation-installation']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-download")
     private WebElement installGuideButton;
 

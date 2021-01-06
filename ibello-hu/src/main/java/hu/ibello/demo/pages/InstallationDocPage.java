@@ -13,7 +13,7 @@ public class InstallationDocPage extends AbstractPage {
     @Find(by = By.CSS_SELECTOR, using = "doc-lane")
     private WebElement docLane;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#all-docs']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='all-docs']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-doc-footer")
     private WebElement moreDocButton;
 

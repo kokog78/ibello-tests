@@ -13,7 +13,7 @@ public class DocumentationsPage extends AbstractPage {
     @Find(by = By.CSS_SELECTOR, using = "docs-lane")
     private WebElement docsLane;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#documentation-changelog']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='documentation-changelog']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-docs")
     private WebElement readItButton;
 

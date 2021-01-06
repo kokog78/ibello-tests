@@ -22,21 +22,21 @@ public class NavigationSteps extends StepLibrary {
     private ChangelogPage changelogPage;
     private InstallationDocPage installationDocPage;
     private QuotationPage quotationPage;
-    private static final String homeSupportUrl = "/#home-support";
-    private static final String homeServicesUrl = "/#home-services";
-    private static final String homeIbelloUrl = "/#home-ibello";
-    private static final String homeAboutUrl = "/#home-about";
-    private static final String installionUrl = "/#documentation-installation";
-    private static final String changelogUrl = "/#documentation-changelog";
-    private static final String supportUrl = "/#support";
-    private static final String interestUrl = "/#interest";
-    private static final String documentationUrl = "/#all-docs";
-    private static final String pricingUrl = "/#pricing-details";
-    private static final String managerUrl = "#flow?id=manager";
-    private static final String aboutUrl = "/#about";
-    private static final String servicesUrl = "/#services";
-    private static final String productPageUrl = "/#ibello";
-    private static final String quotationUrl="/#/quotation";
+    private static final String homeSupportUrl = "home-support";
+    private static final String homeServicesUrl = "home-services";
+    private static final String homeIbelloUrl = "home-ibello";
+    private static final String homeAboutUrl = "home-about";
+    private static final String installionUrl = "documentation-installation";
+    private static final String changelogUrl = "documentation-changelog";
+    private static final String supportUrl = "support";
+    private static final String interestUrl = "download";
+    private static final String documentationUrl = "all-docs";
+    private static final String pricingUrl = "pricing-details";
+    private static final String managerUrl = "flow?id=manager";
+    private static final String aboutUrl = "about";
+    private static final String servicesUrl = "services";
+    private static final String productPageUrl = "ibello";
+    private static final String quotationUrl="/quotation";
 
     public void i_open_the_homepage() {
         homePage.i_open_homepage();
@@ -44,7 +44,7 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_am_on_homepage() {
-        String url = "/#home";
+        String url = "/home";
         homePage.expect_url_is_$(url);
         homePage.i_expect_main_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
@@ -224,7 +224,6 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_services_page_to_quotation_page() {
-        //quotationUrl = "/#quotation";
         servicesPage.click_request_button();
     }
 
@@ -234,25 +233,21 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_make_a_request_for_automated_testing_for_applications() {
-        //quotationUrl = "/#quotation?service=test_apps";
         servicesPage.open_service_with_index_$(1);
         servicesPage.click_request_automated_test_button();
     }
 
     public void i_make_a_request_for_test_framework_building() {
-        //quotationUrl = "/#quotation?service=test_framework";
         servicesPage.open_service_with_index_$(2);
         servicesPage.click_request_test_framework_button();
     }
 
     public void i_make_a_request_for_consultancy() {
-        //quotationUrl = "/#quotation?service=consultancy";
         servicesPage.open_service_with_index_$(3);
         servicesPage.click_request_consultancy_button();
     }
 
     public void i_make_a_request_for_trainings() {
-        //quotationUrl = "/#quotation?service=trainings";
         servicesPage.open_service_with_index_$(4);
         servicesPage.click_request_trainings_button();
     }

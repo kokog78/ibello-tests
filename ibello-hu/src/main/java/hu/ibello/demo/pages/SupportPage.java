@@ -16,23 +16,23 @@ public class SupportPage extends AbstractPage {
     @Find(by = By.CSS_SELECTOR, using = "login-lane")
     private WebElement loginLane;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#ibello']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='ibello']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-welcome-main")
     private WebElement ourProductButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#services']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='services']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-welcome-main")
     private WebElement ourServicesButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#documentation-changelog']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='documentation-changelog']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-changes")
     private WebElement changelogButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#documentation-installation']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='documentation-installation']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-download")
     private WebElement installationGuideButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#all-docs']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='all-docs']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-docs")
     private WebElement readItButton;
 
