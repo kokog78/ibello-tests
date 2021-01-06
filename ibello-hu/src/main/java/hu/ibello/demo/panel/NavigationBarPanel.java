@@ -17,7 +17,7 @@ public class NavigationBarPanel extends PageObject {
     private WebElement productLink;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#home-services']")
-    //@Relation(type = RelationType.DESCENDANT_OF, by = By.CSS_SELECTOR, using = "menu-component")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CSS_SELECTOR, using = "menu-component")
     private WebElement servicesLink;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#home-about']")
