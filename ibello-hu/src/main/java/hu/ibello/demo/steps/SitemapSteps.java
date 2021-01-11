@@ -5,6 +5,9 @@ import hu.ibello.demo.pages.*;
 import hu.ibello.demo.panel.NavigationBarPanel;
 import hu.ibello.steps.StepLibrary;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Name("Sitemap steps")
 public class SitemapSteps extends StepLibrary {
 
@@ -29,29 +32,42 @@ public class SitemapSteps extends StepLibrary {
     private UnsubscribePage unsubscribePage;
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
-    private DocumentationInstallationPage documentationInstallationPage;
-    private AbstractDocumentationPage abstractDocumentationPage;
+    private DocumentationPage documentationPage;
 
-    private static final String szmdUrl = "szmd";
-    private static final String questionsUrl = "questions-manager";
-    private static final String changesUrl = "changes";
-    private static final String gradlePluginUrl = "news-ibello-gradle-plugin";
-    private static final String homeURL = "home";
-    private static final String docsURL = "all-docs";
-    private static final String downloadURL = "download";
-    private static final String productPricingUrl = "pricing-details";
-    private static final String serviceDetailsUrl = "service-details";
-    private static final String orderUrl = "order";
-    private static final String quotationUrl = "quotation";
-    private static final String productUrl = "product";
-    private static final String servicesUrl = "services";
-    private static final String supportUrl = "support";
-    private static final String aboutUrl = "about";
-    private static final String testAutomationUrl = "landing-test-automation";
-    private static final String unsubscribeUrl = "unsubscribe";
-    private static final String loginUrl = "clients/#login";
-    private static final String registrationUrl = "clients/#registration";
-    private static final String documentationInstallationUrl = "documentation-installation";
+    private static final String szmdUrl = "/szmd";
+    private static final String questionsUrl = "/questions-manager";
+    private static final String changesUrl = "/changes";
+    private static final String gradlePluginUrl = "/news-ibello-gradle-plugin";
+    private static final String homeURL = "/home";
+    private static final String docsURL = "/all-docs";
+    private static final String downloadURL = "/download";
+    private static final String productPricingUrl = "/pricing-details";
+    private static final String serviceDetailsUrl = "/service-details";
+    private static final String orderUrl = "/order";
+    private static final String quotationUrl = "/quotation";
+    private static final String productUrl = "/product";
+    private static final String servicesUrl = "/services";
+    private static final String supportUrl = "/support";
+    private static final String aboutUrl = "/about";
+    private static final String testAutomationUrl = "/landing-test-automation";
+    private static final String unsubscribeUrl = "/unsubscribe";
+    private static final String loginUrl = "/clients/#login";
+    private static final String registrationUrl = "/clients/#registration";
+    private static final String documentationInstallationUrl = "/documentation-installation";
+    private static final String documentationGuidesUrl = "/documentation-guides";
+    private static final String documentationApiUrl = "/documentation-api";
+    private static final String documentationExamplesUrl = "/documentation-examples";
+    private static final String documentationCliUrl = "/documentation-cli";
+    private static final String documentationConfigurationUrl = "/documentation-configuration";
+    private static final String documentationResultsUrl = "/documentation-results";
+    private static final String documentationKpiUrl = "/documentation-kpi";
+    private static final String documentationCucumberUrl = "/documentation-cucumber";
+    private static final String documentationGenerateUrl = "/documentation-generate";
+    private static final String documentationDocgenUrl = "/documentation-docgen";
+    private static final String documentationChangelogUrl = "/documentation-changelog";
+    private static final String documentationProblemsUrl = "/documentation-problems";
+
+    private Map<String, PageInterface> pages;
 
     public void i_open_sitemap_page() {
         sitemapPage.i_open_sitemap_page();
@@ -69,7 +85,7 @@ public class SitemapSteps extends StepLibrary {
         navigationBar.expect_menu_component_is_displayed();
     }
 
-    public void i_verify_all_links() {
+    public void i_verify_all_links() throws Exception {
         int linkCount = sitemapPage.get_link_count();
         for (int i = 0; i < linkCount; i++) {
             String link = sitemapPage.get_link(i);
@@ -81,71 +97,54 @@ public class SitemapSteps extends StepLibrary {
         }
     }
 
-    private void verify_specific_links(String link) {
+    private void verify_specific_links(String link) throws Exception {
         if (link != null) {
-            String path = link.replace("https://ibello.hu/", "").replace("https://ibello.eu/", "");
-            switch (path) {
-                case szmdUrl:
-                    lovelyJobsAwardPage.i_am_on_the_page();
-                    break;
-                case questionsUrl:
-                    questionsPage.i_am_on_the_page();
-                    break;
-                case changesUrl:
-                    changesPage.i_am_on_the_page();
-                    break;
-                case gradlePluginUrl:
-                    gradlePluginPage.i_am_on_the_page();
-                    break;
-                case homeURL:
-                    homePage.i_am_on_the_page();
-                    break;
-                case docsURL:
-                    documentationsPage.i_am_on_the_page();
-                    break;
-                case downloadURL:
-                    downloadPage.i_am_on_the_page();
-                    break;
-                case productPricingUrl:
-                    productPricingPage.i_am_on_the_page();
-                    break;
-                case serviceDetailsUrl:
-                    serviceDetailsPage.i_am_on_the_page();
-                    break;
-                case orderUrl:
-                    orderPage.i_am_on_the_page();
-                    break;
-                case quotationUrl:
-                    quotationPage.i_am_on_the_page();
-                    break;
-                case productUrl:
-                    productPage.i_am_on_the_page();
-                    break;
-                case servicesUrl:
-                    servicesPage.i_am_on_the_page();
-                    break;
-                case supportUrl:
-                    supportPage.i_am_on_the_page();
-                    break;
-                case aboutUrl:
-                    aboutPage.i_am_on_the_page();
-                    break;
-                case testAutomationUrl:
-                    testAutomationPage.i_am_on_the_page();
-                    break;
-                case unsubscribeUrl:
-                    unsubscribePage.i_am_on_the_page();
-                    break;
-                case loginUrl:
-                    loginPage.i_am_on_the_page();
-                    break;
-                case registrationUrl:
-                    registrationPage.i_am_on_the_page();
-                    break;
-                case documentationInstallationUrl:
-                    abstractDocumentationPage.i_am_on_the_page();
-                    break;
+            String path = link.replace("https://ibello.hu", "").replace("https://ibello.eu", "");
+            PageInterface page = getPage(path);
+            if (page != null){
+                page.i_am_on_the_page();
+            }else {
+                throw new Exception("Unknow path: " + path);
             }
         }
+    }
+
+    private PageInterface getPage(String url) {
+        if (pages == null) {
+            pages = new HashMap<>();
+            pages.put(szmdUrl, lovelyJobsAwardPage);
+            pages.put(questionsUrl, questionsPage);
+            pages.put(changesUrl, changesPage);
+            pages.put(gradlePluginUrl, gradlePluginPage);
+            pages.put(homeURL, homePage);
+            pages.put(docsURL, documentationsPage);
+            pages.put(downloadURL, downloadPage);
+            pages.put(productPricingUrl, productPricingPage);
+            pages.put(serviceDetailsUrl, serviceDetailsPage);
+            pages.put(orderUrl, orderPage);
+            pages.put(quotationUrl, quotationPage);
+            pages.put(productUrl, productPage);
+            pages.put(servicesUrl, servicesPage);
+            pages.put(supportUrl, supportPage);
+            pages.put(aboutUrl, aboutPage);
+            pages.put(testAutomationUrl, testAutomationPage);
+            pages.put(unsubscribeUrl, unsubscribePage);
+            pages.put(loginUrl, loginPage);
+            pages.put(registrationUrl, registrationPage);
+            pages.put(documentationInstallationUrl, documentationPage);
+            pages.put(documentationGuidesUrl, documentationPage);
+            pages.put(documentationApiUrl, documentationPage);
+            pages.put(documentationExamplesUrl, documentationPage);
+            pages.put(documentationCliUrl, documentationPage);
+            pages.put(documentationConfigurationUrl, documentationPage);
+            pages.put(documentationResultsUrl, documentationPage);
+            pages.put(documentationKpiUrl, documentationPage);
+            pages.put(documentationCucumberUrl, documentationPage);
+            pages.put(documentationGenerateUrl, documentationPage);
+            pages.put(documentationDocgenUrl, documentationPage);
+            pages.put(documentationChangelogUrl, documentationPage);
+            pages.put(documentationProblemsUrl, documentationPage);
+        }
+        return pages.get(url);
     }
 }

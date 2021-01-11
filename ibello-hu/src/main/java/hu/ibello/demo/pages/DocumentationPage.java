@@ -4,7 +4,7 @@ import hu.ibello.elements.WebElement;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
-public class AbstractDocumentationPage extends AbstractPage implements PageInterface {
+public class DocumentationPage extends AbstractPage implements PageInterface {
 
     @Find(by = By.CSS_SELECTOR, using = "doc-lane")
     private WebElement docLane;

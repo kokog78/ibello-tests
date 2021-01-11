@@ -16,7 +16,7 @@ public class SitemapWorkflow extends StepLibrary {
         sitemapSteps.i_am_on_sitemap_page();
     }
 
-    public void i_verify_links(){
+    public void i_verify_links() throws Exception {
         sitemapSteps.i_verify_all_links();
     }
 }
