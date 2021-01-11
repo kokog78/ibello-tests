@@ -8,7 +8,7 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Home page")
-public class HomePage extends AbstractPage {
+public class HomePage extends AbstractPage implements PageInterface {
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")
     private WebElement mainLane;
@@ -143,10 +143,6 @@ public class HomePage extends AbstractPage {
         doWith(moreOptionsButton).click();
     }
 
-    public void click_product_button() {
-        doWith(productButton).click();
-    }
-
     public void click_order_server_button() {
         doWith(orderServerButton).click();
     }
@@ -161,5 +157,10 @@ public class HomePage extends AbstractPage {
 
     public void click_order_team_button() {
         doWith(orderTeamButton).click();
+    }
+
+    public void i_am_on_the_page() {
+        expect_url_is_$("/home");
+        i_expect_main_lane_is_displayed();
     }
 }

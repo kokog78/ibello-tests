@@ -10,18 +10,26 @@ public class NavigationSteps extends StepLibrary {
 
     private NavigationBarPanel navigationBar;
     private HomePage homePage;
-    private IbelloPage ibelloPage;
+    private ProductPage productPage;
     private OrderPage orderPage;
     private ServicesPage servicesPage;
     private AboutPage aboutPage;
-    private ManagerPage managerPage;
-    private PricingPage pricingPage;
+    private ProductPricingPage productPricingPage;
     private DocumentationsPage documentationsPage;
-    private InterestPage interestPage;
+    private DownloadPage downloadPage;
     private SupportPage supportPage;
     private ChangelogPage changelogPage;
     private InstallationDocPage installationDocPage;
     private QuotationPage quotationPage;
+    private LovelyJobsAwardPage lovelyJobsAwardPage;
+    private QuestionsPage questionsPage;
+    private ChangesPage changesPage;
+    private IbelloPluginPage ibelloPluginPage;
+    private ServiceDetailsPage serviceDetailsPage;
+    private TestAutomationPage testAutomationPage;
+    private UnsubscribePage unsubscribePage;
+    private LoginPage loginPage;
+    private RegistrationPage registrationPage;
     private static final String homeSupportUrl = "home-support";
     private static final String homeServicesUrl = "home-services";
     private static final String homeIbelloUrl = "home-ibello";
@@ -29,14 +37,24 @@ public class NavigationSteps extends StepLibrary {
     private static final String installionUrl = "documentation-installation";
     private static final String changelogUrl = "documentation-changelog";
     private static final String supportUrl = "support";
-    private static final String interestUrl = "download";
+    private static final String downloadUrl = "download";
     private static final String documentationUrl = "all-docs";
     private static final String pricingUrl = "pricing-details";
     private static final String managerUrl = "flow?id=manager";
     private static final String aboutUrl = "about";
     private static final String servicesUrl = "services";
-    private static final String productPageUrl = "ibello";
+    private static final String serviceDetailsUrl = "service-details";
+    private static final String productPageUrl = "/product";
     private static final String quotationUrl="/quotation";
+    private static final String szmdUrl = "/szmd";
+    private static final String questionsUrl = "/questions";
+    private static final String changesUrl = "/changes";
+    private static final String gradlePluginUrl = "/news-ibello-gradle-plugin";
+    private static final String orderUrl = "/order";
+    private static final String testAutomationUrl = "/landing-test-automation";
+    private static final String unsubscribeUrl = "/unsubscribe";
+    private static final String loginUrl = "/clients/#login";
+    private static final String registrationUrl = "/clients/#registration";
 
     public void i_open_the_homepage() {
         homePage.i_open_homepage();
@@ -53,11 +71,11 @@ public class NavigationSteps extends StepLibrary {
     public void i_navigate_from_homepage_to_ibello_page(){
         navigationBar.click_product_link();
         homePage.click_learn_more_button();
-        ibelloPage.expect_ibello_lane_is_displayed();
+        productPage.expect_ibello_lane_is_displayed();
     }
 
     public void i_navigate_from_ibello_page_to_order_page(){
-        ibelloPage.click_order_button();
+        productPage.click_order_button();
         navigationBar.expect_menu_component_is_displayed();
         orderPage.expect_order_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
@@ -80,14 +98,15 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_am_on_order_page() {
+        orderPage.expect_url_is_$(orderUrl);
         orderPage.expect_order_lane_is_displayed();
+        orderPage.expect_title_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
-        orderPage.expect_order_lane_is_displayed();
     }
 
     public void i_am_on_product_page() {
-        ibelloPage.expect_url_is_$(productPageUrl);
-        ibelloPage.expect_ibello_lane_is_displayed();
+        productPage.expect_url_is_$(productPageUrl);
+        productPage.expect_ibello_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -103,27 +122,24 @@ public class NavigationSteps extends StepLibrary {
         navigationBar.expect_menu_component_is_displayed();
     }
 
-    public void i_am_on_manager_page() {
-        managerPage.expect_url_is_$(managerUrl);
-        managerPage.expect_flow_lane_is_displayed();
-        navigationBar.expect_menu_component_is_displayed();
-    }
-
     public void i_am_on_pricing_page() {
-        pricingPage.expect_url_is_$(pricingUrl);
-        pricingPage.expect_details_lane_is_displayed();
+        productPricingPage.expect_url_is_$(pricingUrl);
+        productPricingPage.expect_details_lane_is_displayed();
+        productPricingPage.expect_pricing_details_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_documentations_page() {
         documentationsPage.expect_url_is_$(documentationUrl);
         documentationsPage.expect_docs_lane_is_displayed();
+        documentationsPage.expect_title_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_interest_page() {
-        interestPage.expect_url_is_$(interestUrl);
-        interestPage.expect_workflow_lane_is_displayed();
+        downloadPage.expect_url_is_$(downloadUrl);
+        downloadPage.expect_workflow_lane_is_displayed();
+        downloadPage.expect_title_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -149,6 +165,7 @@ public class NavigationSteps extends StepLibrary {
     public void i_am_on_quotation_page() {
         quotationPage.expect_url_is_$(quotationUrl);
         quotationPage.expect_quote_services_lane_is_displayed();
+        quotationPage.expect_title_lane_is_displayed();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -170,7 +187,7 @@ public class NavigationSteps extends StepLibrary {
         navigationBar.click_product_link();
         homePage.expect_url_is_$(homeIbelloUrl);
         homePage.click_try_it_button();
-        interestPage.expect_workflow_lane_is_displayed();
+        downloadPage.expect_workflow_lane_is_displayed();
     }
 
     public void i_use_navbar_to_navigate_to_product_page() {
@@ -200,11 +217,11 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_interest_page_to_documentations_page() {
-        interestPage.click_read_it_button();
+        downloadPage.click_read_it_button();
     }
 
     public void i_navigate_from_interest_page_to_installation_documentation_page() {
-        interestPage.click_install_guide_button();
+        downloadPage.click_install_guide_button();
     }
 
     public void i_navigate_to_about_page_directly_from_navbar() {
@@ -253,7 +270,7 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_product_page_to_order_page() {
-        ibelloPage.click_order_button();
+        productPage.click_order_button();
     }
 
 
@@ -287,8 +304,8 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_product_page_header_to_interest_page() {
-        ibelloPage.click_details_technics_button();
-        ibelloPage.click_download_button();
+        productPage.click_details_technics_button();
+        productPage.click_download_button();
     }
 
     public void i_navigate_from_changelog_page_to_documentations_page() {

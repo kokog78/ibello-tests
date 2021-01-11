@@ -9,7 +9,9 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Order page")
-public class OrderPage extends AbstractPage {
+public class OrderPage extends AbstractPage implements PageInterface{
+
+    private final String url = "/order";
 
     @Find(by = By.CSS_SELECTOR, using = "order-pack-lane")
     private WebElement orderLane;
@@ -41,6 +43,9 @@ public class OrderPage extends AbstractPage {
     @Find(by = By.CLASS_NAME, using = "number")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "products")
     private WebElements numberOfProducts;
+
+    @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.order']")
+    private WebElement title;
 
     public void expect_order_lane_is_displayed() {
         expectations().expect(orderLane).toBe().displayed();
@@ -74,4 +79,13 @@ public class OrderPage extends AbstractPage {
         return get(numberOfProducts.get(index)).text();
     }
 
+    public void expect_title_lane_is_displayed() {
+        expectations().expect(title).toBe().displayed();
+    }
+
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
+        expect_order_lane_is_displayed();
+        expect_title_lane_is_displayed();
+    }
 }
