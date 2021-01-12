@@ -8,7 +8,9 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Quotation page")
-public class QuotationPage extends AbstractPage {
+public class QuotationPage extends AbstractPage implements PageInterface{
+
+    private static final String url = "/quotation";
 
     @Find(by = By.CSS_SELECTOR, using = "quote-services-lane")
     private WebElement quoteServicesLane;
@@ -32,6 +34,9 @@ public class QuotationPage extends AbstractPage {
     @Find(by = By.ID, using = "service-trainings")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "service")
     private WebElement traingingsCheckbox;
+
+    @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.quotation']")
+    private WebElement title;
 
     public void expect_quote_services_lane_is_displayed() {
         expectations().expect(quoteServicesLane).toBe().displayed();
@@ -77,4 +82,13 @@ public class QuotationPage extends AbstractPage {
         expectations().assume(traingingsCheckbox).toNotBe().selected();
     }
 
+    public void expect_title_lane_is_displayed() {
+        expectations().expect(title).toBe().displayed();
+    }
+
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
+        expect_quote_services_lane_is_displayed();
+        expect_title_lane_is_displayed();
+    }
 }
