@@ -40,7 +40,7 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_open_the_homepage() {
         homePage.i_open_homepage();
-        i_am_on_homepage();
+        homePage.i_am_on_the_page();
     }
 
     public void i_am_on_homepage() {

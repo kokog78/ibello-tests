@@ -8,7 +8,9 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Changelog page")
-public class ChangelogPage extends AbstractPage {
+public class ChangelogPage extends AbstractPage implements PageInterface {
+
+    private static final String url = "documentation-changelog";
 
     @Find(by = By.CSS_SELECTOR, using = "doc-lane")
     private WebElement docLane;
@@ -20,8 +22,15 @@ public class ChangelogPage extends AbstractPage {
     public void expect_doc_lane_is_displayed() {
         expectations().expect(docLane).toBe().displayed();
     }
+
     public void click_more_documentation_button() {
         doWith(moreDocumentationButton).click();
     }
 
+
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
+        expect_doc_lane_is_displayed();
+    }
 }
