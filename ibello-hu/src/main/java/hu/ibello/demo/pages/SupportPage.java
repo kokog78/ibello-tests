@@ -8,7 +8,8 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Support page")
-public class SupportPage extends AbstractPage {
+public class SupportPage extends AbstractPage implements PageInterface{
+    private static final String url = "/support";
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")
     private WebElement welcomeLane;
@@ -64,4 +65,9 @@ public class SupportPage extends AbstractPage {
         doWith(readItButton).click();
     }
 
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
+        expect_welcome_lane_is_displayed();
+        expect_login_lane_is_displayed();
+    }
 }

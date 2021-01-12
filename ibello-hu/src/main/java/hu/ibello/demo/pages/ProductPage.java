@@ -7,8 +7,10 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Ibello page")
-public class IbelloPage extends AbstractPage {
+@Name("Product page")
+public class ProductPage extends AbstractPage implements PageInterface{
+
+    private static final String url = "/product";
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-ibello-lane")
     private WebElement ibelloLane;
@@ -40,4 +42,8 @@ public class IbelloPage extends AbstractPage {
         doWith(downloadButton).click();
     }
 
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
+        expect_ibello_lane_is_displayed();
+    }
 }

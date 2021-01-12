@@ -9,7 +9,9 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Services page")
-public class ServicesPage extends AbstractPage {
+public class ServicesPage extends AbstractPage implements PageInterface{
+
+    private static final String url = "/services";
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-services-lane")
     private WebElement servicesLane;
@@ -78,4 +80,8 @@ public class ServicesPage extends AbstractPage {
         }
     }
 
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
+        expect_services_lane_is_displayed();
+    }
 }

@@ -1,5 +1,6 @@
 package hu.ibello.demo.panel;
 
+import hu.ibello.core.Name;
 import hu.ibello.elements.WebElement;
 import hu.ibello.pages.PageObject;
 import hu.ibello.search.By;
@@ -7,6 +8,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
+@Name("Navigation bar panel")
 public class NavigationBarPanel extends PageObject {
 
     @Find(by = By.CSS_SELECTOR, using = "menu-component")
