@@ -9,7 +9,7 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Order page")
-public class OrderPage extends AbstractPage implements PageInterface{
+public class OrderPage extends AbstractPage {
 
     private final String url = "/order";
 
@@ -45,10 +45,13 @@ public class OrderPage extends AbstractPage implements PageInterface{
     private WebElements numberOfProducts;
 
     @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.order']")
-    private WebElement title;
+    private WebElement orderTitle;
 
-    public void expect_order_lane_is_displayed() {
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
         expectations().expect(orderLane).toBe().displayed();
+        expectations().expect(orderTitle).toBe().displayed();
     }
 
     public void click_existing_user_radio_button() {
@@ -77,15 +80,5 @@ public class OrderPage extends AbstractPage implements PageInterface{
 
     public String getNumberOfProduct(int index) {
         return get(numberOfProducts.get(index)).text();
-    }
-
-    public void expect_title_lane_is_displayed() {
-        expectations().expect(title).toBe().displayed();
-    }
-
-    public void i_am_on_the_page() {
-        expect_url_is_$(url);
-        expect_order_lane_is_displayed();
-        expect_title_lane_is_displayed();
     }
 }

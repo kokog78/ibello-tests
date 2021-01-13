@@ -67,21 +67,19 @@ public class SitemapSteps extends StepLibrary {
     private static final String documentationChangelogUrl = "/documentation-changelog";
     private static final String documentationProblemsUrl = "/documentation-problems";
 
-    private Map<String, PageInterface> pages;
+    private Map<String, AbstractPage> pages;
 
     public void i_open_sitemap_page() {
         sitemapPage.i_open_sitemap_page();
     }
 
     public void i_am_on_sitemap_page() {
-        sitemapPage.expect_url_is_sitemap();
-        sitemapPage.expect_sitemap_lane_is_displayed();
+        sitemapPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_not_on_sitemap_page() {
-        sitemapPage.expect_url_is_not_sitemap();
-        sitemapPage.expect_sitemap_lane_is_not_displayed();
+        sitemapPage.i_am_not_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -100,7 +98,7 @@ public class SitemapSteps extends StepLibrary {
     private void verify_specific_links(String link) throws Exception {
         if (link != null) {
             String path = link.replace("https://ibello.hu", "").replace("https://ibello.eu", "");
-            PageInterface page = getPage(path);
+            AbstractPage page = getPage(path);
             if (page != null){
                 page.i_am_on_the_page();
             }else {
@@ -109,7 +107,7 @@ public class SitemapSteps extends StepLibrary {
         }
     }
 
-    private PageInterface getPage(String url) {
+    private AbstractPage getPage(String url) {
         if (pages == null) {
             pages = new HashMap<>();
             pages.put(szmdUrl, lovelyJobsAwardPage);

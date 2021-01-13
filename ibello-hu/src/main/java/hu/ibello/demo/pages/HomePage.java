@@ -8,7 +8,7 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Home page")
-public class HomePage extends AbstractPage implements PageInterface {
+public class HomePage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")
     private WebElement mainLane;
@@ -81,16 +81,18 @@ public class HomePage extends AbstractPage implements PageInterface {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderTeamButton;
 
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$("/home");
+        expectations().expect(mainLane).toBe().displayed();
+    }
+
     public void assume_$_text_is_displayed(String textToCheck) {
         expectations().assume(text.applyParameters(textToCheck)).toBe().displayed();
     }
 
     public void assume_$_text_is_not_displayed(String textToCheck) {
         expectations().assume(text.applyParameters(textToCheck)).toNotBe().displayed();
-    }
-
-    public void i_expect_main_lane_is_displayed() {
-        expectations().expect(mainLane).toBe().displayed();
     }
 
     public void set_contact_name_field_to_$(String value) {
@@ -157,10 +159,5 @@ public class HomePage extends AbstractPage implements PageInterface {
 
     public void click_order_team_button() {
         doWith(orderTeamButton).click();
-    }
-
-    public void i_am_on_the_page() {
-        expect_url_is_$("/home");
-        i_expect_main_lane_is_displayed();
     }
 }

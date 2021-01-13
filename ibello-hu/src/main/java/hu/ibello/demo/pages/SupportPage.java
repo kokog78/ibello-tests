@@ -8,7 +8,7 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Support page")
-public class SupportPage extends AbstractPage implements PageInterface{
+public class SupportPage extends AbstractPage {
     private static final String url = "/support";
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")
@@ -37,11 +37,10 @@ public class SupportPage extends AbstractPage implements PageInterface{
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-docs")
     private WebElement readItButton;
 
-    public void expect_welcome_lane_is_displayed() {
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
         expectations().expect(welcomeLane).toBe().displayed();
-    }
-
-    public void expect_login_lane_is_displayed() {
         expectations().expect(loginLane).toBe().displayed();
     }
 
@@ -63,11 +62,5 @@ public class SupportPage extends AbstractPage implements PageInterface{
 
     public void click_read_it_button() {
         doWith(readItButton).click();
-    }
-
-    public void i_am_on_the_page() {
-        expect_url_is_$(url);
-        expect_welcome_lane_is_displayed();
-        expect_login_lane_is_displayed();
     }
 }

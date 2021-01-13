@@ -8,8 +8,8 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Sitemap Page")
-public class SitemapPage extends AbstractPage{
+@Name("Sitemap page")
+public class SitemapPage extends AbstractPage {
 
     private final String url = "/sitemap";
 
@@ -92,6 +92,17 @@ public class SitemapPage extends AbstractPage{
     @Find(by = By.CSS_SELECTOR, using = "sitemap-links-lane")
     private WebElement sitemapLane;
 
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$("/sitemap");
+        expectations().expect(sitemapLane).toBe().displayed();
+    }
+
+    public void i_am_not_on_the_page(){
+        expect_url_is_not_$(url);
+        expectations().expect(sitemapLane).toNotBe().displayed();
+    }
+
     public void i_open_sitemap_page() {
         browser().resize(2000, 1000);
         browser().openURL("/sitemap");
@@ -106,22 +117,6 @@ public class SitemapPage extends AbstractPage{
     public void click_link_$(int index){
         WebElement link = find().using(".links a").nth(index);
         doWith(link).click();
-    }
-
-    public void expect_url_is_sitemap(){
-        expect_url_is_$("/sitemap");
-    }
-
-    public void expect_url_is_not_sitemap(){
-        expect_url_is_not_$(url);
-    }
-
-    public void expect_sitemap_lane_is_displayed(){
-        expectations().expect(sitemapLane).toBe().displayed();
-    }
-
-    public void expect_sitemap_lane_is_not_displayed(){
-        expectations().expect(sitemapLane).toNotBe().displayed();
     }
 
     public String get_link(int index){

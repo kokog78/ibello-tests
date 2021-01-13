@@ -16,5 +16,5 @@ public abstract class AbstractPage extends PageObject {
         expectations().assume(browser()).toNotHave().url(pattern);
     }
 
-
+    abstract public void i_am_on_the_page();
 }

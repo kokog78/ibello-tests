@@ -9,7 +9,7 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Services page")
-public class ServicesPage extends AbstractPage implements PageInterface{
+public class ServicesPage extends AbstractPage {
 
     private static final String url = "/services";
 
@@ -44,7 +44,9 @@ public class ServicesPage extends AbstractPage implements PageInterface{
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElements serviceSectors;
 
-    public void expect_services_lane_is_displayed() {
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
         expectations().expect(servicesLane).toBe().displayed();
     }
 
@@ -78,10 +80,5 @@ public class ServicesPage extends AbstractPage implements PageInterface{
         } else {
             throw new AssertionError("There are no available services on the page!");
         }
-    }
-
-    public void i_am_on_the_page() {
-        expect_url_is_$(url);
-        expect_services_lane_is_displayed();
     }
 }

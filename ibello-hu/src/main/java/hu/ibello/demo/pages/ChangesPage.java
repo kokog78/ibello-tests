@@ -6,19 +6,16 @@ import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
 @Name("Changes Page")
-public class ChangesPage extends AbstractPage implements PageInterface{
+public class ChangesPage extends AbstractPage {
 
     private final String url = "/changes";
 
     @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.changes']")
-    private WebElement title;
+    private WebElement changesTitle;
 
-    public void expect_changes_title_lane_is_displayed(){
-        expectations().expect(title).toBe().displayed();
-    }
-
+    @Override
     public void i_am_on_the_page() {
         expect_url_is_$(url);
-        expect_changes_title_lane_is_displayed();
+        expectations().expect(changesTitle).toBe().displayed();
     }
 }

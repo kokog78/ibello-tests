@@ -8,7 +8,9 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Download page")
-public class DownloadPage extends AbstractPage implements PageInterface {
+public class DownloadPage extends AbstractPage {
+
+    private final String url = "/download";
 
     @Find(by = By.CSS_SELECTOR, using = "workflow-lane")
     private WebElement workflowLane;
@@ -22,13 +24,13 @@ public class DownloadPage extends AbstractPage implements PageInterface {
     private WebElement installGuideButton;
 
     @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.download']")
-    private WebElement title;
+    private WebElement downloadTitle;
 
-    private final String url = "/download";
-
-
-    public void expect_workflow_lane_is_displayed() {
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
         expectations().expect(workflowLane).toBe().displayed();
+        expectations().expect(downloadTitle).toBe().displayed();
     }
 
     public void click_read_it_button() {
@@ -39,13 +41,4 @@ public class DownloadPage extends AbstractPage implements PageInterface {
         doWith(installGuideButton).click();
     }
 
-    public void expect_title_lane_is_displayed() {
-        expectations().expect(title).toBe().displayed();
-    }
-
-    public void i_am_on_the_page() {
-        expect_url_is_$(url);
-        expect_workflow_lane_is_displayed();
-        expect_title_lane_is_displayed();
-    }
 }

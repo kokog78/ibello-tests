@@ -6,18 +6,14 @@ import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
 @Name("Gradle plugin page")
-public class IbelloPluginPage extends AbstractPage implements PageInterface {
+public class IbelloPluginPage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "[id='ibello-gradle-plugin']")
-    private WebElement id;
+    private WebElement gradlePluginId;
 
-    public void expect_ibello_gradle_plugin_lane_is_displayed() {
-        expectations().expect(id).toBe().displayed();
-    }
-
-
+    @Override
     public void i_am_on_the_page() {
         expect_url_is_$("/news-ibello-gradle-plugin");
-        expect_ibello_gradle_plugin_lane_is_displayed();
+        expectations().expect(gradlePluginId).toBe().displayed();
     }
 }

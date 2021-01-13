@@ -8,7 +8,7 @@ import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
 @Name("Product page")
-public class ProductPage extends AbstractPage implements PageInterface{
+public class ProductPage extends AbstractPage {
 
     private static final String url = "/product";
 
@@ -26,7 +26,9 @@ public class ProductPage extends AbstractPage implements PageInterface{
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attributes")
     private WebElement downloadButton;
 
-    public void expect_ibello_lane_is_displayed() {
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
         expectations().expect(ibelloLane).toBe().displayed();
     }
 
@@ -42,8 +44,4 @@ public class ProductPage extends AbstractPage implements PageInterface{
         doWith(downloadButton).click();
     }
 
-    public void i_am_on_the_page() {
-        expect_url_is_$(url);
-        expect_ibello_lane_is_displayed();
-    }
 }

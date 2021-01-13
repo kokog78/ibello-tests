@@ -45,7 +45,7 @@ public class NavigationSteps extends StepLibrary {
     private static final String servicesUrl = "services";
     private static final String serviceDetailsUrl = "service-details";
     private static final String productPageUrl = "/product";
-    private static final String quotationUrl="/quotation";
+    private static final String quotationUrl = "/quotation";
     private static final String szmdUrl = "/szmd";
     private static final String questionsUrl = "/questions";
     private static final String changesUrl = "/changes";
@@ -62,22 +62,20 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_am_on_homepage() {
-        String url = "/home";
-        homePage.expect_url_is_$(url);
-        homePage.i_expect_main_lane_is_displayed();
+        homePage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
-    public void i_navigate_from_homepage_to_ibello_page(){
+    public void i_navigate_from_homepage_to_ibello_page() {
         navigationBar.click_product_link();
         homePage.click_learn_more_button();
-        productPage.expect_ibello_lane_is_displayed();
+        productPage.i_am_on_the_page();
     }
 
-    public void i_navigate_from_ibello_page_to_order_page(){
+    public void i_navigate_from_ibello_page_to_order_page() {
         productPage.click_order_button();
         navigationBar.expect_menu_component_is_displayed();
-        orderPage.expect_order_lane_is_displayed();
+        orderPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -88,84 +86,67 @@ public class NavigationSteps extends StepLibrary {
     public void i_navigate_from_homepage_header_to_services_page() {
         navigationBar.click_services_link();
         homePage.click_work_with_us_button();
-        servicesPage.expect_services_lane_is_displayed();
+        servicesPage.i_am_on_the_page();
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
         navigationBar.click_home_link();
-        homePage.i_expect_main_lane_is_displayed();
+        homePage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_order_page() {
-        orderPage.expect_url_is_$(orderUrl);
-        orderPage.expect_order_lane_is_displayed();
-        orderPage.expect_title_lane_is_displayed();
+        orderPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_product_page() {
-        productPage.expect_url_is_$(productPageUrl);
-        productPage.expect_ibello_lane_is_displayed();
+        productPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_services_page() {
-        servicesPage.expect_url_is_$(servicesUrl);
-        servicesPage.expect_services_lane_is_displayed();
+        servicesPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_about_page() {
-        aboutPage.expect_url_is_$(aboutUrl);
-        aboutPage.expect_about_lane_is_displayed();
+        aboutPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_pricing_page() {
-        productPricingPage.expect_url_is_$(pricingUrl);
-        productPricingPage.expect_details_lane_is_displayed();
-        productPricingPage.expect_pricing_details_lane_is_displayed();
+        productPricingPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_documentations_page() {
-        documentationsPage.expect_url_is_$(documentationUrl);
-        documentationsPage.expect_docs_lane_is_displayed();
-        documentationsPage.expect_title_lane_is_displayed();
+        documentationsPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_interest_page() {
-        downloadPage.expect_url_is_$(downloadUrl);
-        downloadPage.expect_workflow_lane_is_displayed();
-        downloadPage.expect_title_lane_is_displayed();
+        downloadPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_support_page() {
-        supportPage.expect_url_is_$(supportUrl);
-        supportPage.expect_welcome_lane_is_displayed();
-        supportPage.expect_login_lane_is_displayed();
+        supportPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_changelog_page() {
-        supportPage.expect_url_is_$(changelogUrl);
-        changelogPage.expect_doc_lane_is_displayed();
+        changelogPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_installation_documentation_page() {
-        installationDocPage.expect_url_is_$(installionUrl);
-        installationDocPage.expect_doc_lane_is_displayed();
+        installationDocPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_quotation_page() {
-        quotationPage.expect_url_is_$(quotationUrl);
-        quotationPage.expect_quote_services_lane_is_displayed();
-        quotationPage.expect_title_lane_is_displayed();
+        quotationPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -173,21 +154,21 @@ public class NavigationSteps extends StepLibrary {
         navigationBar.click_about_us_link();
         homePage.expect_url_is_$(homeAboutUrl);
         homePage.click_meet_us_button();
-        aboutPage.expect_about_lane_is_displayed();
+        aboutPage.i_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_documentations_page() {
         navigationBar.click_support_link();
         homePage.expect_url_is_$(homeSupportUrl);
         homePage.click_documentations_button();
-        documentationsPage.expect_docs_lane_is_displayed();
+        documentationsPage.i_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_interest_page() {
         navigationBar.click_product_link();
         homePage.expect_url_is_$(homeIbelloUrl);
         homePage.click_try_it_button();
-        downloadPage.expect_workflow_lane_is_displayed();
+        downloadPage.i_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_product_page() {
@@ -362,21 +343,21 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_server_product() {
         homePage.click_order_server_button();
-        orderPage.expect_order_lane_is_displayed();
+        orderPage.i_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_analyzer_product() {
         homePage.click_order_analyzer_button();
-        orderPage.expect_order_lane_is_displayed();
+        orderPage.i_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_creator_product() {
         homePage.click_order_creator_button();
-        orderPage.expect_order_lane_is_displayed();
+        orderPage.i_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_team_product() {
         homePage.click_order_team_button();
-        orderPage.expect_order_lane_is_displayed();
+        orderPage.i_am_on_the_page();
     }
 }
