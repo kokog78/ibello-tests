@@ -102,7 +102,7 @@ public class SitemapSteps extends StepLibrary {
             if (page != null){
                 page.i_am_on_the_page();
             }else {
-                throw new Exception("Unknow path: " + path);
+                output().recordCustomExpectation("Unknow path: " + path);
             }
         }
     }
