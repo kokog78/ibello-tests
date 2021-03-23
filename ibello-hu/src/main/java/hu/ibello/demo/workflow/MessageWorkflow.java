@@ -2,6 +2,7 @@ package hu.ibello.demo.workflow;
 
 import hu.ibello.core.Name;
 import hu.ibello.demo.model.ContactData;
+import hu.ibello.demo.pages.HomePage;
 import hu.ibello.demo.steps.NavigationSteps;
 import hu.ibello.demo.steps.SendingMessageSteps;
 import hu.ibello.steps.StepLibrary;
@@ -11,6 +12,7 @@ public class MessageWorkflow extends StepLibrary{
 
     private NavigationSteps navigationSteps;
     private SendingMessageSteps sendingMessageSteps;
+    private HomePage homePage;
 
     private boolean isOpened;
     private ContactData data;
@@ -21,7 +23,7 @@ public class MessageWorkflow extends StepLibrary{
             navigationSteps.i_open_the_homepage();
             isOpened = true;
         }
-        navigationSteps.i_am_on_homepage();
+        homePage.i_am_on_the_page();
     }
 
     public void the_name_will_be_valid() {

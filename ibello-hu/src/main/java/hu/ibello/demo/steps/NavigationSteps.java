@@ -1,7 +1,6 @@
 package hu.ibello.demo.steps;
 
 import hu.ibello.core.Name;
-import hu.ibello.demo.model.LanguageSelection;
 import hu.ibello.demo.pages.*;
 import hu.ibello.demo.panel.NavigationBarPanel;
 import hu.ibello.steps.StepLibrary;
@@ -11,40 +10,72 @@ public class NavigationSteps extends StepLibrary {
 
     private NavigationBarPanel navigationBar;
     private HomePage homePage;
-    private IbelloPage ibelloPage;
+    private ProductPage productPage;
     private OrderPage orderPage;
     private ServicesPage servicesPage;
     private AboutPage aboutPage;
-    private ManagerPage managerPage;
-    private PricingPage pricingPage;
+    private ProductPricingPage productPricingPage;
     private DocumentationsPage documentationsPage;
-    private InterestPage interestPage;
+    private DownloadPage downloadPage;
     private SupportPage supportPage;
     private ChangelogPage changelogPage;
     private InstallationDocPage installationDocPage;
     private QuotationPage quotationPage;
-
-    private String quotationUrl;
+    private LovelyJobsAwardPage lovelyJobsAwardPage;
+    private QuestionsPage questionsPage;
+    private ChangesPage changesPage;
+    private IbelloPluginPage ibelloPluginPage;
+    private ServiceDetailsPage serviceDetailsPage;
+    private TestAutomationPage testAutomationPage;
+    private UnsubscribePage unsubscribePage;
+    private LoginPage loginPage;
+    private RegistrationPage registrationPage;
+    private static final String homeSupportUrl = "home-support";
+    private static final String homeServicesUrl = "home-services";
+    private static final String homeIbelloUrl = "home-ibello";
+    private static final String homeAboutUrl = "home-about";
+    private static final String installionUrl = "documentation-installation";
+    private static final String changelogUrl = "documentation-changelog";
+    private static final String supportUrl = "support";
+    private static final String downloadUrl = "download";
+    private static final String documentationUrl = "all-docs";
+    private static final String pricingUrl = "pricing-details";
+    private static final String managerUrl = "flow?id=manager";
+    private static final String aboutUrl = "about";
+    private static final String servicesUrl = "services";
+    private static final String serviceDetailsUrl = "service-details";
+    private static final String productPageUrl = "/product";
+    private static final String quotationUrl = "/quotation";
+    private static final String szmdUrl = "/szmd";
+    private static final String questionsUrl = "/questions";
+    private static final String changesUrl = "/changes";
+    private static final String gradlePluginUrl = "/news-ibello-gradle-plugin";
+    private static final String orderUrl = "/order";
+    private static final String testAutomationUrl = "/landing-test-automation";
+    private static final String unsubscribeUrl = "/unsubscribe";
+    private static final String loginUrl = "/clients/#login";
+    private static final String registrationUrl = "/clients/#registration";
 
     public void i_open_the_homepage() {
         homePage.i_open_homepage();
-        i_am_on_homepage();
+        homePage.i_am_on_the_page();
     }
 
     public void i_am_on_homepage() {
-        String url = "/#home";
-        homePage.expect_url_is_$(url);
-        homePage.i_expect_main_lane_is_displayed();
+        homePage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
-    public void i_navigate_from_homepage_to_the_order_page() {
+    public void i_navigate_from_homepage_to_ibello_page() {
         navigationBar.click_product_link();
         homePage.click_learn_more_button();
-        ibelloPage.expect_ibello_lane_is_displayed();
-        ibelloPage.click_order_button();
+        productPage.i_am_on_the_page();
+    }
+
+    public void i_navigate_from_ibello_page_to_order_page() {
+        productPage.click_order_button();
         navigationBar.expect_menu_component_is_displayed();
-        orderPage.expect_order_lane_is_displayed();
+        orderPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -55,133 +86,106 @@ public class NavigationSteps extends StepLibrary {
     public void i_navigate_from_homepage_header_to_services_page() {
         navigationBar.click_services_link();
         homePage.click_work_with_us_button();
+        servicesPage.i_am_on_the_page();
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
         navigationBar.click_home_link();
+        homePage.i_am_on_the_page();
+        navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_order_page() {
-        orderPage.expect_order_lane_is_displayed();
+        orderPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_product_page() {
-        String url = "/#ibello";
-        ibelloPage.expect_url_is_$(url);
-        ibelloPage.expect_ibello_lane_is_displayed();
+        productPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_services_page() {
-        String url = "/#services";
-        servicesPage.expect_url_is_$(url);
-        servicesPage.expect_services_lane_is_displayed();
+        servicesPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_about_page() {
-        String url = "/#about";
-        aboutPage.expect_url_is_$(url);
-        aboutPage.expect_about_lane_is_displayed();
-        navigationBar.expect_menu_component_is_displayed();
-    }
-
-    public void i_am_on_manager_page() {
-        String url = "#flow?id=manager";
-        managerPage.expect_url_is_$(url);
-        managerPage.expect_flow_lane_is_displayed();
+        aboutPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_pricing_page() {
-        String url = "/#pricing-details";
-        pricingPage.expect_url_is_$(url);
-        pricingPage.expect_details_lane_is_displayed();
+        productPricingPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_documentations_page() {
-        String url = "/#all-docs";
-        documentationsPage.expect_url_is_$(url);
-        documentationsPage.expect_docs_lane_is_displayed();
+        documentationsPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_interest_page() {
-        String url = "/#interest";
-        interestPage.expect_url_is_$(url);
-        interestPage.expect_workflow_lane_is_displayed();
+        downloadPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_support_page() {
-        String url = "/#support";
-        supportPage.expect_url_is_$(url);
-        supportPage.expect_welcome_lane_is_displayed();
-        supportPage.expect_login_lane_is_displayed();
+        supportPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_changelog_page() {
-        String url = "/#documentation-changelog";
-        supportPage.expect_url_is_$(url);
-        changelogPage.expect_doc_lane_is_displayed();
+        changelogPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_installation_documentation_page() {
-        String url = "/#documentation-installation";
-        installationDocPage.expect_url_is_$(url);
-        installationDocPage.expect_doc_lane_is_displayed();
+        installationDocPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_quotation_page() {
-        quotationPage.expect_url_is_$(quotationUrl);
-        quotationPage.expect_quote_services_lane_is_displayed();
+        quotationPage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_use_navbar_to_navigate_to_about_page() {
         navigationBar.click_about_us_link();
-        String url = "/#home-about";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeAboutUrl);
         homePage.click_meet_us_button();
+        aboutPage.i_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_documentations_page() {
         navigationBar.click_support_link();
-        String url = "/#home-support";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeSupportUrl);
         homePage.click_documentations_button();
+        documentationsPage.i_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_interest_page() {
         navigationBar.click_product_link();
-        String url = "/#home-ibello";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeIbelloUrl);
         homePage.click_try_it_button();
+        downloadPage.i_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_product_page() {
         navigationBar.click_product_link();
-        String url = "/#home-ibello";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeIbelloUrl);
         homePage.click_learn_more_button();
     }
 
     public void i_use_navbar_to_navigate_to_services_page() {
         navigationBar.click_services_link();
-        String url = "/#home-services";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeServicesUrl);
         homePage.click_work_with_us_button();
     }
 
     public void i_use_navbar_to_navigate_to_support_page() {
         navigationBar.click_support_link();
-        String url = "/#home-support";
-        homePage.expect_url_is_$(url);
+        homePage.expect_url_is_$(homeSupportUrl);
         homePage.click_more_options_button();
     }
 
@@ -194,11 +198,11 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_interest_page_to_documentations_page() {
-        interestPage.click_read_it_button();
+        downloadPage.click_read_it_button();
     }
 
     public void i_navigate_from_interest_page_to_installation_documentation_page() {
-        interestPage.click_install_guide_button();
+        downloadPage.click_install_guide_button();
     }
 
     public void i_navigate_to_about_page_directly_from_navbar() {
@@ -218,42 +222,36 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_services_page_to_quotation_page() {
-        quotationUrl = "/#quotation";
         servicesPage.click_request_button();
     }
 
     public void i_make_a_request_for_online_automated_testing() {
-        quotationUrl = "/#/quotation?service=online_testing";
         servicesPage.open_service_with_index_$(0);
         servicesPage.click_request_online_testing_button();
     }
 
     public void i_make_a_request_for_automated_testing_for_applications() {
-        quotationUrl = "/#/quotation?service=test_apps";
         servicesPage.open_service_with_index_$(1);
         servicesPage.click_request_automated_test_button();
     }
 
     public void i_make_a_request_for_test_framework_building() {
-        quotationUrl = "/#/quotation?service=test_framework";
         servicesPage.open_service_with_index_$(2);
         servicesPage.click_request_test_framework_button();
     }
 
     public void i_make_a_request_for_consultancy() {
-        quotationUrl = "/#/quotation?service=consultancy";
         servicesPage.open_service_with_index_$(3);
         servicesPage.click_request_consultancy_button();
     }
 
     public void i_make_a_request_for_trainings() {
-        quotationUrl = "/#/quotation?service=trainings";
         servicesPage.open_service_with_index_$(4);
         servicesPage.click_request_trainings_button();
     }
 
     public void i_navigate_from_product_page_to_order_page() {
-        ibelloPage.click_order_button();
+        productPage.click_order_button();
     }
 
 
@@ -264,34 +262,6 @@ public class NavigationSteps extends StepLibrary {
                 throw new AssertionError("There is unexpected product selection!");
             }
         }
-    }
-
-    public void i_see_that_server_is_selected() {
-        check_if_order_with_$_index_is_selected(1);
-    }
-
-    public void i_see_that_analyzer_is_selected() {
-        check_if_order_with_$_index_is_selected(2);
-    }
-
-    public void i_see_that_creator_is_selected() {
-        check_if_order_with_$_index_is_selected(3);
-    }
-
-    public void i_see_that_team_10_is_selected() {
-        check_if_order_with_$_index_is_selected(5);
-    }
-
-    public void i_see_that_sentinel_is_selected() {
-        check_if_order_with_$_index_is_selected(1);
-    }
-
-    public void i_see_that_hunter_is_selected() {
-        check_if_order_with_$_index_is_selected(2);
-    }
-
-    public void i_see_that_master_hunter_is_selected() {
-        check_if_order_with_$_index_is_selected(3);
     }
 
     public void i_navigate_from_support_page_header_to_product_page() {
@@ -315,8 +285,8 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_navigate_from_product_page_header_to_interest_page() {
-        ibelloPage.click_details_technics_button();
-        ibelloPage.click_download_button();
+        productPage.click_details_technics_button();
+        productPage.click_download_button();
     }
 
     public void i_navigate_from_changelog_page_to_documentations_page() {
@@ -373,51 +343,21 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_server_product() {
         homePage.click_order_server_button();
+        orderPage.i_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_analyzer_product() {
         homePage.click_order_analyzer_button();
+        orderPage.i_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_creator_product() {
         homePage.click_order_creator_button();
+        orderPage.i_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_team_product() {
         homePage.click_order_team_button();
-    }
-
-    private void check_if_order_with_$_index_is_selected(int productIndex) {
-        String product = getProductName(productIndex);
-        for (int index = 0; index < 4; index++) {
-            int currentNum = Integer.parseInt(orderPage.getNumberOfProduct(index));
-            if (index == productIndex) {
-                if (currentNum != 1) {
-                    throw new AssertionError(String.format("The %s is not selected!", product));
-                }
-            }
-            if (currentNum > 0 && index != productIndex) {
-                throw new AssertionError("There is unexpected product selection!");
-            }
-        }
-    }
-
-    private String getProductName(int productIndex) {
-        switch (productIndex) {
-            case 0:
-                return "evulation";
-            case 1:
-                return "server";
-            case 2:
-                return "analyzer";
-            case 3:
-                return "creator";
-            case 4:
-                return "team 5";
-            case 5:
-                return "team 10";
-            default:
-                return "";
-        }
+        orderPage.i_am_on_the_page();
     }
 }

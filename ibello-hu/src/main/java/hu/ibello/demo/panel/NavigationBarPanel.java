@@ -1,5 +1,6 @@
 package hu.ibello.demo.panel;
 
+import hu.ibello.core.Name;
 import hu.ibello.elements.WebElement;
 import hu.ibello.pages.PageObject;
 import hu.ibello.search.By;
@@ -7,6 +8,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
+@Name("Navigation bar panel")
 public class NavigationBarPanel extends PageObject {
 
     @Find(by = By.CSS_SELECTOR, using = "menu-component")
@@ -39,23 +41,23 @@ public class NavigationBarPanel extends PageObject {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "language-selector")
     private WebElement englishLink;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#home']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='home']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CSS_SELECTOR, using = "menu-component")
     private WebElement homeLink;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#ibello']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='product']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "menu")
     private WebElement productDirectLink;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#services']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='services']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "menu")
     private WebElement servicesDirectLink;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#about']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='about']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "menu")
     private WebElement aboutDirectLink;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#support']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='support']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "menu")
     private WebElement supportDirectLink;
 

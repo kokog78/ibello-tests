@@ -1,13 +1,20 @@
 package hu.ibello.demo.pages;
 
-import hu.ibello.core.Name;
 import hu.ibello.pages.PageObject;
 
-@Name("Abstract Page")
+import java.util.regex.Pattern;
+
 public abstract class AbstractPage extends PageObject {
 
     public void expect_url_is_$(String url) {
-        expectations().assume(browser()).toHave().url(url);
+        Pattern pattern = Pattern.compile(url + ".*");
+        expectations().assume(browser()).toHave().url(pattern);
     }
 
+    protected void expect_url_is_not_$(String url) {
+        Pattern pattern = Pattern.compile(url + ".*");
+        expectations().assume(browser()).toNotHave().url(pattern);
+    }
+
+    abstract public void i_am_on_the_page();
 }

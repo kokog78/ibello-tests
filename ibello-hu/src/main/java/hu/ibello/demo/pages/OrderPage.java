@@ -8,8 +8,10 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Order Page")
+@Name("Order page")
 public class OrderPage extends AbstractPage {
+
+    private final String url = "/order";
 
     @Find(by = By.CSS_SELECTOR, using = "order-pack-lane")
     private WebElement orderLane;
@@ -42,8 +44,14 @@ public class OrderPage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "products")
     private WebElements numberOfProducts;
 
-    public void expect_order_lane_is_displayed() {
+    @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.order']")
+    private WebElement orderTitle;
+
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
         expectations().expect(orderLane).toBe().displayed();
+        expectations().expect(orderTitle).toBe().displayed();
     }
 
     public void click_existing_user_radio_button() {
@@ -73,5 +81,4 @@ public class OrderPage extends AbstractPage {
     public String getNumberOfProduct(int index) {
         return get(numberOfProducts.get(index)).text();
     }
-
 }

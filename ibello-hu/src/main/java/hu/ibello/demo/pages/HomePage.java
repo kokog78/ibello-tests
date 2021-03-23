@@ -7,7 +7,7 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Home Page")
+@Name("Home page")
 public class HomePage extends AbstractPage {
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")
@@ -37,46 +37,55 @@ public class HomePage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CSS_SELECTOR, using = "contact-lane")
     private WebElement sendMessageButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#about']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='about']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-about-summary")
     private WebElement meetUsButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#all-docs']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='all-docs']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-support-summary")
     private WebElement documentationsButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#ibello']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='product']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-ibello-summary")
     private WebElement learnMoreButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#interest']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='download']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-ibello-summary")
     private WebElement tryItButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#services']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='services']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-services-summary")
     private WebElement workWithUsButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#support']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='support']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-support-summary")
     private WebElement moreOptionsButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#order']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='order']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-convert")
     private WebElement productButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=SERVER']")
-    //@Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-attribute-details")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='order?product=SERVER']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderServerButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=ANALYZER']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='order?product=ANALYZER']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderAnalyzerButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=CREATOR']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='order?product=CREATOR']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderCreatorButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/order?product=TEAM_10']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='order?product=TEAM_10']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderTeamButton;
+
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$("/home");
+        expectations().expect(mainLane).toBe().displayed();
+    }
 
     public void assume_$_text_is_displayed(String textToCheck) {
         expectations().assume(text.applyParameters(textToCheck)).toBe().displayed();
@@ -84,10 +93,6 @@ public class HomePage extends AbstractPage {
 
     public void assume_$_text_is_not_displayed(String textToCheck) {
         expectations().assume(text.applyParameters(textToCheck)).toNotBe().displayed();
-    }
-
-    public void i_expect_main_lane_is_displayed() {
-        expectations().expect(mainLane).toBe().displayed();
     }
 
     public void set_contact_name_field_to_$(String value) {
@@ -113,7 +118,7 @@ public class HomePage extends AbstractPage {
     public void i_open_homepage() {
         browser().resize(2000, 1000);
         browser().maximize();
-        browser().openURL("/#home");
+        browser().openURL("/home");
     }
 
     public void click_meet_us_button() {
@@ -138,10 +143,6 @@ public class HomePage extends AbstractPage {
 
     public void click_more_options_button() {
         doWith(moreOptionsButton).click();
-    }
-
-    public void click_product_button() {
-        doWith(productButton).click();
     }
 
     public void click_order_server_button() {

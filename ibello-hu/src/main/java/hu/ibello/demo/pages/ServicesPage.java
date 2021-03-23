@@ -8,33 +8,35 @@ import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
 import hu.ibello.search.RelationType;
 
-@Name("Services Page")
+@Name("Services page")
 public class ServicesPage extends AbstractPage {
+
+    private static final String url = "/services";
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-services-lane")
     private WebElement servicesLane;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#quotation']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='quotation']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-convert")
     private WebElement requestButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='#/quotation?service=online_testing']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='quotation?service=online_testing']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestOnlineTestingButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='#/quotation?service=test_apps']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=test_apps']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestAutomatedTestButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='#/quotation?service=test_framework']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=test_framework']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestTestFrameworkButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='#/quotation?service=consultancy']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=consultancy']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestConsultancyButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='#/quotation?service=trainings']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=trainings']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestTrainingsButton;
 
@@ -42,7 +44,9 @@ public class ServicesPage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElements serviceSectors;
 
-    public void expect_services_lane_is_displayed() {
+    @Override
+    public void i_am_on_the_page() {
+        expect_url_is_$(url);
         expectations().expect(servicesLane).toBe().displayed();
     }
 
@@ -77,5 +81,4 @@ public class ServicesPage extends AbstractPage {
             throw new AssertionError("There are no available services on the page!");
         }
     }
-
 }
