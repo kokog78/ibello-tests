@@ -1,0 +1,1788 @@
+{
+  "algorithm": "SPARING",
+  "skipOptions": false,
+  "parameters": [
+    {
+      "name": "tags",
+      "literal": "@full-test @navigation"
+    },
+    {
+      "name": "Navigation bar test",
+      "literal": "true"
+    }
+  ],
+  "states": [
+    {
+      "name": "TEST INIT"
+    },
+    {
+      "name": "HOME PAGE"
+    },
+    {
+      "name": "IBELLO PAGE"
+    },
+    {
+      "name": "SERVICES PAGE"
+    },
+    {
+      "name": "ABOUT PAGE"
+    },
+    {
+      "name": "SUPPORT PAGE"
+    },
+    {
+      "name": "INTEREST PAGE"
+    },
+    {
+      "name": "PRICING PAGE"
+    },
+    {
+      "name": "DOCUMENTATIONS PAGE"
+    },
+    {
+      "name": "ORDER PAGE WHITOUT PRODUCT"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 OUTPOST"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 SENTINEL"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 HUNTER"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 MASTER HUNTER"
+    },
+    {
+      "name": "QUOTATION PAGE WITHOUT SERVICE"
+    },
+    {
+      "name": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST"
+    },
+    {
+      "name": "QUOTATION PAGE WITH AUTOMATED TESTS"
+    },
+    {
+      "name": "QUOTATION PAGE WITH TEST FRAMEWORK"
+    },
+    {
+      "name": "QUOTATION PAGE WITH CONSULTANCY"
+    },
+    {
+      "name": "QUOTATION PAGE WITH DEV AND TEST TRAINING"
+    },
+    {
+      "name": "CHANGE LOG PAGE"
+    }
+  ],
+  "transitions": [
+    {
+      "index": 0,
+      "input1": "TEST INIT",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 1,
+      "input1": "IBELLO PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 2,
+      "input1": "SERVICES PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 3,
+      "input1": "HOME PAGE",
+      "input2": "navbar, details button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 4,
+      "input1": "ABOUT PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 5,
+      "input1": "HOME PAGE",
+      "input2": "more options button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 6,
+      "input1": "SUPPORT PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 7,
+      "input1": "HOME PAGE",
+      "input2": "try it button",
+      "inputStateIndex": 1,
+      "output1": "INTEREST PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 8,
+      "input1": "INTEREST PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 9,
+      "input1": "HOME PAGE",
+      "input2": "order details button",
+      "inputStateIndex": 1,
+      "output1": "PRICING PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 10,
+      "input1": "PRICING PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 11,
+      "input1": "HOME PAGE",
+      "input2": "documentations button",
+      "inputStateIndex": 1,
+      "output1": "DOCUMENTATIONS PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 12,
+      "input1": "DOCUMENTATIONS PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 13,
+      "input1": "HOME PAGE",
+      "input2": "our services from header",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 14,
+      "input1": "HOME PAGE",
+      "input2": "navbar, work with us button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 15,
+      "input1": "HOME PAGE",
+      "input2": "navbar, learn more button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 16,
+      "input1": "HOME PAGE",
+      "input2": "our product from header",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 17,
+      "input1": "IBELLO PAGE",
+      "input2": "order now button",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WHITOUT PRODUCT",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 18,
+      "input1": "IBELLO PAGE",
+      "input2": "download button",
+      "inputStateIndex": 1,
+      "output1": "INTEREST PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 19,
+      "input1": "IBELLO PAGE",
+      "input2": "order outpost button",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 OUTPOST",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 20,
+      "input1": "IBELLO PAGE",
+      "input2": "order sentinel button",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 SENTINEL",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 21,
+      "input1": "IBELLO PAGE",
+      "input2": "order hunter button",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 HUNTER",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 22,
+      "input1": "IBELLO PAGE",
+      "input2": "order master hunter button",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 MASTER HUNTER",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 23,
+      "input1": "SERVICES PAGE",
+      "input2": "request quotation button",
+      "inputStateIndex": 1,
+      "output1": "QUOTATION PAGE WITHOUT SERVICE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 24,
+      "input1": "SERVICES PAGE",
+      "input2": "request quotation for online automated test",
+      "inputStateIndex": 1,
+      "output1": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 25,
+      "input1": "SERVICES PAGE",
+      "input2": "request quotation for automated tests",
+      "inputStateIndex": 1,
+      "output1": "QUOTATION PAGE WITH AUTOMATED TESTS",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 26,
+      "input1": "SERVICES PAGE",
+      "input2": "request quotation for test framework",
+      "inputStateIndex": 1,
+      "output1": "QUOTATION PAGE WITH TEST FRAMEWORK",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 27,
+      "input1": "SERVICES PAGE",
+      "input2": "request quotation for consultancy",
+      "inputStateIndex": 1,
+      "output1": "QUOTATION PAGE WITH CONSULTANCY",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 28,
+      "input1": "SERVICES PAGE",
+      "input2": "request quotation for dev and test training",
+      "inputStateIndex": 1,
+      "output1": "QUOTATION PAGE WITH DEV AND TEST TRAINING",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 29,
+      "input1": "SERVICES PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 30,
+      "input1": "IBELLO PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 31,
+      "input1": "IBELLO PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 32,
+      "input1": "IBELLO PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 33,
+      "input1": "SERVICES PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 34,
+      "input1": "SERVICES PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 35,
+      "input1": "ABOUT PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 36,
+      "input1": "ABOUT PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 37,
+      "input1": "ABOUT PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 38,
+      "input1": "SUPPORT PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 39,
+      "input1": "SUPPORT PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 40,
+      "input1": "SUPPORT PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 41,
+      "input1": "SUPPORT PAGE",
+      "input2": "read it button",
+      "inputStateIndex": 1,
+      "output1": "DOCUMENTATIONS PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 42,
+      "input1": "INTEREST PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 43,
+      "input1": "INTEREST PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 44,
+      "input1": "INTEREST PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 45,
+      "input1": "INTEREST PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 46,
+      "input1": "PRICING PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 47,
+      "input1": "PRICING PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 48,
+      "input1": "PRICING PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 49,
+      "input1": "PRICING PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 50,
+      "input1": "DOCUMENTATIONS PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 51,
+      "input1": "DOCUMENTATIONS PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 52,
+      "input1": "DOCUMENTATIONS PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 53,
+      "input1": "DOCUMENTATIONS PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 54,
+      "input1": "ORDER PAGE WHITOUT PRODUCT",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 55,
+      "input1": "ORDER PAGE WHITOUT PRODUCT",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 56,
+      "input1": "ORDER PAGE WHITOUT PRODUCT",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 57,
+      "input1": "ORDER PAGE WHITOUT PRODUCT",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 58,
+      "input1": "ORDER PAGE WHITOUT PRODUCT",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 59,
+      "input1": "ORDER PAGE WITH 1 OUTPOST",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 60,
+      "input1": "ORDER PAGE WITH 1 OUTPOST",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 61,
+      "input1": "ORDER PAGE WITH 1 OUTPOST",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 62,
+      "input1": "ORDER PAGE WITH 1 OUTPOST",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 63,
+      "input1": "ORDER PAGE WITH 1 OUTPOST",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 64,
+      "input1": "ORDER PAGE WITH 1 SENTINEL",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 65,
+      "input1": "ORDER PAGE WITH 1 SENTINEL",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 66,
+      "input1": "ORDER PAGE WITH 1 SENTINEL",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 67,
+      "input1": "ORDER PAGE WITH 1 SENTINEL",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 68,
+      "input1": "ORDER PAGE WITH 1 SENTINEL",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 69,
+      "input1": "ORDER PAGE WITH 1 HUNTER",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 70,
+      "input1": "ORDER PAGE WITH 1 HUNTER",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 71,
+      "input1": "ORDER PAGE WITH 1 HUNTER",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 72,
+      "input1": "ORDER PAGE WITH 1 HUNTER",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 73,
+      "input1": "ORDER PAGE WITH 1 HUNTER",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 74,
+      "input1": "ORDER PAGE WITH 1 MASTER HUNTER",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 75,
+      "input1": "ORDER PAGE WITH 1 MASTER HUNTER",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 76,
+      "input1": "ORDER PAGE WITH 1 MASTER HUNTER",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 77,
+      "input1": "ORDER PAGE WITH 1 MASTER HUNTER",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 78,
+      "input1": "ORDER PAGE WITH 1 MASTER HUNTER",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 79,
+      "input1": "QUOTATION PAGE WITHOUT SERVICE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 80,
+      "input1": "QUOTATION PAGE WITHOUT SERVICE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 81,
+      "input1": "QUOTATION PAGE WITHOUT SERVICE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 82,
+      "input1": "QUOTATION PAGE WITHOUT SERVICE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 83,
+      "input1": "QUOTATION PAGE WITHOUT SERVICE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 84,
+      "input1": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 85,
+      "input1": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 86,
+      "input1": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 87,
+      "input1": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 88,
+      "input1": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 89,
+      "input1": "QUOTATION PAGE WITH TEST FRAMEWORK",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 90,
+      "input1": "QUOTATION PAGE WITH TEST FRAMEWORK",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 91,
+      "input1": "QUOTATION PAGE WITH TEST FRAMEWORK",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 92,
+      "input1": "QUOTATION PAGE WITH TEST FRAMEWORK",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 93,
+      "input1": "QUOTATION PAGE WITH TEST FRAMEWORK",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 94,
+      "input1": "QUOTATION PAGE WITH CONSULTANCY",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 95,
+      "input1": "QUOTATION PAGE WITH CONSULTANCY",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 96,
+      "input1": "QUOTATION PAGE WITH CONSULTANCY",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 97,
+      "input1": "QUOTATION PAGE WITH CONSULTANCY",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 98,
+      "input1": "QUOTATION PAGE WITH CONSULTANCY",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 99,
+      "input1": "QUOTATION PAGE WITH DEV AND TEST TRAINING",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 100,
+      "input1": "QUOTATION PAGE WITH DEV AND TEST TRAINING",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 101,
+      "input1": "QUOTATION PAGE WITH DEV AND TEST TRAINING",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 102,
+      "input1": "QUOTATION PAGE WITH DEV AND TEST TRAINING",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 103,
+      "input1": "QUOTATION PAGE WITH DEV AND TEST TRAINING",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 104,
+      "input1": "CHANGE LOG PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 105,
+      "input1": "CHANGE LOG PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 106,
+      "input1": "CHANGE LOG PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 107,
+      "input1": "CHANGE LOG PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 108,
+      "input1": "CHANGE LOG PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 109,
+      "input1": "QUOTATION PAGE WITH AUTOMATED TESTS",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 110,
+      "input1": "QUOTATION PAGE WITH AUTOMATED TESTS",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "IBELLO PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 111,
+      "input1": "QUOTATION PAGE WITH AUTOMATED TESTS",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 112,
+      "input1": "QUOTATION PAGE WITH AUTOMATED TESTS",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 113,
+      "input1": "QUOTATION PAGE WITH AUTOMATED TESTS",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    }
+  ],
+  "steps": [
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "HOME PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to about page using details button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to documentations page using documentations button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to interest page using try it button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to pricing page using details button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to product page using learn more button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to product page using our product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to services page using our services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to services page using work with us button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navigation to support page using more options button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on homepage"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ABOUT PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on about page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "HOME PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "documentations button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "more options button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar, details button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar, learn more button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar, work with us button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order details button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "our product from header"
+        },
+        {
+          "kind": "OPTION",
+          "name": "our services from header"
+        },
+        {
+          "kind": "OPTION",
+          "name": "try it button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on homepage"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "IBELLO PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "download button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order hunter button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order master hunter button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order now button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order outpost button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order sentinel button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on product page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WHITOUT PRODUCT"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on order page and no product is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "SERVICES PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "request quotation button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "request quotation for automated tests"
+        },
+        {
+          "kind": "OPTION",
+          "name": "request quotation for consultancy"
+        },
+        {
+          "kind": "OPTION",
+          "name": "request quotation for dev and test training"
+        },
+        {
+          "kind": "OPTION",
+          "name": "request quotation for online automated test"
+        },
+        {
+          "kind": "OPTION",
+          "name": "request quotation for test framework"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on services page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "SUPPORT PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "read it button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on support page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "DOCUMENTATIONS PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on documentations page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "INTEREST PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on interest page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "PRICING PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on pricing"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "CHANGE LOG PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on change log page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to support page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "logo button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to homepage using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar about button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to about page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar services button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to services page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar product button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to product page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "QUOTATION PAGE WITHOUT SERVICE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on quotation page without selected service"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WITH 1 OUTPOST"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on order page and outpost is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WITH 1 SENTINEL"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on order page and sentinel is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WITH 1 HUNTER"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on order page and hunter is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order now button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i navigate to order page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order outpost button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i order an outpost product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order hunter button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i order a hunter product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar, details button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to about page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "request quotation button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from services page i request guotation"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "read it button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from support page i navigate to documentations page"
+    }
+  ]
+}

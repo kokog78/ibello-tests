@@ -1,0 +1,983 @@
+{
+  "algorithm": "SPARING",
+  "skipOptions": false,
+  "parameters": [
+    {
+      "name": "tags",
+      "literal": "@full-test @navigation @nav"
+    },
+    {
+      "name": "Navigation bar test",
+      "literal": "true"
+    },
+    {
+      "name": "title",
+      "literal": "Testing navigation on ibello.hu"
+    }
+  ],
+  "states": [
+    {
+      "name": "TEST INIT"
+    },
+    {
+      "name": "HOME PAGE"
+    },
+    {
+      "name": "PRODUCT PAGE"
+    },
+    {
+      "name": "SERVICES PAGE"
+    },
+    {
+      "name": "ABOUT PAGE"
+    },
+    {
+      "name": "SUPPORT PAGE"
+    },
+    {
+      "name": "INTEREST PAGE"
+    },
+    {
+      "name": "PRICING PAGE"
+    },
+    {
+      "name": "DOCUMENTATIONS PAGE"
+    },
+    {
+      "name": "ORDER PAGE WHITOUT PRODUCT"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 OUTPOST"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 SENTINEL"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 HUNTER"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 MASTER HUNTER"
+    },
+    {
+      "name": "QUOTATION PAGE WITHOUT SERVICE"
+    },
+    {
+      "name": "QUOTATION PAGE WITH ONLINE AUTOMATED TEST"
+    },
+    {
+      "name": "QUOTATION PAGE WITH AUTOMATED TESTS"
+    },
+    {
+      "name": "QUOTATION PAGE WITH TEST FRAMEWORK"
+    },
+    {
+      "name": "QUOTATION PAGE WITH CONSULTANCY"
+    },
+    {
+      "name": "QUOTATION PAGE WITH DEV AND TEST TRAINING"
+    },
+    {
+      "name": "CHANGE LOG PAGE"
+    },
+    {
+      "name": "INSTALLATION DOC PAGE"
+    }
+  ],
+  "transitions": [
+    {
+      "index": 0,
+      "input1": "TEST INIT",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 1,
+      "input1": "HOME PAGE",
+      "input2": "header our product",
+      "inputStateIndex": 1,
+      "output1": "PRODUCT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 2,
+      "input1": "HOME PAGE",
+      "input2": "header our services",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 3,
+      "input1": "HOME PAGE",
+      "input2": "navbar product, try it button",
+      "inputStateIndex": 1,
+      "output1": "INTEREST PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 4,
+      "input1": "HOME PAGE",
+      "input2": "navbar product, learn more button",
+      "inputStateIndex": 1,
+      "output1": "PRODUCT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 5,
+      "input1": "HOME PAGE",
+      "input2": "navbar services, work with us button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 6,
+      "input1": "HOME PAGE",
+      "input2": "navbar about, details button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 7,
+      "input1": "HOME PAGE",
+      "input2": "navbar support, more options button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 8,
+      "input1": "SERVICES PAGE",
+      "input2": "request quotation button",
+      "inputStateIndex": 1,
+      "output1": "QUOTATION PAGE WITHOUT SERVICE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 9,
+      "input1": "QUOTATION PAGE WITHOUT SERVICE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 10,
+      "input1": "SUPPORT PAGE",
+      "input2": "support page, read it button",
+      "inputStateIndex": 1,
+      "output1": "DOCUMENTATIONS PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 11,
+      "input1": "DOCUMENTATIONS PAGE",
+      "input2": "read change log button",
+      "inputStateIndex": 1,
+      "output1": "CHANGE LOG PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 12,
+      "input1": "CHANGE LOG PAGE",
+      "input2": "change log more documents button",
+      "inputStateIndex": 1,
+      "output1": "DOCUMENTATIONS PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 13,
+      "input1": "SUPPORT PAGE",
+      "input2": "change log button",
+      "inputStateIndex": 1,
+      "output1": "CHANGE LOG PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 14,
+      "input1": "CHANGE LOG PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 15,
+      "input1": "DOCUMENTATIONS PAGE",
+      "input2": "navbar support button",
+      "inputStateIndex": 1,
+      "output1": "SUPPORT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 16,
+      "input1": "PRODUCT PAGE",
+      "input2": "order now button",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WHITOUT PRODUCT",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 17,
+      "input1": "PRODUCT PAGE",
+      "input2": "header details, download button",
+      "inputStateIndex": 1,
+      "output1": "INTEREST PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 18,
+      "input1": "ABOUT PAGE",
+      "input2": "navbar services button",
+      "inputStateIndex": 1,
+      "output1": "SERVICES PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 19,
+      "input1": "SERVICES PAGE",
+      "input2": "navbar product button",
+      "inputStateIndex": 1,
+      "output1": "PRODUCT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 20,
+      "input1": "INTEREST PAGE",
+      "input2": "interest page, installation guide button",
+      "inputStateIndex": 1,
+      "output1": "INSTALLATION DOC PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 21,
+      "input1": "INSTALLATION DOC PAGE",
+      "input2": "navbar about button",
+      "inputStateIndex": 1,
+      "output1": "ABOUT PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 22,
+      "input1": "PRODUCT PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 23,
+      "input1": "SERVICES PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 24,
+      "input1": "ABOUT PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 25,
+      "input1": "INTEREST PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 26,
+      "input1": "SUPPORT PAGE",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 27,
+      "input1": "ORDER PAGE WHITOUT PRODUCT",
+      "input2": "logo button",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    }
+  ],
+  "steps": [
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to support page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "logo button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to homepage using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar about button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to about page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar services button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to services page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar product button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i navigate directly to product page using the navbar"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "QUOTATION PAGE WITHOUT SERVICE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on quotation page without selected service"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order now button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i navigate to order page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order outpost button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i order an outpost product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order hunter button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i order a hunter product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "request quotation button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from services page i request guotation"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "HOME PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "header our product"
+        },
+        {
+          "kind": "OPTION",
+          "name": "header our services"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about, details button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product, learn more button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product, try it button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services, work with us button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support, more options button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on homepage"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "SERVICES PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar product button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "request quotation button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on services page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "PRODUCT PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "header details, download button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order now button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on product page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "INTEREST PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "interest page, installation guide button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on interest page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "INSTALLATION DOC PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar about button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on installation documentation page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "DOCUMENTATIONS PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "read change log button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on documentations page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "CHANGE LOG PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "change log more documents button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar support button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on changelog page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ABOUT PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "navbar services button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on about page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "SUPPORT PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "change log button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        },
+        {
+          "kind": "OPTION",
+          "name": "support page, read it button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on support page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WHITOUT PRODUCT"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on order page and no product is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "PRICING PAGE"
+        },
+        {
+          "kind": "OPTION"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: i am on pricing page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "header our services"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage header i navigate to services page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "interest page, installation guide button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from interest page i navigate to installation documentation page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "more documentations button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from installation documentation page i navigate to documentations page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "read change log button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from documentations page i navigate to change log page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar about, details button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to about page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar support, more options button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to support page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "support page, read it button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from support page i navigate to documentations page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "support page, installation guide button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from support page i navigate to installation documentation page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "change log button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from support page i navigate to change log page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "our product button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from support page header i navigate to product page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order details button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to pricing page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "header our product"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage header i navigate to product page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order sentinel button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i order a sentinel product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order master hunter button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page i order a master hunter product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "TEST INIT"
+        },
+        {
+          "kind": "OPTION"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: test init"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar support, documentations button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to documentations page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar services, work with us button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to services page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar product, learn more button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to product page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "navbar product, try it button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from homepage i navigate to interest page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "interest page, read it button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from interest page i navigate to documentations page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "our services"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from support page header i navigate to services page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "header details, download button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from product page header i navigate to interest page"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "change log more documents button"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation: from changelog page i navigate to documentations page"
+    }
+  ]
+}
