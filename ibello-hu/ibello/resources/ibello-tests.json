@@ -1,0 +1,25 @@
+{
+  "remoteTests": [
+    {
+      "url": "https://ibello.hu:8543",
+      "tests": [
+        {
+          "id": "IbelloTests_TestIbelloHu:20210323_132440",
+          "steps": [
+            {
+              "id": "as/03cbrzZCzH3NEW7XZLVrQxnnMV6/Wrk+nMxgJhdU\u003d",
+              "outcome": "FAILURE",
+              "durationMs": 7453,
+              "timeoutMs": 5000,
+              "tags": "",
+              "browser": "CHROME",
+              "headless": true,
+              "exceptionKind": "TIMEOUT",
+              "failureReason": "TEST_ERROR"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
