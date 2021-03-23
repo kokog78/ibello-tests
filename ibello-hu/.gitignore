@@ -7,8 +7,6 @@
 /ibello/results/
 
 /.gradle/
-/gradle/wrapper
-/gradle/
 /.idea/
 /.settings/
 /features/sandbox-*.feature
