@@ -7,8 +7,6 @@
 /ibello/results/
 
 /.gradle/
-/gradlew
-/gradlew.bat
 /gradle/wrapper
 /gradle/
 /.idea/
