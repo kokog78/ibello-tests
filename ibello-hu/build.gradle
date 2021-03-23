@@ -28,6 +28,13 @@ dependencies {
     api 'hu.ibello:ibello-api:1.14.0'
 }
 
+ibello {
+	File dir = file("/opt/ibello")
+	if (dir.exists()) {
+		installDir dir
+	}
+}
+
 task ibelloRunAll(type: IbelloRun, group: 'ibello') {
 	description "Runs ibello java tests."
 	headless true
