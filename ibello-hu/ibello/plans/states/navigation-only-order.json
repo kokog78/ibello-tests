@@ -1,0 +1,309 @@
+{
+  "algorithm": "SPARING",
+  "skipOptions": false,
+  "parameters": [
+    {
+      "name": "tags",
+      "literal": "@full-test @navigation @nav-order"
+    },
+    {
+      "name": "Navigation bar test",
+      "literal": "true"
+    },
+    {
+      "name": "title",
+      "literal": "Testing navigation to different order pages of products"
+    }
+  ],
+  "states": [
+    {
+      "name": "TEST INIT"
+    },
+    {
+      "name": "HOME PAGE"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 SERVER"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 ANALYZER"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 CREATOR"
+    },
+    {
+      "name": "ORDER PAGE WITH 1 TEAM 10"
+    }
+  ],
+  "transitions": [
+    {
+      "index": 0,
+      "input1": "TEST INIT",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 1,
+      "input1": "HOME PAGE",
+      "input2": "order button at server product",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 SERVER",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 2,
+      "input1": "HOME PAGE",
+      "input2": "order button at analyzer product",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 ANALYZER",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 3,
+      "input1": "HOME PAGE",
+      "input2": "order button at creator product",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 CREATOR",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 4,
+      "input1": "HOME PAGE",
+      "input2": "order button at team product",
+      "inputStateIndex": 1,
+      "output1": "ORDER PAGE WITH 1 TEAM 10",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 5,
+      "input1": "ORDER PAGE WITH 1 SERVER",
+      "input2": "logo",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 6,
+      "input1": "ORDER PAGE WITH 1 ANALYZER",
+      "input2": "logo",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 7,
+      "input1": "ORDER PAGE WITH 1 CREATOR",
+      "input2": "logo",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    },
+    {
+      "index": 8,
+      "input1": "ORDER PAGE WITH 1 TEAM 10",
+      "input2": "logo",
+      "inputStateIndex": 1,
+      "output1": "HOME PAGE",
+      "outputStateIndex": 1,
+      "positiveOutput": false
+    }
+  ],
+  "steps": [
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "TEST INIT"
+        },
+        {
+          "kind": "OPTION"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: test init"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "HOME PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at analyzer product"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at creator product"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at server product"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at team product"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: i am on homepage"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order button at server product"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: from home page i order a server product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order button at analyzer product"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: from home page i order an analyzer product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order button at creator product"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: from home page i order a creator product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "order button at team product"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: from home page i order a team product"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WITH 1 SERVER"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: i am on order page and server is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WITH 1 ANALYZER"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: i am on order page and analyzer is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WITH 1 CREATOR"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: i am on order page and creator is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "STATE",
+          "name": "ORDER PAGE WITH 1 TEAM 10"
+        },
+        {
+          "kind": "OPTION",
+          "name": "logo"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: i am on order page and team 10 is selected"
+    },
+    {
+      "keyword": "UNKNOWN",
+      "items": [
+        {
+          "kind": "INPUT",
+          "name": "logo"
+        },
+        {
+          "kind": "STATE",
+          "name": "HOME PAGE"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at analyzer product"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at creator product"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at server product"
+        },
+        {
+          "kind": "OPTION",
+          "name": "order button at team product"
+        }
+      ],
+      "archived": false,
+      "kind": "STEP",
+      "name": "navigation order: i navigate back to homepage"
+    }
+  ]
+}
