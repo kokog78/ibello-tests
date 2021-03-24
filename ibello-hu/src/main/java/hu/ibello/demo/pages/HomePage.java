@@ -10,7 +10,7 @@ import hu.ibello.search.RelationType;
 @Name("Home page")
 public class HomePage extends AbstractPage {
 
-    @Find(by = By.CSS_SELECTOR, using = "welcome-main-lane")
+    @Find(by = By.CSS_SELECTOR, using = "welcome-image-lane")
     private WebElement mainLane;
 
     @Find(by = By.TEXT, using = "${0}")
