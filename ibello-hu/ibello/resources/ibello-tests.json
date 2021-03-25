@@ -78,6 +78,58 @@
               "failureReason": "TEST_ERROR"
             }
           ]
+        },
+        {
+          "id": "IbelloTests_TestIbelloHu:20210324_095912",
+          "steps": [
+            {
+              "id": "1cXDjoTbPmVHioOdbY4jr0tsNdCymwXYISMk7qfxPao\u003d",
+              "outcome": "FAILURE",
+              "durationMs": 17,
+              "timeoutMs": 0,
+              "tags": "",
+              "browser": "CHROME",
+              "headless": true,
+              "failureReason": "TEST_ERROR"
+            },
+            {
+              "id": "dJ4dl5QsCGFei2RWLg35zNgUxrMHMTras9K69AJRpB8\u003d",
+              "outcome": "ERROR",
+              "durationMs": 6381,
+              "timeoutMs": 5000,
+              "tags": "",
+              "browser": "CHROME",
+              "headless": true,
+              "exceptionKind": "ELEMENT_NOT_DISPLAYED",
+              "failureReason": "TEST_ERROR"
+            }
+          ]
+        },
+        {
+          "id": "IbelloTests_TestIbelloHu:20210324_110725",
+          "steps": [
+            {
+              "id": "1cXDjoTbPmVHioOdbY4jr0tsNdCymwXYISMk7qfxPao\u003d",
+              "outcome": "FAILURE",
+              "durationMs": 22,
+              "timeoutMs": 0,
+              "tags": "",
+              "browser": "CHROME",
+              "headless": true,
+              "failureReason": "TEST_ERROR"
+            },
+            {
+              "id": "dJ4dl5QsCGFei2RWLg35zNgUxrMHMTras9K69AJRpB8\u003d",
+              "outcome": "ERROR",
+              "durationMs": 6852,
+              "timeoutMs": 5000,
+              "tags": "",
+              "browser": "CHROME",
+              "headless": true,
+              "exceptionKind": "ELEMENT_NOT_DISPLAYED",
+              "failureReason": "TEST_ERROR"
+            }
+          ]
         }
       ]
     }
