@@ -41,7 +41,7 @@ public class NavigationBarPanel extends PageObject {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "language-selector")
     private WebElement englishLink;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='home']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href='/']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CSS_SELECTOR, using = "menu-component")
     private WebElement homeLink;
 

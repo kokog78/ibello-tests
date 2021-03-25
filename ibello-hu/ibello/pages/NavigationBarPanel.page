@@ -1,115 +1,317 @@
-productLink = clickable {
-    cssSelector 'a[href=\'#home-ibello\']'
-    descendantOf {
-        cssSelector 'menu-component'
+{
+  "name": "NavigationBarPanel",
+  "namespace": "",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "productLink",
+      "xpath": "/html[1]/body[1]/menu-component[1]/a[2]",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "menu-component"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#home-ibello\u0027]"
+    },
+    {
+      "fieldName": "servicesLink",
+      "xpath": "/html[1]/body[1]/menu-component[1]/a[3]",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "menu-component"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#home-services\u0027]"
+    },
+    {
+      "fieldName": "aboutUsLink",
+      "xpath": "/html[1]/body[1]/menu-component[1]/a[4]",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "menu-component"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#home-about\u0027]"
+    },
+    {
+      "fieldName": "supportLink",
+      "xpath": "/html[1]/body[1]/menu-component[1]/a[5]",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "menu-component"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#home-support\u0027]"
+    },
+    {
+      "fieldName": "languageLink",
+      "xpath": "/html[1]/body[1]/menu-component[1]/div[2]/a[1]",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "by": "BUTTON_TEXT",
+      "selector": "▼"
+    },
+    {
+      "fieldName": "hungarianLink",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "ID",
+          "selector": "language-selector"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[title\u003d\u0027magyar\u0027]"
+    },
+    {
+      "fieldName": "englishLink",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "ID",
+          "selector": "language-selector"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[title\u003d\u0027english\u0027]"
+    },
+    {
+      "fieldName": "homeLink",
+      "xpath": "/html[1]/body[1]/menu-component[1]/a[1]",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": "menu-component"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027/\u0027]"
+    },
+    {
+      "fieldName": "menuComponent",
+      "selected": false,
+      "kind": "ELEMENT",
+      "by": "CSS_SELECTOR",
+      "selector": "menu-component"
+    },
+    {
+      "fieldName": "productDirectLink",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "ID",
+          "selector": "menu"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#ibello\u0027]"
+    },
+    {
+      "fieldName": "servicesDirectLink",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "ID",
+          "selector": "menu"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#services\u0027]"
+    },
+    {
+      "fieldName": "aboutDirectLink",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "ID",
+          "selector": "menu"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#about\u0027]"
+    },
+    {
+      "fieldName": "supportDirectLink",
+      "selected": false,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "ID",
+          "selector": "menu"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href\u003d\u0027#support\u0027]"
     }
-    xpath '/html[1]/body[1]/menu-component[1]/a[2]'
-    click_product_link = action click
-    hidden
-}
-
-servicesLink = clickable {
-    cssSelector 'a[href=\'#home-services\']'
-    descendantOf {
-        cssSelector 'menu-component'
+  ],
+  "methods": [
+    {
+      "name": "click_product_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "productLink"
+        }
+      ]
+    },
+    {
+      "name": "click_services_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "servicesLink"
+        }
+      ]
+    },
+    {
+      "name": "click_about_us_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "aboutUsLink"
+        }
+      ]
+    },
+    {
+      "name": "click_support_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "supportLink"
+        }
+      ]
+    },
+    {
+      "name": "click_language_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "languageLink"
+        }
+      ]
+    },
+    {
+      "name": "click_hungarian_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "hungarianLink"
+        }
+      ]
+    },
+    {
+      "name": "click_english_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "englishLink"
+        }
+      ]
+    },
+    {
+      "name": "click_home_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "homeLink"
+        }
+      ]
+    },
+    {
+      "name": "expect_menu_component_is_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "menuComponent"
+        }
+      ]
+    },
+    {
+      "name": "click_product_direct_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "productDirectLink"
+        }
+      ]
+    },
+    {
+      "name": "click_services_direct_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "servicesDirectLink"
+        }
+      ]
+    },
+    {
+      "name": "click_about_direct_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "aboutDirectLink"
+        }
+      ]
+    },
+    {
+      "name": "click_support_direct_link",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "supportDirectLink"
+        }
+      ]
     }
-    xpath '/html[1]/body[1]/menu-component[1]/a[3]'
-    click_services_link = action click
-    hidden
-}
-
-aboutUsLink = clickable {
-    cssSelector 'a[href=\'#home-about\']'
-    descendantOf {
-        cssSelector 'menu-component'
-    }
-    xpath '/html[1]/body[1]/menu-component[1]/a[4]'
-    click_about_us_link = action click
-    hidden
-}
-
-supportLink = clickable {
-    cssSelector 'a[href=\'#home-support\']'
-    descendantOf {
-        cssSelector 'menu-component'
-    }
-    xpath '/html[1]/body[1]/menu-component[1]/a[5]'
-    click_support_link = action click
-    hidden
-}
-
-languageLink = clickable {
-    buttonText '▼'
-    xpath '/html[1]/body[1]/menu-component[1]/div[2]/a[1]'
-    click_language_link = action click
-}
-
-hungarianLink = clickable {
-    cssSelector 'a[title=\'magyar\']'
-    descendantOf {
-        id 'language-selector'
-    }
-    click_hungarian_link = action click
-    hidden
-}
-
-englishLink = clickable {
-    cssSelector 'a[title=\'english\']'
-    descendantOf {
-        id 'language-selector'
-    }
-    click_english_link = action click
-    hidden
-}
-
-homeLink = clickable {
-    cssSelector 'a[href=\'#home\']'
-    descendantOf {
-        cssSelector 'menu-component'
-    }
-    xpath '/html[1]/body[1]/menu-component[1]/a[1]'
-    click_home_link = action click
-    hidden
-}
-
-menuComponent = element {
-    cssSelector 'menu-component'
-    expect_menu_component_is_displayed = expect toBe displayed
-    hidden
-}
-
-productDirectLink = clickable {
-    cssSelector 'a[href=\'#ibello\']'
-    descendantOf {
-        id 'menu'
-    }
-    click_product_direct_link = action click
-    hidden
-}
-
-servicesDirectLink = clickable {
-    cssSelector 'a[href=\'#services\']'
-    descendantOf {
-        id 'menu'
-    }
-    click_services_direct_link = action click
-    hidden
-}
-
-aboutDirectLink = clickable {
-    cssSelector 'a[href=\'#about\']'
-    descendantOf {
-        id 'menu'
-    }
-    click_about_direct_link = action click
-    hidden
-}
-
-supportDirectLink = clickable {
-    cssSelector 'a[href=\'#support\']'
-    descendantOf {
-        id 'menu'
-    }
-    click_support_direct_link = action click
-    hidden
+  ]
 }

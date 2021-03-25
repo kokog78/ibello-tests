@@ -43,4 +43,36 @@ task ibelloRunAll(type: IbelloRun, group: 'ibello') {
 task ibelloCucumberAll(type: IbelloCucumber, group: 'ibello') {
 	description "Runs ibello cucumber tests."
 	headless true
+    tags 'hu', 'full-test'
 }
+
+task ibelloCucumberLanguage(type: IbelloCucumber, group: 'ibello') {
+    description "Runs ibello cucumber tests only for language selection."
+    headless true
+    tags 'hu', 'language'
+}
+
+task ibelloCucumberMessage(type: IbelloCucumber, group: 'ibello') {
+    description "Runs ibello cucumber tests only for message sending."
+    headless true
+    tags 'message'
+}
+
+task ibelloCucumberNavigation(type: IbelloCucumber, group: 'ibello') {
+    description "Runs ibello cucumber tests only for navigation."
+    headless true
+    tags 'navigation'
+}
+
+task ibelloCucumberOrder(type: IbelloCucumber, group: 'ibello') {
+    description "Runs ibello cucumber tests only for ordering."
+    headless true
+    tags 'order'
+}
+
+task ibelloCucumberSitemap(type: IbelloCucumber, group: 'ibello') {
+    description "Runs ibello cucumber tests only for sitemap."
+    headless true
+    tags 'sitemap'
+}
+
