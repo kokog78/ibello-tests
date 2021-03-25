@@ -43,13 +43,13 @@ task ibelloRunAll(type: IbelloRun, group: 'ibello') {
 task ibelloCucumberAll(type: IbelloCucumber, group: 'ibello') {
 	description "Runs ibello cucumber tests."
 	headless true
-    tags 'eng', 'full-test'
+    tags 'hu', 'full-test'
 }
 
 task ibelloCucumberLanguage(type: IbelloCucumber, group: 'ibello') {
     description "Runs ibello cucumber tests only for language selection."
     headless true
-    tags 'eng', 'language'
+    tags 'hu', 'language'
 }
 
 task ibelloCucumberMessage(type: IbelloCucumber, group: 'ibello') {
