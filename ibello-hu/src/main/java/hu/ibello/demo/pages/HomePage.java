@@ -14,7 +14,7 @@ public class HomePage extends AbstractPage {
     private WebElement mainLane;
 
     @Find(by = By.TEXT, using = "${0}")
-    @Relation(type = RelationType.DESCENDANT_OF, by = By.CSS_SELECTOR, using = "welcome-main-lane")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CSS_SELECTOR, using = "welcome-image-lane")
     private WebElement text;
 
     @Find(by = By.ID, using = "contactName")
