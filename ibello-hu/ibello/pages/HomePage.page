@@ -10,7 +10,7 @@
       "selected": false,
       "kind": "ELEMENT",
       "by": "CSS_SELECTOR",
-      "selector": "welcome-main-lane"
+      "selector": "welcome-image-lane"
     },
     {
       "fieldName": "text",
@@ -20,7 +20,7 @@
         {
           "type": "DESCENDANT_OF",
           "by": "CSS_SELECTOR",
-          "selector": "welcome-main-lane"
+          "selector": "welcome-image-lane"
         }
       ],
       "by": "TEXT",
