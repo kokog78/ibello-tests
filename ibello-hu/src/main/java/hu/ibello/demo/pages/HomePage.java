@@ -10,6 +10,8 @@ import hu.ibello.search.RelationType;
 @Name("Home page")
 public class HomePage extends AbstractPage {
 
+    private static final String url = "";
+
     @Find(by = By.CSS_SELECTOR, using = "welcome-image-lane")
     private WebElement mainLane;
 
@@ -83,7 +85,7 @@ public class HomePage extends AbstractPage {
 
     @Override
     public void i_am_on_the_page() {
-        expect_url_is_$("/home");
+        expect_url_is_$(url);
         expectations().expect(mainLane).toBe().displayed();
     }
 
