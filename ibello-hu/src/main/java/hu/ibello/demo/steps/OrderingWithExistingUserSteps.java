@@ -1,6 +1,7 @@
 package hu.ibello.demo.steps;
 
 import hu.ibello.core.Name;
+import hu.ibello.demo.pages.OrderResultPage;
 import hu.ibello.demo.panel.PopUpMessagesPanel;
 import hu.ibello.demo.model.ExistingUserData;
 import hu.ibello.demo.pages.OrderPage;
@@ -11,6 +12,7 @@ public class OrderingWithExistingUserSteps extends StepLibrary {
 
     private OrderPage orderPage;
     private PopUpMessagesPanel popUpMessagesPanel;
+    private OrderResultPage orderResultPage;
 
     public void i_send_the_order() {
         orderPage.click_sending_order_button();
@@ -36,9 +38,8 @@ public class OrderingWithExistingUserSteps extends StepLibrary {
         popUpMessagesPanel.assume_error_message_is_not_displayed();
     }
 
-    public void i_see_the_success_message() {
-        popUpMessagesPanel.assume_success_message_is_displayed();
-        popUpMessagesPanel.assume_success_message_is_not_displayed();
+    public void i_see_the_order_result_page() {
+        orderResultPage.i_am_on_the_page();
     }
 
 }

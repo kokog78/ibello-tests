@@ -27,14 +27,6 @@ public class PopUpMessagesPanel extends PageObject {
         expectations().withTimeout(Timeout.LONG).assume(errorMessage).toNotBe().displayed();
     }
 
-    public void assume_success_message_is_displayed() {
-        expectations().assume(successMessage).toBe().displayed();
-    }
-
-    public void assume_success_message_is_not_displayed() {
-        expectations().withTimeout(Timeout.LONG).assume(successMessage).toNotBe().displayed();
-    }
-
     public void assume_$_error_messages_are_displayed(int expectedNumberOfErrors) {
         WebElements errorMessages = errorMessage.find().using(By.CSS_SELECTOR, "div").all();
         int displayedErrors = errorMessages.size();

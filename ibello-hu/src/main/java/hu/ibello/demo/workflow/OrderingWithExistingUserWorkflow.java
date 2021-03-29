@@ -59,7 +59,7 @@ public class OrderingWithExistingUserWorkflow extends StepLibrary{
     }
 
     public void i_see_that_the_order_is_successful() {
-        orderingSteps.i_see_the_success_message();
+        orderingSteps.i_see_the_order_result_page();
     }
 
 }

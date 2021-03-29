@@ -106,6 +106,7 @@ public class SitemapPage extends AbstractPage {
     public void i_open_sitemap_page() {
         browser().resize(2000, 1000);
         browser().openURL("/sitemap");
+        browser().maximize();
     }
 
     public int get_link_count(){
