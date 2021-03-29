@@ -1,6 +1,7 @@
 package hu.ibello.demo.steps;
 
 import hu.ibello.core.Name;
+import hu.ibello.demo.pages.MessageSentPage;
 import hu.ibello.demo.panel.PopUpMessagesPanel;
 import hu.ibello.demo.model.ContactData;
 import hu.ibello.demo.pages.HomePage;
@@ -11,6 +12,7 @@ public class SendingMessageSteps extends StepLibrary {
 
     private HomePage homePage;
     private PopUpMessagesPanel popUpMessagesPanel;
+    private MessageSentPage messageSentPage;
 
     public void i_send_the_message() {
         homePage.click_send_message_button();
@@ -39,8 +41,7 @@ public class SendingMessageSteps extends StepLibrary {
         popUpMessagesPanel.assume_error_message_is_not_displayed();
     }
 
-    public void i_see_the_success_message() {
-        popUpMessagesPanel.assume_success_message_is_displayed();
-        popUpMessagesPanel.assume_success_message_is_not_displayed();
+    public void i_see_the_message_sent_page() {
+        messageSentPage.i_am_on_the_page();
     }
 }

@@ -1,0 +1,18 @@
+{
+  "name": "MessageSentPage",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "title",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": "title-lane[key\u003d\u0027titles.message-result\u0027]"
+    }
+  ],
+  "methods": []
+}

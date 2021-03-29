@@ -89,6 +89,10 @@ public class HomePage extends AbstractPage {
         expectations().expect(mainLane).toBe().displayed();
     }
 
+    public boolean is_the_page_open() {
+        return checkThat(mainLane).isDisplayed();
+    }
+
     public void assume_$_text_is_displayed(String textToCheck) {
         expectations().assume(text.applyParameters(textToCheck)).toBe().displayed();
     }

@@ -61,6 +61,10 @@ public class NavigationSteps extends StepLibrary {
         homePage.i_am_on_the_page();
     }
 
+    public boolean am_i_on_hompage() {
+        return homePage.is_the_page_open();
+    }
+
     public void i_am_on_homepage() {
         homePage.i_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();

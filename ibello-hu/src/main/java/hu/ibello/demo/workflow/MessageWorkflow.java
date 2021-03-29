@@ -23,6 +23,9 @@ public class MessageWorkflow extends StepLibrary{
             navigationSteps.i_open_the_homepage();
             isOpened = true;
         }
+        if (!navigationSteps.am_i_on_hompage()) {
+            navigationSteps.i_navigate_to_homepage_directly_from_navbar();
+        }
         homePage.i_am_on_the_page();
     }
 
@@ -75,7 +78,7 @@ public class MessageWorkflow extends StepLibrary{
     }
 
     public void i_see_that_sending_the_message_was_successfull() {
-        sendingMessageSteps.i_see_the_success_message();
+        sendingMessageSteps.i_see_the_message_sent_page();
     }
 
 }
