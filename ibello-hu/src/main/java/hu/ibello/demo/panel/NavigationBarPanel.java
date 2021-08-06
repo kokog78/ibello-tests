@@ -11,7 +11,7 @@ import hu.ibello.search.RelationType;
 @Name("Navigation bar panel")
 public class NavigationBarPanel extends PageObject {
 
-    @Find(by = By.CSS_SELECTOR, using = "menu-component")
+    @Find(by = By.ID, using = "menu") //CSS -> ID
     private WebElement menuComponent;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#home-ibello']")

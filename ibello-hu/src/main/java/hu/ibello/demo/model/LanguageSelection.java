@@ -1,6 +1,7 @@
 package hu.ibello.demo.model;
 
 import hu.ibello.core.Description;
+import hu.ibello.core.Name;
 import hu.ibello.data.Model;
 
 import java.util.List;
