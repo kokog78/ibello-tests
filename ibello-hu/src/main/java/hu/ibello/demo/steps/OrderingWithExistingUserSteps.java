@@ -20,7 +20,8 @@ public class OrderingWithExistingUserSteps extends StepLibrary {
 
     public void i_use_$_test_data_to_fill_out_the_ordering_form_with_existing_user(ExistingUserData data) {
         if (data != null) {
-            orderPage.click_existing_user_radio_button();
+                orderPage.click_existing_user_radio_button();
+
             if (data.getNameOrEmail() != null) {
                 orderPage.set_username_or_email_field_to_$(data.getNameOrEmail());
             }

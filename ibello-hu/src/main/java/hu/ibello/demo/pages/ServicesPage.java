@@ -16,27 +16,27 @@ public class ServicesPage extends AbstractPage {
     @Find(by = By.CSS_SELECTOR, using = "welcome-services-lane")
     private WebElement servicesLane;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='quotation']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='quotation']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-convert")
     private WebElement requestButton;
 
-    @Find(by = By.CSS_SELECTOR, using = "a[href='quotation?service=online_testing']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='online_testing']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestOnlineTestingButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=test_apps']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href$='test_apps']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestAutomatedTestButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=test_framework']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href$='test_framework']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestTestFrameworkButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=consultancy']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href$='consultancy']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestConsultancyButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href='quotation?service=trainings']")
+    @Find(by = By.CSS_SELECTOR, using = " a[href$='trainings']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestTrainingsButton;
 

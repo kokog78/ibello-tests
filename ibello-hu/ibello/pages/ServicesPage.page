@@ -1,67 +1,188 @@
-servicesLane = element {
-    cssSelector 'welcome-services-lane'
-    expect_services_lane_is_displayed = expect toBe displayed
-    hidden
-}
-
-requestButton = clickable {
-    cssSelector 'a[href=\'#quotation\']'
-    descendantOf {
-        className 'lane-convert'
+{
+  "name": "ServicesPage",
+  "namespace": "",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "servicesLane",
+      "selected": true,
+      "kind": "ELEMENT",
+      "by": "CSS_SELECTOR",
+      "selector": "welcome-services-lane"
+    },
+    {
+      "fieldName": "requestButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-convert"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href$\u003d\u0027quotation\u0027]"
+    },
+    {
+      "fieldName": "requestOnlineTestingButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-service-details"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "a[href$\u003d\u0027online_testing\u0027]"
+    },
+    {
+      "fieldName": "requestAutomatedTestButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-service-details"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": " a[href$\u003d\u0027test_apps\u0027]"
+    },
+    {
+      "fieldName": "requestTestFrameworkButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-service-details"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": " a[href$\u003d\u0027test_framework\u0027]"
+    },
+    {
+      "fieldName": "requestConsultancyButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-service-details"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": " a[href$\u003d\u0027consultancy\u0027]"
+    },
+    {
+      "fieldName": "requestTrainingsButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-service-details"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": " a[href$\u003d\u0027trainings\u0027]"
+    },
+    {
+      "fieldName": "serviceSectors",
+      "selected": true,
+      "kind": "ELEMENTS",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "lane-service-details"
+        }
+      ],
+      "by": "CSS_SELECTOR",
+      "selector": "h3"
     }
-    click_request_button = action click
-    hidden
-}
-
-requestOnlineTestingButton = clickable {
-    cssSelector 'a[href=\'#/quotation?service=online_testing\']'
-    descendantOf {
-        className 'lane-service-details'
+  ],
+  "methods": [
+    {
+      "name": "expect_services_lane_is_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "servicesLane"
+        }
+      ]
+    },
+    {
+      "name": "click_request_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "requestButton"
+        }
+      ]
+    },
+    {
+      "name": "click_request_online_testing_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "requestOnlineTestingButton"
+        }
+      ]
+    },
+    {
+      "name": "click_request_automated_test_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "requestAutomatedTestButton"
+        }
+      ]
+    },
+    {
+      "name": "click_request_test_framework_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "requestTestFrameworkButton"
+        }
+      ]
+    },
+    {
+      "name": "click_request_consultancy_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "requestConsultancyButton"
+        }
+      ]
+    },
+    {
+      "name": "click_request_trainings_button",
+      "selected": false,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "requestTrainingsButton"
+        }
+      ]
     }
-    click_request_online_testing_button = action click
-    hidden
-}
-
-requestAutomatedTestButton = clickable {
-    cssSelector ' a[href=\'#/quotation?service=test_apps\']'
-    descendantOf {
-        className 'lane-service-details'
-    }
-    click_request_automated_test_button = action click
-    hidden
-}
-
-requestTestFrameworkButton = clickable {
-    cssSelector ' a[href=\'#/quotation?service=test_framework\']'
-    descendantOf {
-        className 'lane-service-details'
-    }
-    click_request_test_framework_button = action click
-    hidden
-}
-
-requestConsultancyButton = clickable {
-    cssSelector ' a[href=\'#/quotation?service=consultancy\']'
-    descendantOf {
-        className 'lane-service-details'
-    }
-    click_request_consultancy_button = action click
-    hidden
-}
-
-requestTrainingsButton = clickable {
-    cssSelector ' a[href=\'#/quotation?service=trainings\']'
-    descendantOf {
-        className 'lane-service-details'
-    }
-    click_request_trainings_button = action click
-    hidden
-}
-
-serviceSector = element {
-    cssSelector 'h3'
-    descendantOf {
-        className 'lane-service-details'
-    }
-    hidden
+  ]
 }

@@ -1,5 +1,6 @@
 package hu.ibello.demo.pages;
 
+import hu.ibello.actions.Key;
 import hu.ibello.core.Name;
 import hu.ibello.elements.WebElement;
 import hu.ibello.elements.WebElements;
@@ -47,6 +48,10 @@ public class OrderPage extends AbstractPage {
     @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.order']")
     private WebElement orderTitle;
 
+
+    @Find(by = By.CSS_SELECTOR, using = "h1")
+    private WebElement title;
+
     @Override
     public void i_am_on_the_page() {
         expect_url_is_$(url);
@@ -55,6 +60,7 @@ public class OrderPage extends AbstractPage {
     }
 
     public void click_existing_user_radio_button() {
+        doWith(title).moveTo();
         doWith(existingUserRadioButton).click();
     }
 

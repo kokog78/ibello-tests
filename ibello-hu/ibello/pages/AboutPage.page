@@ -1,4 +1,30 @@
-aboutLane = element {
-    cssSelector 'welcome-about-lane'
-    expect_about_lane_is_displayed = expect toBe displayed
+{
+  "name": "",
+  "namespace": "",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "aboutLane",
+      "selected": true,
+      "kind": "ELEMENT",
+      "by": "CSS_SELECTOR",
+      "selector": "welcome-about-lane"
+    }
+  ],
+  "methods": [
+    {
+      "name": "expect_about_lane_is_displayed",
+      "selected": false,
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "aboutLane"
+        }
+      ]
+    }
+  ]
 }
