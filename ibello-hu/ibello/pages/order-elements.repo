@@ -47,7 +47,7 @@
     },
     {
       "kind": "TEXTBOX",
-      "fieldName": "passwordButton",
+      "fieldName": "passwordField",
       "cached": false,
       "selected": true,
       "by": "ID",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "kind": "CLICKABLE",
+      "kind": "ELEMENTS",
       "fieldName": "increaseButton",
       "cached": false,
       "selected": true,
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "kind": "CLICKABLE",
+      "kind": "ELEMENTS",
       "fieldName": "ecreaseButton",
       "cached": false,
       "selected": true,
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "kind": "ELEMENT",
+      "kind": "ELEMENTS",
       "fieldName": "numberOfProducts",
       "cached": false,
       "selected": true,

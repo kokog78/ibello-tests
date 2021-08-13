@@ -1,10 +1,11 @@
 package hu.ibello.demo.pages.elements;
 import hu.ibello.elements.ElementRepository;
 import hu.ibello.elements.WebElement;
+import hu.ibello.elements.WebElements;
 
-public class OrderElements extends ElementRepository{
+public class OrderElementsRead extends ElementRepository{
 
-    public OrderElements() {
+    public OrderElementsRead() {
         setRepositoryPath("order-elements.repo");
     }
 
@@ -28,24 +29,20 @@ public class OrderElements extends ElementRepository{
         return element("sendingOrderButton");
     }
 
-    public WebElement passwordButton() {
-        return element("passwordButton");
+    public WebElement passwordField() {
+        return element("passwordField");
     }
 
-    public WebElement increaseButton() {
-        return element("increaseButton");
+    public WebElements increaseButton() {
+        return elements("increaseButton");
     }
 
-    public WebElement ecreaseButton() {
-        return element("ecreaseButton");
+    public WebElements ecreaseButton() {
+        return elements("ecreaseButton");
     }
 
-    public WebElement numberOfProducts() {
-        return element("numberOfProducts");
-    }
-
-    public WebElement newUserRadioButton() {
-        return element("newUserRadioButton");
+    public WebElements numberOfProducts() {
+        return elements("numberOfProducts");
     }
 
     public WebElement title() {
