@@ -1,3 +1,4 @@
+# namespace: Existing user order
 @full-test @order
 Feature: Test to order products with existing user
 

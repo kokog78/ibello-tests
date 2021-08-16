@@ -2,8 +2,6 @@ package hu.ibello.demo.pages;
 
 import hu.ibello.core.Name;
 import hu.ibello.demo.pages.elements.OrderElementsRead;
-import hu.ibello.elements.WebElement;
-import hu.ibello.elements.WebElements;
 
 
 @Name("Order page")
