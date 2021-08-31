@@ -266,12 +266,12 @@ A 'Fájlok' menüpontban kattintsunk az 'Új fájl létrehozása' gombra, majd n
   "id": "Texts",
   "englishTexts": [
     "ibello Test Framework",
-    "Our reasonableness strengthens our customers",
+    "The experience of testing supported by artificial intelligence",
     "If you need some good tests"
   ],
   "hungarianTexts": [
     "ibello teszt keretrendszer",
-    "Észszerűségünk erőt ad ügyfeleinknek",
+    "A mesterséges intelligencia által támogatott tesztelés élménye",
     "Ha kell néhány jó teszt"
   ]
 }
