@@ -1,0 +1,54 @@
+{
+  "name": "oneblogpageelements",
+  "frames": [],
+  "elements": [
+    {
+      "kind": "ELEMENT",
+      "fieldName": "detail",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "blog-detail-lane"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "author",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "header address.author"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "date",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "header time"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "readtime",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "header div "
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "blog-title",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "blog-detail-lane h1"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "links",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "blog-link-lane a"
+    }
+  ]
+}
