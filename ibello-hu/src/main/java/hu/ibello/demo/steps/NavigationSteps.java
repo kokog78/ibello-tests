@@ -240,17 +240,17 @@ public class NavigationSteps extends StepLibrary {
     }
 
     public void i_make_a_request_for_test_framework_building() {
-        servicesPage.open_service_with_index_$(2);
+        servicesPage.open_service_with_index_$(3);
         servicesPage.click_request_test_framework_button();
     }
 
     public void i_make_a_request_for_consultancy() {
-        servicesPage.open_service_with_index_$(3);
+        servicesPage.open_service_with_index_$(6);
         servicesPage.click_request_consultancy_button();
     }
 
     public void i_make_a_request_for_trainings() {
-        servicesPage.open_service_with_index_$(4);
+        servicesPage.open_service_with_index_$(7);
         servicesPage.click_request_trainings_button();
     }
 

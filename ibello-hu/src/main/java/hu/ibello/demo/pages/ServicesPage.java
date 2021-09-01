@@ -24,19 +24,19 @@ public class ServicesPage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestOnlineTestingButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href$='test_apps']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='test_apps']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestAutomatedTestButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href$='test_framework']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='test_framework']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestTestFrameworkButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href$='consultancy']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='consultancy']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestConsultancyButton;
 
-    @Find(by = By.CSS_SELECTOR, using = " a[href$='trainings']")
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='trainings']")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElement requestTrainingsButton;
 
