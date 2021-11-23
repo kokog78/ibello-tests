@@ -30,6 +30,7 @@ public class NavigationSteps extends StepLibrary {
     private UnsubscribePage unsubscribePage;
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
+    private BlogPage blogpage;
     private static final String homeSupportUrl = "home-support";
     private static final String homeServicesUrl = "home-services";
     private static final String homeIbelloUrl = "home-ibello";
@@ -55,6 +56,7 @@ public class NavigationSteps extends StepLibrary {
     private static final String unsubscribeUrl = "/unsubscribe";
     private static final String loginUrl = "/clients/#login";
     private static final String registrationUrl = "/clients/#registration";
+    private static final String blogUrl = "blog";
 
     public void i_open_the_homepage() {
         homePage.i_open_homepage();
@@ -363,5 +365,9 @@ public class NavigationSteps extends StepLibrary {
     public void i_navigate_from_homepage_to_the_order_page_with_one_team_product() {
         homePage.click_order_team_button();
         orderPage.i_am_on_the_page();
+    }
+    public void i_navigate_from_homepage_to_the_blog_page() {
+        navigationBar.click_blog_direct_link();
+        blogpage.i_am_on_the_page();
     }
 }
