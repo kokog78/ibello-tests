@@ -1,0 +1,61 @@
+{
+  "name": "BlogPage",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "blogPost",
+      "arguments": [],
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CSS_SELECTOR",
+          "selector": ".blog-items"
+        }
+      ],
+      "positions": [],
+      "by": "TEXT",
+      "selector": "i_click_on_$_title_article"
+    },
+    {
+      "fieldName": "",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ""
+    },
+    {
+      "fieldName": "blogTitle",
+      "selected": true,
+      "kind": "TEXTBOX",
+      "relations": [],
+      "positions": [],
+      "by": "TEXT",
+      "selector": "${0}"
+    }
+  ],
+  "methods": [
+    {
+      "name": "rákattintok a $ című cikkre",
+      "selected": true,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "blogPost"
+        }
+      ],
+      "expectations": []
+    },
+    {
+      "name": "",
+      "selected": true,
+      "actions": [],
+      "expectations": []
+    }
+  ]
+}
