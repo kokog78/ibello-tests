@@ -32,8 +32,7 @@ public class OrderPage extends AbstractPage {
     }
 
     public void click_decrease_button_with_$_index(int index) {
-        doWith(orderElementsRead.ecreaseButton().get(index)).click();
-        // TODO javítani a nevét
+        doWith(orderElementsRead.decreaseButton().get(index)).click();
     }
 
     public void click_increase_button_with_$_index(int index) {

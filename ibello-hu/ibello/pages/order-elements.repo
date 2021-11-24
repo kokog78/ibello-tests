@@ -81,7 +81,7 @@
     },
     {
       "kind": "ELEMENTS",
-      "fieldName": "ecreaseButton",
+      "fieldName": "decreaseButton",
       "cached": false,
       "selected": true,
       "by": "BUTTON_TEXT",

@@ -37,8 +37,8 @@ public class OrderElementsRead extends ElementRepository{
         return elements("increaseButton");
     }
 
-    public WebElements ecreaseButton() {
-        return elements("ecreaseButton");
+    public WebElements decreaseButton() {
+        return elements("decreaseButton");
     }
 
     public WebElements numberOfProducts() {
