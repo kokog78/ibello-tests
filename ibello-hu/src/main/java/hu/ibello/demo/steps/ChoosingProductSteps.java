@@ -13,14 +13,14 @@ import java.util.List;
 public class ChoosingProductSteps extends StepLibrary {
 
     private OrderPage orderPage;
-    private final List<String> productNames = new ArrayList<>(Arrays.asList("evaluation", "serves", "analyzer", "creator", "team 5", "team 10"));
+    private final List<String> productNames = new ArrayList<>(Arrays.asList("evaluation", "server", "analyzer", "creator", "team 5", "team 10"));
 
     public void i_use_$_test_data_to_select_products(ProductToOrder data) {
         if (data != null) {
-            change_number_of_product(data.getOutpost(), 1);
-            change_number_of_product(data.getSentinel(), 2);
-            change_number_of_product(data.getHunter(), 3);
-            change_number_of_product(data.getMasterHunter(), 4);
+            change_number_of_product(data.getEvaluation(), 1);
+            change_number_of_product(data.getServer(), 2);
+            change_number_of_product(data.getAnalyzer(), 3);
+            change_number_of_product(data.getCreator(), 4);
         }
     }
 
