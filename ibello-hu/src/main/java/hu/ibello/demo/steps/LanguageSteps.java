@@ -2,7 +2,9 @@ package hu.ibello.demo.steps;
 
 import hu.ibello.core.Internal;
 import hu.ibello.core.Name;
+import hu.ibello.core.TestException;
 import hu.ibello.demo.model.LanguageSelection;
+import hu.ibello.demo.model.Languages;
 import hu.ibello.demo.pages.HomePage;
 import hu.ibello.demo.panel.NavigationBarPanel;
 import hu.ibello.steps.StepLibrary;
@@ -24,18 +26,26 @@ public class LanguageSteps extends StepLibrary {
     }
 
     public void based_on_$_test_data_i_select_other_language(LanguageSelection data) {
-        i_select_language_based_on_$_test_data_with_$_boolean(data, false);
+        checkTestData(data);
+        i_select_language_based_on_$_test_data_with_$_boolean(data.getLanguage(), false);
     }
 
     public void based_on_$_test_data_i_select_the_default_language(LanguageSelection data) {
-        i_select_language_based_on_$_test_data_with_$_boolean(data, true);
+        checkTestData(data);
+        i_select_language_based_on_$_test_data_with_$_boolean(data.getLanguage(), true);
+    }
+
+    private void checkTestData(LanguageSelection data){
+        if(data==null){
+            throw new TestException("Test data is null");
+        }
     }
 
     @Internal
-    public void i_select_language_based_on_$_test_data_with_$_boolean(LanguageSelection data, boolean isDefault) {
-        if (data != null && data.getLanguage() != null) {
+    public void i_select_language_based_on_$_test_data_with_$_boolean(Languages language, boolean isDefault) {
+        if (language != null) {
             navigationBar.click_language_link();
-            switch (data.getLanguage()) {
+            switch (language) {
                 case HUNGARIAN:
                     if (isDefault) {
                         navigationBar.click_english_link();
@@ -54,7 +64,7 @@ public class LanguageSteps extends StepLibrary {
                     break;
             }
         } else {
-            throw new AssertionError("Testdata is null!");
+            throw new TestException("Language is not specified!");
         }
     }
 
@@ -84,7 +94,7 @@ public class LanguageSteps extends StepLibrary {
                     break;
             }
         } else {
-            throw new AssertionError("One or more testdata are null!");
+            throw new TestException("Language is not specified!");
         }
     }
 
