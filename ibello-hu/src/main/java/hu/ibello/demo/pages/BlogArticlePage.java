@@ -2,6 +2,7 @@ package hu.ibello.demo.pages;
 
 import hu.ibello.core.Name;
 import hu.ibello.elements.WebElement;
+import hu.ibello.elements.WebElements;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
@@ -20,6 +21,9 @@ public class BlogArticlePage extends AbstractPage {
 
   @Find(by = By.CSS_SELECTOR, using = "header time + div")
   private WebElement  readingTime;
+
+  @Find(by = By.CSS_SELECTOR, using = "blog-link-lane a[href^=blog-]")
+  private WebElements recommendations;
 
   public void setCurrentURL() {
     this.currentURL = browser().getURL();
@@ -40,5 +44,8 @@ public class BlogArticlePage extends AbstractPage {
 
   public void assert_reading_time_of_$_article(String textToCheck){
     expectations().assume(readingTime).toHave().text(textToCheck);
+  }
+  public void assert_number_of_recommendations_is_at_least_$(int numberOfRecommendedBlogpost){
+    expectations().assume(recommendations).toHave().sizeGreaterThan(numberOfRecommendedBlogpost-1);
   }
 }

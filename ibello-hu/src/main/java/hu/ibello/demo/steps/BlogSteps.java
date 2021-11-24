@@ -29,5 +29,7 @@ public class BlogSteps extends StepLibrary {
     blogArticlePage.assert_author(data.getAuthor());
     blogArticlePage.assert_reading_time_of_$_article(data.getHowLongToRead());
   }
-
+  public void assert_number_of_recommendations_is_more_than_1(){
+    blogArticlePage.assert_number_of_recommendations_is_at_least_$(1);
+  }
 }

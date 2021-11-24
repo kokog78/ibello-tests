@@ -1,8 +1,9 @@
 package hu.ibello.demo.workflow;
 
 import hu.ibello.core.Name;
+import hu.ibello.core.TestException;
 import hu.ibello.demo.model.BlogData;
-import hu.ibello.demo.model.LanguageSelection;
+import hu.ibello.demo.model.Languages;
 import hu.ibello.demo.steps.BlogSteps;
 import hu.ibello.demo.steps.LanguageSteps;
 import hu.ibello.demo.steps.NavigationSteps;
@@ -14,21 +15,19 @@ public class BlogWorkflow extends StepLibrary {
   private BlogSteps blogSteps;
   private LanguageSteps languageSteps;
   private BlogData blogData;
-  private LanguageSelection languageSelectionData;
-  private String language;
+  private Languages language;
 
   public void I_am_on_homepage() {
     navigationSteps.i_open_the_homepage();
   }
 
   public void The_current_language_is_hungarian() {
-    language = "hungarian";
+    language = Languages.HUNGARIAN;
     setLanguageToHun();
-
   }
 
   public void I_change_the_language_to_english() {
-    language = "english";
+    language = Languages.ENGLISH;
     setLanguageToEng();
   }
 
@@ -37,14 +36,10 @@ public class BlogWorkflow extends StepLibrary {
   }
 
   public void I_select_a_blogpost() {
-    if (language.contains("english")) {
-      blogData = loadBlogData("englishValid");
+    if (language == null) {
+      throw new TestException("Language is null");
     }
-    if (language.contains("hungarian")) {
-      blogData = loadBlogData("hungarianValid");
-    } else {
-      throw new AssertionError("Please check the language selector");
-    }
+    blogData = loadBlogData(language.toString()+"Valid");
     blogSteps.based_on_$_test_data_i_select_a_blog_post(blogData);
   }
 
@@ -53,7 +48,7 @@ public class BlogWorkflow extends StepLibrary {
   }
 
   public void The_recommendation_is_there() {
-    // TO DEVELOP
+    blogSteps.assert_number_of_recommendations_is_more_than_1();
   }
 
   private BlogData loadBlogData(String id) {
@@ -62,23 +57,12 @@ public class BlogWorkflow extends StepLibrary {
     return blogData;
   }
 
-  private LanguageSelection languageSelection(String id) {
-    languageSelectionData = testData().fromJson(LanguageSelection.class).withId(id).load();
-    return languageSelectionData;
-  }
-
   private void setLanguageToHun() {
-    languageSelectionData = languageSelection("0");
-    languageSteps.based_on_$_test_data_i_select_the_default_language(languageSelectionData);
-    languageSelectionData = languageSelection("2");
-    languageSteps.based_on_$_test_data_i_check_if_the_language_is_default(languageSelectionData);
+    languageSteps.i_select_$_language(Languages.HUNGARIAN);
   }
 
   private void setLanguageToEng() {
-    languageSelectionData = languageSelection("1");
-    languageSteps.based_on_$_test_data_i_select_the_default_language(languageSelectionData);
-    languageSelectionData = languageSelection("2");
-    languageSteps.based_on_$_test_data_i_check_if_the_language_is_changed(languageSelectionData);
+    languageSteps.i_select_$_language(Languages.ENGLISH);
   }
 }
 
