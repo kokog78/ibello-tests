@@ -35,6 +35,19 @@ public class LanguageSelection {
         return language;
     }
 
+    public Languages getOtherLanguage() {
+        if (language == null) {
+            return null;
+        }
+        switch (language) {
+            case ENGLISH:
+                return Languages.HUNGARIAN;
+            case HUNGARIAN:
+                return Languages.ENGLISH;
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         if (id != null) {

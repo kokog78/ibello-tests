@@ -27,12 +27,12 @@ public class LanguageSteps extends StepLibrary {
 
     public void based_on_$_test_data_i_select_other_language(LanguageSelection data) {
         checkTestData(data);
-        i_select_language_based_on_$_test_data_with_$_boolean(data.getLanguage(), false);
+        i_select_$_language(data.getLanguage());
     }
 
     public void based_on_$_test_data_i_select_the_default_language(LanguageSelection data) {
         checkTestData(data);
-        i_select_language_based_on_$_test_data_with_$_boolean(data.getLanguage(), true);
+        i_select_$_language(data.getOtherLanguage());
     }
 
     private void checkTestData(LanguageSelection data){
@@ -42,23 +42,15 @@ public class LanguageSteps extends StepLibrary {
     }
 
     @Internal
-    public void i_select_language_based_on_$_test_data_with_$_boolean(Languages language, boolean isDefault) {
+    public void i_select_$_language(Languages language) {
         if (language != null) {
             navigationBar.click_language_link();
             switch (language) {
                 case HUNGARIAN:
-                    if (isDefault) {
-                        navigationBar.click_english_link();
-                    } else {
-                        navigationBar.click_hungarian_link();
-                    }
+                    navigationBar.click_hungarian_link();
                     break;
                 case ENGLISH:
-                    if (isDefault) {
-                        navigationBar.click_hungarian_link();
-                    } else {
-                        navigationBar.click_english_link();
-                    }
+                    navigationBar.click_english_link();
                     break;
                 default:
                     break;
