@@ -4,7 +4,6 @@ import hu.ibello.core.Name;
 import hu.ibello.demo.model.ProductToOrder;
 import hu.ibello.demo.pages.OrderPage;
 import hu.ibello.steps.StepLibrary;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
