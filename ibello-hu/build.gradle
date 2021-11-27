@@ -64,6 +64,12 @@ task ibelloCucumberNavigation(type: IbelloCucumber, group: 'ibello') {
     tags 'navigation'
 }
 
+task ibelloCucumberBlog(type: IbelloCucumber, group: 'ibello') {
+    description "Runs ibello cucumber tests only for blog."
+    headless true
+    tags 'blog'
+}
+
 task ibelloCucumberOrder(type: IbelloCucumber, group: 'ibello') {
     description "Runs ibello cucumber tests only for ordering."
     headless true
