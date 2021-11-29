@@ -27,12 +27,12 @@ public class LanguageSteps extends StepLibrary {
 
     public void based_on_$_test_data_i_select_other_language(LanguageSelection data) {
         checkTestData(data);
-        i_select_$_language(data.getLanguage());
+        I_select_$_language(data.getLanguage());
     }
 
     public void based_on_$_test_data_i_select_the_default_language(LanguageSelection data) {
         checkTestData(data);
-        i_select_$_language(data.getOtherLanguage());
+        I_select_$_language(data.getOtherLanguage());
     }
 
     private void checkTestData(LanguageSelection data){
@@ -42,7 +42,7 @@ public class LanguageSteps extends StepLibrary {
     }
 
     @Internal
-    public void i_select_$_language(Languages language) {
+    public void I_select_$_language(Languages language) {
         if (language != null) {
             navigationBar.click_language_link();
             switch (language) {

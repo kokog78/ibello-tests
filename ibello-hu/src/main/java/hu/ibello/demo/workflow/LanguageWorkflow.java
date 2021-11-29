@@ -13,7 +13,7 @@ public class LanguageWorkflow extends StepLibrary{
     private LanguageSteps languageSteps;
 
     public void i_am_on_homepage() {
-        navigationSteps.i_open_the_homepage();
+        navigationSteps.I_open_the_homepage();
     }
 
     public void the_current_language_is_the_default() {

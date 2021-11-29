@@ -20,7 +20,7 @@ public class OrderingWithExistingUserWorkflow extends StepLibrary{
     }
 
     public void i_navigate_to_the_order_page() {
-        navigationSteps.i_open_the_homepage();
+        navigationSteps.I_open_the_homepage();
         navigationSteps.i_navigate_from_homepage_to_ibello_page();
         navigationSteps.i_navigate_from_ibello_page_to_order_page();
     }

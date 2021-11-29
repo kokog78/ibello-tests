@@ -20,13 +20,13 @@ public class MessageWorkflow extends StepLibrary{
     public void i_want_to_send_a_new_message() {
         data = new ContactData();
         if (!isOpened) {
-            navigationSteps.i_open_the_homepage();
+            navigationSteps.I_open_the_homepage();
             isOpened = true;
         }
         if (!navigationSteps.am_i_on_hompage()) {
             navigationSteps.i_navigate_to_homepage_directly_from_navbar();
         }
-        homePage.i_am_on_the_page();
+        homePage.I_am_on_the_page();
     }
 
     public void the_name_will_be_valid() {

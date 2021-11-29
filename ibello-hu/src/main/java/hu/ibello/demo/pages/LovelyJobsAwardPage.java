@@ -17,7 +17,7 @@ public class LovelyJobsAwardPage extends AbstractPage {
     private WebElement szmdTitle;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(szmdTitle).toBe().displayed();
     }

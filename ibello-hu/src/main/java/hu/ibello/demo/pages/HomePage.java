@@ -84,7 +84,7 @@ public class HomePage extends AbstractPage {
     private WebElement orderTeamButton;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(mainLane).toBe().displayed();
     }
@@ -121,7 +121,7 @@ public class HomePage extends AbstractPage {
         doWith(sendMessageButton).click();
     }
 
-    public void i_open_homepage() {
+    public void I_open_homepage() {
         browser().resize(2000, 1000);
         browser().maximize();
         browser().openURL("/home");

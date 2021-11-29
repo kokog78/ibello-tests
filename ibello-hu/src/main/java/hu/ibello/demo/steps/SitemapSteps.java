@@ -74,7 +74,7 @@ public class SitemapSteps extends StepLibrary {
     }
 
     public void i_am_on_sitemap_page() {
-        sitemapPage.i_am_on_the_page();
+        sitemapPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -100,7 +100,7 @@ public class SitemapSteps extends StepLibrary {
             String path = link.replace("https://ibello.hu", "").replace("https://ibello.eu", "");
             AbstractPage page = getPage(path);
             if (page != null){
-                page.i_am_on_the_page();
+                page.I_am_on_the_page();
             }else {
                 output().recordCustomExpectation("Unknow path: " + path);
             }

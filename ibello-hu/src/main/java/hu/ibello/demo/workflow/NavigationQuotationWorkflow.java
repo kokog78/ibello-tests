@@ -10,7 +10,7 @@ public class NavigationQuotationWorkflow extends StepLibrary{
     private NavigationSteps navigationSteps;
 
     public void test_init() {
-        navigationSteps.i_open_the_homepage();
+        navigationSteps.I_open_the_homepage();
     }
 
     public void from_homepage_i_navigate_to_services_page() {
@@ -18,7 +18,7 @@ public class NavigationQuotationWorkflow extends StepLibrary{
     }
 
     public void i_am_on_homepage() {
-        navigationSteps.i_am_on_homepage();
+        navigationSteps.I_am_on_homepage();
     }
 
     public void i_am_on_services_page() {

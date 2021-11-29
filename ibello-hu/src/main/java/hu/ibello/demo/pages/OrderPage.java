@@ -11,7 +11,7 @@ public class OrderPage extends AbstractPage {
     private OrderElementsRead orderElementsRead;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(orderElementsRead.orderLane()).toBe().displayed();
         expectations().expect(orderElementsRead.title()).toBe().displayed();

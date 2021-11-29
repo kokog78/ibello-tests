@@ -42,7 +42,7 @@
       "expectations": []
     },
     {
-      "name": "assert first paragraph of $ article",
+      "name": "assert first paragraph",
       "selected": true,
       "actions": [],
       "expectations": [
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "name": "assert reading time of $ article",
+      "name": "assert reading time is correct $",
       "selected": true,
       "actions": [],
       "expectations": [

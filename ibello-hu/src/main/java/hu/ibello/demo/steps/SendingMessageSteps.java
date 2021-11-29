@@ -42,6 +42,6 @@ public class SendingMessageSteps extends StepLibrary {
     }
 
     public void i_see_the_message_sent_page() {
-        messageSentPage.i_am_on_the_page();
+        messageSentPage.I_am_on_the_page();
     }
 }
