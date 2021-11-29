@@ -40,11 +40,11 @@ public class BlogWorkflow extends StepLibrary {
       throw new TestException("Language is null");
     }
     blogData = loadBlogData(language.toString());
-    blogSteps.based_on_$_test_data_i_select_a_blog_post(blogData);
+    blogSteps.based_on_$_test_data_I_select_a_blog_post(blogData);
   }
 
   public void The_selected_post_looks_well() {
-    blogSteps.the_$_blog_post_looks_well(blogData);
+    blogSteps.based_on_$_test_data_I_check_if_blog_post_looks_well(blogData);
   }
 
   public void The_recommendation_is_there() {
