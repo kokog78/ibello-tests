@@ -29,5 +29,4 @@ public class BlogPage extends AbstractPage {
   public void I_click_on_$_title_article(String title) {
     doWith(blogPost.applyParameters(title)).click();
   }
-
 }

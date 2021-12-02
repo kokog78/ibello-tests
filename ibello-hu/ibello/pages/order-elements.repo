@@ -63,7 +63,7 @@
       ]
     },
     {
-      "kind": "ELEMENTS",
+      "kind": "ELEMENT",
       "fieldName": "increaseButton",
       "cached": false,
       "selected": true,
@@ -76,11 +76,16 @@
           "type": "DESCENDANT_OF",
           "by": "CLASS_NAME",
           "selector": "products"
+        },
+        {
+          "type": "NEAREST_TO",
+          "by": "PARTIAL_TEXT",
+          "selector": "${0}"
         }
       ]
     },
     {
-      "kind": "ELEMENTS",
+      "kind": "ELEMENT",
       "fieldName": "decreaseButton",
       "cached": false,
       "selected": true,
@@ -93,6 +98,31 @@
           "type": "DESCENDANT_OF",
           "by": "CLASS_NAME",
           "selector": "products"
+        },
+        {
+          "type": "NEAREST_TO",
+          "by": "PARTIAL_TEXT",
+          "selector": "${0}"
+        }
+      ]
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "numberOfProduct",
+      "cached": false,
+      "selected": true,
+      "by": "CLASS_NAME",
+      "selector": "number",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "products"
+        },
+        {
+          "type": "NEAREST_TO",
+          "by": "PARTIAL_TEXT",
+          "selector": "${0}"
         }
       ]
     },
@@ -129,6 +159,14 @@
       "selected": true,
       "by": "CSS_SELECTOR",
       "selector": "h1"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": ""
     }
   ]
 }

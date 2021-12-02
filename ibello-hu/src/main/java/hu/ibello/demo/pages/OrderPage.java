@@ -31,19 +31,27 @@ public class OrderPage extends AbstractPage {
         doWith(orderElementsRead.passwordField()).setValue(value);
     }
 
-    public void click_decrease_button_with_$_index(int index) {
-        doWith(orderElementsRead.decreaseButton().get(index)).click();
+    public void click_decrease_button_with_$_product(String productName) {
+        doWith(orderElementsRead.decreaseButton().applyParameters(productName)).click();
     }
 
-    public void click_increase_button_with_$_index(int index) {
-        doWith(orderElementsRead.increaseButton().get(index)).click();
+    public void click_increase_button_with_$_product(String productName) {
+        doWith(orderElementsRead.increaseButton().applyParameters(productName)).click();
     }
 
-    public void click_sending_order_button() {
-        doWith(orderElementsRead.sendingOrderButton()).click();
+    public int get_number_of_selection_$_product(String productName) {
+       return Integer.parseInt(get(orderElementsRead.numberOfProduct().applyParameters(productName)).text());
     }
 
     public String getNumberOfProduct(int index) {
         return get(orderElementsRead.numberOfProducts().get(index)).text();
+    }
+
+    public int getNumberOfProducts(){
+        return orderElementsRead.numberOfProducts().size();
+    }
+
+    public void click_sending_order_button() {
+        doWith(orderElementsRead.sendingOrderButton()).click();
     }
 }
