@@ -15,8 +15,6 @@ import static hu.ibello.demo.model.ProductNames.*;
 public class ChoosingProductSteps extends StepLibrary {
 
     private OrderPage orderPage;
-    // TODO ez a lista nincs használva
-    private final List<String> productNames = new ArrayList<>(Arrays.asList(EVALUATION.toString(), SERVER.toString(), ANALYZER.toString(), CREATOR.toString(), TEAM5.toString(), TEAM10.toString()));
 
     public void i_use_$_test_data_to_select_products(ProductToOrder data) {
         if (data != null) {
@@ -59,8 +57,10 @@ public class ChoosingProductSteps extends StepLibrary {
     }
 
     private void check_if_order_with_$_is_selected(String productName) {
-    // TODO itt valamit ellenőrzöl a metódus alapján, de nem csinálsz semmit a visszatérési értékkel.
-        int currentNumberOfProductsInThePage = orderPage.get_number_of_selection_$_product(productName); //??
+        int currentNumberOfProduct = orderPage.get_number_of_selection_$_product(productName);
+        if(currentNumberOfProduct<1){
+            throw new AssertionError(productName + " Is not selected");
+        }
     }
 
     private int getNumberOfProduct(String selectedProductName){
