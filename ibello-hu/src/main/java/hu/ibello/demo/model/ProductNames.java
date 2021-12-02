@@ -26,6 +26,8 @@ public enum ProductNames {
     }
     return "";
   }
+
+  // TODO ez egy nem használt metódus
   public ProductNames getEvaluation (){
     return EVALUATION;
   }
