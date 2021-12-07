@@ -53,15 +53,7 @@ public class ChoosingProductSteps extends StepLibrary {
     }
 
     private void check_if_order_with_$_is_selected(String productName) {
-        // TODO ez a metódus azt ellenőrzi, hogy ha az ibello.hu főoldalán az egyik terméknél a megrendelés gombra kattintok
-        //  akkor az oldal átnavigál-e az order oldalra úgy, hogy a kattintásnak megfelelő terméknél 1 van kiválasztva. Van már egy privát
-        //  metódus (getNumberOfProduct(String selectedProductName)) ami visszaadja, hogy az adott terméknél mennyi van kiválasztva. Kellene
-        //  az OrderPage oldalleíróban egy olyan metódus ami megkapja ezt a számot és a terméket, majd expectation().assume()... metódusláncot használva
-        //  ellenőrzi, hogy az érték 1 (pontosan 1 mert úgy kellene működnie az oldalnak).
-        int currentNumberOfProduct = orderPage.get_number_of_selection_$_product(productName);
-        if(currentNumberOfProduct<1){
-            throw new AssertionError(productName + " Is not selected");
-        }
+        orderPage.check_if_select_only_one_product_works(productName);
     }
 
     private int getNumberOfProduct(String selectedProductName){

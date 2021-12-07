@@ -54,4 +54,7 @@ public class OrderPage extends AbstractPage {
     public void click_sending_order_button() {
         doWith(orderElementsRead.sendingOrderButton()).click();
     }
+    public void check_if_select_only_one_product_works(String toCheck) {
+        expectations().expect(orderElementsRead.numberOfProduct().applyParameters(toCheck)).toHave().text("1");
+    }
 }
