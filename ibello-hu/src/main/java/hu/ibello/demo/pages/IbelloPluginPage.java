@@ -12,7 +12,7 @@ public class IbelloPluginPage extends AbstractPage {
     private WebElement gradlePluginId;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$("/news-ibello-gradle-plugin");
         expectations().expect(gradlePluginId).toBe().displayed();
     }

@@ -38,7 +38,7 @@ public class SupportPage extends AbstractPage {
     private WebElement readItButton;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(welcomeLane).toBe().displayed();
         expectations().expect(loginLane).toBe().displayed();

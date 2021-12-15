@@ -14,7 +14,7 @@ public class ServiceDetailsPage extends AbstractPage {
     private WebElement servicesTitle;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(servicesTitle).toBe().displayed();
     }

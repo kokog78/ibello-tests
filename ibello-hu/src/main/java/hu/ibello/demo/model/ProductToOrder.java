@@ -3,6 +3,8 @@ package hu.ibello.demo.model;
 import hu.ibello.core.Description;
 import hu.ibello.data.Model;
 
+import static hu.ibello.demo.model.ProductNames.*;
+
 @Model
 @Description("Test data choose product to order")
 public class ProductToOrder {

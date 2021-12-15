@@ -39,7 +39,7 @@ public class QuotationPage extends AbstractPage {
     private WebElement quotationTitle;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(quotationTitle).toBe().displayed();
         expectations().expect(quoteServicesLane).toBe().displayed();

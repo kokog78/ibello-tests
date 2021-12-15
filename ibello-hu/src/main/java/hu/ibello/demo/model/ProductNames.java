@@ -12,7 +12,7 @@ public enum ProductNames {
   public String toString() {
     switch (this) {
       case EVALUATION:
-        return "evaluation";
+        return "kipróbálása";
       case SERVER:
         return "server";
       case ANALYZER:
@@ -20,14 +20,11 @@ public enum ProductNames {
       case CREATOR:
         return "creator";
       case TEAM5:
-        return "team5";
+        return "team 5";
       case TEAM10:
-        return "team10";
+        return "team 10";
     }
     return "";
-  }
-  public ProductNames getEvaluation (){
-    return EVALUATION;
   }
 }
 

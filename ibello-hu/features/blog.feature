@@ -1,5 +1,5 @@
-# namespace: Blog
-@full-test @blog
+# namespace: blog
+@full-test @Blog
 Feature: Test the blog page
 
 	Scenario: hungarian article looks well

@@ -18,7 +18,7 @@ public class BlogWorkflow extends StepLibrary {
   private Languages language;
 
   public void I_am_on_homepage() {
-    navigationSteps.i_open_the_homepage();
+    navigationSteps.I_open_the_homepage();
   }
 
   public void The_current_language_is_hungarian() {
@@ -32,23 +32,23 @@ public class BlogWorkflow extends StepLibrary {
   }
 
   public void I_go_to_the_blogpage() {
-    navigationSteps.i_navigate_from_homepage_to_the_blog_page();
+    navigationSteps.I_navigate_from_homepage_to_the_blog_page();
   }
 
   public void I_select_a_blogpost() {
     if (language == null) {
       throw new TestException("Language is null");
     }
-    blogData = loadBlogData(language.toString()+"Valid");
-    blogSteps.based_on_$_test_data_i_select_a_blog_post(blogData);
+    blogData = loadBlogData(language.toString());
+    blogSteps.based_on_$_test_data_I_select_a_blog_post(blogData);
   }
 
   public void The_selected_post_looks_well() {
-    blogSteps.the_$_blog_post_looks_well(blogData);
+    blogSteps.based_on_$_test_data_I_check_if_blog_post_looks_well(blogData);
   }
 
   public void The_recommendation_is_there() {
-    blogSteps.assert_number_of_recommendations_is_more_than_1();
+    blogSteps.assert_number_of_recommendations();
   }
 
   private BlogData loadBlogData(String id) {
@@ -58,11 +58,11 @@ public class BlogWorkflow extends StepLibrary {
   }
 
   private void setLanguageToHun() {
-    languageSteps.i_select_$_language(Languages.HUNGARIAN);
+    languageSteps.I_select_$_language(Languages.HUNGARIAN);
   }
 
   private void setLanguageToEng() {
-    languageSteps.i_select_$_language(Languages.ENGLISH);
+    languageSteps.I_select_$_language(Languages.ENGLISH);
   }
 }
 

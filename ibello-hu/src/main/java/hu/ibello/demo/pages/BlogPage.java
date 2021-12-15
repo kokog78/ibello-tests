@@ -21,13 +21,12 @@ public class BlogPage extends AbstractPage {
   private WebElement blogPost;
 
   @Override
-  public void i_am_on_the_page() {
+  public void I_am_on_the_page() {
     expect_url_is_$(url);
     expectations().expect(blogTitle).toBe().displayed();
   }
 
-  public void i_click_on_$_title_article(String title) {
+  public void I_click_on_$_title_article(String title) {
     doWith(blogPost.applyParameters(title)).click();
   }
-
 }

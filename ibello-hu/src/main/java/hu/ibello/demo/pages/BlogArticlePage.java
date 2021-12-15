@@ -25,24 +25,24 @@ public class BlogArticlePage extends AbstractPage {
   @Find(by = By.CSS_SELECTOR, using = "blog-link-lane a[href^=blog-]")
   private WebElements recommendations;
 
-  public void setCurrentURL() {
+  public void set_current_url() {
     this.currentURL = browser().getURL();
   }
 
   @Override
-  public void i_am_on_the_page() {
+  public void I_am_on_the_page() {
     expect_url_is_$(currentURL);
   }
 
-  public void assert_first_paragraph_of_$_article(String textToCheck){
+  public void assert_that_first_paragraph_is_$(String textToCheck){
     expectations().assume(firstParagraph).toHave().text(textToCheck);
   }
 
-  public void assert_author(String textToCheck){
+  public void assert_that_author_is_$(String textToCheck){
     expectations().assume(author).toHave().text(textToCheck);
   }
 
-  public void assert_reading_time_of_$_article(String textToCheck){
+  public void assert_that_reading_time_is_$(String textToCheck){
     expectations().assume(readingTime).toHave().text(textToCheck);
   }
   public void assert_number_of_recommendations_is_at_least_$(int numberOfRecommendedBlogpost){

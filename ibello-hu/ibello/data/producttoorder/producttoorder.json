@@ -1,4 +1,7 @@
 {
-  "analyzer": 2,
+  "evaluation": 4,
+  "analyzer": 3,
+  "creator": 2,
+  "server": 1,
   "id": "valid_product"
 }

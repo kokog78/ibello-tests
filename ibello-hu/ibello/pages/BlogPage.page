@@ -41,7 +41,7 @@
   ],
   "methods": [
     {
-      "name": "rákattintok a $ című cikkre",
+      "name": "I click on $ title article",
       "selected": true,
       "actions": [
         {
@@ -49,12 +49,6 @@
           "target": "blogPost"
         }
       ],
-      "expectations": []
-    },
-    {
-      "name": "",
-      "selected": true,
-      "actions": [],
       "expectations": []
     }
   ]

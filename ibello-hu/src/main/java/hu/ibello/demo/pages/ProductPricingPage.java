@@ -17,7 +17,7 @@ public class ProductPricingPage extends AbstractPage {
     private WebElement pricingTitle;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(detailsLane).toBe().displayed();
         expectations().expect(pricingTitle).toBe().displayed();
