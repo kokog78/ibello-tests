@@ -1,5 +1,5 @@
 {
-  "name": "oneblogpageelements",
+  "name": "OneBlogArticleElements",
   "frames": [],
   "elements": [
     {
@@ -8,7 +8,7 @@
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "blog-detail-lane"
+      "selector": "blog-detail-lane [id]"
     },
     {
       "kind": "ELEMENT",
@@ -16,7 +16,7 @@
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "header address.author"
+      "selector": "blog-detail-lane header address.author"
     },
     {
       "kind": "ELEMENT",
@@ -24,7 +24,7 @@
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "header time"
+      "selector": "blog-detail-lane header time"
     },
     {
       "kind": "ELEMENT",
@@ -32,7 +32,7 @@
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "header div "
+      "selector": "blog-detail-lane header div "
     },
     {
       "kind": "ELEMENT",
@@ -43,7 +43,7 @@
       "selector": "blog-detail-lane h1"
     },
     {
-      "kind": "CLICKABLE",
+      "kind": "ELEMENTS",
       "fieldName": "links",
       "cached": false,
       "selected": true,

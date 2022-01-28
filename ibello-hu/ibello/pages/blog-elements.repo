@@ -1,5 +1,5 @@
 {
-  "name": "blog-elements",
+  "name": "BlogElements",
   "frames": [],
   "elements": [
     {
@@ -11,36 +11,36 @@
       "selector": "blog-list-lane"
     },
     {
-      "kind": "CLICKABLE",
+      "kind": "ELEMENTS",
       "fieldName": "webelements",
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "blog-list-lane div"
+      "selector": "blog-list-lane .blog-items a"
     },
     {
-      "kind": "ELEMENT",
+      "kind": "ELEMENTS",
       "fieldName": "authors",
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "address.author"
+      "selector": "blog-list-lane address.author"
     },
     {
-      "kind": "ELEMENT",
+      "kind": "ELEMENTS",
       "fieldName": "dates",
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "time"
+      "selector": "blog-list-lane time"
     },
     {
-      "kind": "ELEMENT",
+      "kind": "ELEMENTS",
       "fieldName": "titles",
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "h4"
+      "selector": "blog-list-lane h4"
     }
   ]
 }
