@@ -93,7 +93,7 @@ public class SitemapPage extends AbstractPage {
     private WebElement sitemapLane;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$("/sitemap");
         expectations().expect(sitemapLane).toBe().displayed();
     }

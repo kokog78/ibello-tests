@@ -1,7 +1,6 @@
 package hu.ibello.demo.model;
 
 import hu.ibello.core.Description;
-import hu.ibello.core.Name;
 import hu.ibello.data.Model;
 
 import java.util.List;
@@ -34,6 +33,19 @@ public class LanguageSelection {
 
     public Languages getLanguage() {
         return language;
+    }
+
+    public Languages getOtherLanguage() {
+        if (language == null) {
+            return null;
+        }
+        switch (language) {
+            case ENGLISH:
+                return Languages.HUNGARIAN;
+            case HUNGARIAN:
+                return Languages.ENGLISH;
+        }
+        return null;
     }
 
     @Override

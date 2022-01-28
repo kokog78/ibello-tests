@@ -12,11 +12,11 @@ public class NavigationOrderWorkflow extends StepLibrary{
     private ChoosingProductSteps choosingProductSteps;
 
     public void test_init() {
-        navigationSteps.i_open_the_homepage();
+        navigationSteps.I_open_the_homepage();
     }
 
     public void i_am_on_homepage() {
-        navigationSteps.i_am_on_homepage();
+        navigationSteps.I_am_on_homepage();
     }
 
     public void i_navigate_back_to_homepage(){

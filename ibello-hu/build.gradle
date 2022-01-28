@@ -25,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    api 'hu.ibello:ibello-api:1.16.3'
+    api 'hu.ibello:ibello-api:1.19.0'
 }
 
 ibello {
@@ -62,6 +62,12 @@ task ibelloCucumberNavigation(type: IbelloCucumber, group: 'ibello') {
     description "Runs ibello cucumber tests only for navigation."
     headless true
     tags 'navigation'
+}
+
+task ibelloCucumberBlog(type: IbelloCucumber, group: 'ibello') {
+    description "Runs ibello cucumber tests only for blog."
+    headless true
+    tags 'blog'
 }
 
 task ibelloCucumberOrder(type: IbelloCucumber, group: 'ibello') {

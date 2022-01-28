@@ -40,7 +40,7 @@ public class OrderingWithExistingUserSteps extends StepLibrary {
     }
 
     public void i_see_the_order_result_page() {
-        orderResultPage.i_am_on_the_page();
+        orderResultPage.I_am_on_the_page();
     }
 
 }

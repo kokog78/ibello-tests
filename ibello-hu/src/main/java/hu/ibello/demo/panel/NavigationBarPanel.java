@@ -61,6 +61,10 @@ public class NavigationBarPanel extends PageObject {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "menu")
     private WebElement supportDirectLink;
 
+    @Find(by = By.CSS_SELECTOR, using = "a[href='blog']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.ID, using = "menu")
+    private WebElement blogDirectLink;
+
     public void expect_menu_component_is_displayed() {
         expectations().expect(menuComponent).toBe().displayed();
     }
@@ -112,5 +116,7 @@ public class NavigationBarPanel extends PageObject {
     public void click_support_direct_link() {
         doWith(supportDirectLink).click();
     }
+
+    public void click_blog_direct_link() { doWith(blogDirectLink).click(); }
 
 }

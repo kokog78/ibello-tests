@@ -30,6 +30,7 @@ public class NavigationSteps extends StepLibrary {
     private UnsubscribePage unsubscribePage;
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
+    private BlogPage blogpage;
     private static final String homeSupportUrl = "home-support";
     private static final String homeServicesUrl = "home-services";
     private static final String homeIbelloUrl = "home-ibello";
@@ -55,31 +56,32 @@ public class NavigationSteps extends StepLibrary {
     private static final String unsubscribeUrl = "/unsubscribe";
     private static final String loginUrl = "/clients/#login";
     private static final String registrationUrl = "/clients/#registration";
+    private static final String blogUrl = "blog";
 
-    public void i_open_the_homepage() {
-        homePage.i_open_homepage();
-        homePage.i_am_on_the_page();
+    public void I_open_the_homepage() {
+        homePage.I_open_homepage();
+        homePage.I_am_on_the_page();
     }
 
     public boolean am_i_on_hompage() {
         return homePage.is_the_page_open();
     }
 
-    public void i_am_on_homepage() {
-        homePage.i_am_on_the_page();
+    public void I_am_on_homepage() {
+        homePage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_navigate_from_homepage_to_ibello_page() {
         navigationBar.click_product_link();
         homePage.click_learn_more_button();
-        productPage.i_am_on_the_page();
+        productPage.I_am_on_the_page();
     }
 
     public void i_navigate_from_ibello_page_to_order_page() {
         productPage.click_order_button();
         navigationBar.expect_menu_component_is_displayed();
-        orderPage.i_am_on_the_page();
+        orderPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -90,67 +92,67 @@ public class NavigationSteps extends StepLibrary {
     public void i_navigate_from_homepage_header_to_services_page() {
         navigationBar.click_services_link();
         homePage.click_work_with_us_button();
-        servicesPage.i_am_on_the_page();
+        servicesPage.I_am_on_the_page();
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
         navigationBar.click_home_link();
-        homePage.i_am_on_the_page();
+        homePage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_order_page() {
-        orderPage.i_am_on_the_page();
+        orderPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_product_page() {
-        productPage.i_am_on_the_page();
+        productPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_services_page() {
-        servicesPage.i_am_on_the_page();
+        servicesPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_about_page() {
-        aboutPage.i_am_on_the_page();
+        aboutPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_pricing_page() {
-        productPricingPage.i_am_on_the_page();
+        productPricingPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_documentations_page() {
-        documentationsPage.i_am_on_the_page();
+        documentationsPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_interest_page() {
-        downloadPage.i_am_on_the_page();
+        downloadPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_support_page() {
-        supportPage.i_am_on_the_page();
+        supportPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_changelog_page() {
-        changelogPage.i_am_on_the_page();
+        changelogPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_installation_documentation_page() {
-        installationDocPage.i_am_on_the_page();
+        installationDocPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
     public void i_am_on_quotation_page() {
-        quotationPage.i_am_on_the_page();
+        quotationPage.I_am_on_the_page();
         navigationBar.expect_menu_component_is_displayed();
     }
 
@@ -158,21 +160,21 @@ public class NavigationSteps extends StepLibrary {
         navigationBar.click_about_us_link();
         homePage.expect_url_is_$(homeAboutUrl);
         homePage.click_meet_us_button();
-        aboutPage.i_am_on_the_page();
+        aboutPage.I_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_documentations_page() {
         navigationBar.click_support_link();
         homePage.expect_url_is_$(homeSupportUrl);
         homePage.click_documentations_button();
-        documentationsPage.i_am_on_the_page();
+        documentationsPage.I_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_interest_page() {
         navigationBar.click_product_link();
         homePage.expect_url_is_$(homeIbelloUrl);
         homePage.click_try_it_button();
-        downloadPage.i_am_on_the_page();
+        downloadPage.I_am_on_the_page();
     }
 
     public void i_use_navbar_to_navigate_to_product_page() {
@@ -347,21 +349,25 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_server_product() {
         homePage.click_order_server_button();
-        orderPage.i_am_on_the_page();
+        orderPage.I_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_analyzer_product() {
         homePage.click_order_analyzer_button();
-        orderPage.i_am_on_the_page();
+        orderPage.I_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_creator_product() {
         homePage.click_order_creator_button();
-        orderPage.i_am_on_the_page();
+        orderPage.I_am_on_the_page();
     }
 
     public void i_navigate_from_homepage_to_the_order_page_with_one_team_product() {
         homePage.click_order_team_button();
-        orderPage.i_am_on_the_page();
+        orderPage.I_am_on_the_page();
+    }
+    public void I_navigate_from_homepage_to_the_blog_page() {
+        navigationBar.click_blog_direct_link();
+        blogpage.I_am_on_the_page();
     }
 }

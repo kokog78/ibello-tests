@@ -33,16 +33,18 @@ public class OrderElementsRead extends ElementRepository{
         return element("passwordField");
     }
 
-    public WebElements increaseButton() {
-        return elements("increaseButton");
+    public WebElement increaseButton() {
+        return element("increaseButton");
     }
 
-    public WebElements ecreaseButton() {
-        return elements("ecreaseButton");
+    public WebElement decreaseButton() {
+        return element("decreaseButton");
     }
-
     public WebElements numberOfProducts() {
         return elements("numberOfProducts");
+    }
+    public WebElement numberOfProduct() {
+        return element("numberOfProduct");
     }
 
     public WebElement title() {

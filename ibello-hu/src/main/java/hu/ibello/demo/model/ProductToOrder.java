@@ -3,32 +3,34 @@ package hu.ibello.demo.model;
 import hu.ibello.core.Description;
 import hu.ibello.data.Model;
 
+import static hu.ibello.demo.model.ProductNames.*;
+
 @Model
 @Description("Test data choose product to order")
 public class ProductToOrder {
 
-    private int outpost;
-    private int sentinel;
-    private int hunter;
-    private int masterHunter;
+    private int evaluation;
+    private int server;
+    private int analyzer;
+    private int creator;
 
     @Description("It is used to identify testdata.")
     private String id;
 
-    public int getOutpost() {
-        return outpost;
+    public int getEvaluation() {
+        return evaluation;
     }
 
-    public int getSentinel() {
-        return sentinel;
+    public int getServer() {
+        return server;
     }
 
-    public int getHunter() {
-        return hunter;
+    public int getAnalyzer() {
+        return analyzer;
     }
 
-    public int getMasterHunter() {
-        return masterHunter;
+    public int getCreator() {
+        return creator;
     }
 
     @Override

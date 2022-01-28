@@ -23,7 +23,7 @@ public class DocumentationsPage extends AbstractPage {
     private String url = "/all-docs";
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(docsLane).toBe().displayed();
         expectations().expect(docsTitle).toBe().displayed();

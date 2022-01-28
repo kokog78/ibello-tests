@@ -11,7 +11,7 @@ public class OrderPage extends AbstractPage {
     private OrderElementsRead orderElementsRead;
 
     @Override
-    public void i_am_on_the_page() {
+    public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(orderElementsRead.orderLane()).toBe().displayed();
         expectations().expect(orderElementsRead.title()).toBe().displayed();
@@ -31,20 +31,31 @@ public class OrderPage extends AbstractPage {
         doWith(orderElementsRead.passwordField()).setValue(value);
     }
 
-    public void click_decrease_button_with_$_index(int index) {
-        doWith(orderElementsRead.ecreaseButton().get(index)).click();
-        // TODO javítani a nevét
+    public void click_decrease_button_with_$_product(String productName) {
+        doWith(orderElementsRead.decreaseButton().applyParameters(productName)).click();
     }
 
-    public void click_increase_button_with_$_index(int index) {
-        doWith(orderElementsRead.increaseButton().get(index)).click();
+    public void click_increase_button_with_$_product(String productName) {
+        doWith(orderElementsRead.increaseButton().applyParameters(productName)).click();
+    }
+
+    public int get_number_of_selection_$_product(String productName) {
+       return Integer.parseInt(get(orderElementsRead.numberOfProduct().applyParameters(productName)).text());
+    }
+
+    public String getNumberOfProduct(int index) {
+        return get(orderElementsRead.numberOfProducts().get(index)).text();
+    }
+
+    public int getNumberOfProducts(){
+        return orderElementsRead.numberOfProducts().size();
     }
 
     public void click_sending_order_button() {
         doWith(orderElementsRead.sendingOrderButton()).click();
     }
 
-    public String getNumberOfProduct(int index) {
-        return get(orderElementsRead.numberOfProducts().get(index)).text();
+    public void check_if_select_only_one_product_works(String toCheck) {
+        expectations().expect(orderElementsRead.numberOfProduct().applyParameters(toCheck)).toHave().text("1");
     }
 }

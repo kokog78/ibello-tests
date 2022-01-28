@@ -1,0 +1,71 @@
+{
+  "name": "BlogArticlePage",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "firstParagraph",
+      "selected": true,
+      "kind": "TEXTBOX",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": "article h1 + p"
+    },
+    {
+      "fieldName": " readingTime",
+      "propertyValue": "",
+      "arguments": [],
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": "header time + div"
+    },
+    {
+      "fieldName": "recommendations",
+      "selected": true,
+      "kind": "ELEMENTS",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": "blog-link-lane a[href^\u003dblog-]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "based on $ test data i select a blog post",
+      "selected": true,
+      "actions": [],
+      "expectations": []
+    },
+    {
+      "name": "assert first paragraph",
+      "selected": true,
+      "actions": [],
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "text",
+          "target": "firstParagraph"
+        }
+      ]
+    },
+    {
+      "name": "assert reading time is correct $",
+      "selected": true,
+      "actions": [],
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "text",
+          "target": " readingTime"
+        }
+      ]
+    }
+  ]
+}
