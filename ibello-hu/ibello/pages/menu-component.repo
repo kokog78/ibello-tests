@@ -1,0 +1,78 @@
+{
+  "name": "MenuComponent",
+  "frames": [],
+  "elements": [
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "product",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "Termék"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "services",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "Szolgáltatások"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "about",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "Rólunk"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "support",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "Támogatás"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "blog",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "Blog"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "login",
+      "cached": false,
+      "selected": true,
+      "by": "ID",
+      "selector": "menu-login"
+    },
+    {
+      "kind": "LISTBOX",
+      "fieldName": "selector",
+      "cached": false,
+      "selected": true,
+      "by": "ID",
+      "selector": "language-selector"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "icon ibello",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "[title\u003d\u0027Nyitóoldal\u0027]"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "arrow",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "▼"
+    }
+  ]
+}

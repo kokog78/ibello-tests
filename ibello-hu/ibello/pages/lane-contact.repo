@@ -1,0 +1,38 @@
+{
+  "name": "LaneContact",
+  "frames": [],
+  "elements": [
+    {
+      "kind": "ELEMENT",
+      "fieldName": "Kapcsolat",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": ".lane-contact"
+    },
+    {
+      "kind": "TEXTBOX",
+      "fieldName": "contact name ",
+      "cached": false,
+      "selected": true,
+      "by": "ID",
+      "selector": "contactName"
+    },
+    {
+      "kind": "TEXTBOX",
+      "fieldName": "contact email",
+      "cached": false,
+      "selected": true,
+      "by": "ID",
+      "selector": "contactEmail"
+    },
+    {
+      "kind": "TEXTBOX",
+      "fieldName": "contact phone",
+      "cached": false,
+      "selected": true,
+      "by": "ID",
+      "selector": "contactPhone"
+    }
+  ]
+}
