@@ -33,6 +33,30 @@
       "selected": true,
       "by": "ID",
       "selector": "contactPhone"
+    },
+    {
+      "kind": "TEXTBOX",
+      "fieldName": "contact subject ",
+      "cached": false,
+      "selected": true,
+      "by": "ID",
+      "selector": "contactSubject"
+    },
+    {
+      "kind": "TEXTBOX",
+      "fieldName": "contact text area",
+      "cached": false,
+      "selected": true,
+      "by": "ID",
+      "selector": "contactText"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "send button",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "Küldés"
     }
   ]
 }

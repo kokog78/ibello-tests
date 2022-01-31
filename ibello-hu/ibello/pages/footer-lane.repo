@@ -1,0 +1,38 @@
+{
+  "name": "FooterLane",
+  "frames": [],
+  "elements": [
+    {
+      "kind": "ELEMENT",
+      "fieldName": "footer lane",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "footer-lane"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "icon ibello",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "footer-lane.icon ibello"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "info",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "footer-lane.footer-info"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "company name",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "footer-info.span"
+    }
+  ]
+}

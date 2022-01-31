@@ -4,6 +4,14 @@
   "elements": [
     {
       "kind": "CLICKABLE",
+      "fieldName": "icon ibello",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "[title\u003d\u0027Nyitóoldal\u0027]"
+    },
+    {
+      "kind": "CLICKABLE",
       "fieldName": "product",
       "cached": false,
       "selected": true,
@@ -57,14 +65,6 @@
       "selected": true,
       "by": "ID",
       "selector": "language-selector"
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "icon ibello",
-      "cached": false,
-      "selected": true,
-      "by": "CSS_SELECTOR",
-      "selector": "[title\u003d\u0027Nyitóoldal\u0027]"
     },
     {
       "kind": "CLICKABLE",
