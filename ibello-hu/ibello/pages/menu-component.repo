@@ -3,6 +3,14 @@
   "frames": [],
   "elements": [
     {
+      "kind": "ELEMENT",
+      "fieldName": "menu component",
+      "cached": false,
+      "selected": true,
+      "by": "CSS_SELECTOR",
+      "selector": "menu-component"
+    },
+    {
       "kind": "CLICKABLE",
       "fieldName": "icon ibello",
       "cached": false,

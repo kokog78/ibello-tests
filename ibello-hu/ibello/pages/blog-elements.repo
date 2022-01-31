@@ -6,7 +6,7 @@
       "kind": "ELEMENT",
       "fieldName": "bloglist",
       "cached": false,
-      "selected": true,
+      "selected": false,
       "by": "CSS_SELECTOR",
       "selector": "blog-list-lane"
     },
@@ -14,7 +14,7 @@
       "kind": "ELEMENTS",
       "fieldName": "webelements",
       "cached": false,
-      "selected": true,
+      "selected": false,
       "by": "CSS_SELECTOR",
       "selector": "blog-list-lane .blog-items a"
     },
@@ -22,7 +22,7 @@
       "kind": "ELEMENTS",
       "fieldName": "authors",
       "cached": false,
-      "selected": true,
+      "selected": false,
       "by": "CSS_SELECTOR",
       "selector": "blog-list-lane address.author"
     },
@@ -30,7 +30,7 @@
       "kind": "ELEMENTS",
       "fieldName": "dates",
       "cached": false,
-      "selected": true,
+      "selected": false,
       "by": "CSS_SELECTOR",
       "selector": "blog-list-lane time"
     },
@@ -38,264 +38,9 @@
       "kind": "ELEMENTS",
       "fieldName": "titles",
       "cached": false,
-      "selected": true,
+      "selected": false,
       "by": "CSS_SELECTOR",
       "selector": "blog-list-lane h4"
-    },
-    {
-      "kind": "ELEMENT",
-      "fieldName": "",
-      "cached": false,
-      "selected": true,
-      "by": "CSS_SELECTOR",
-      "selector": ""
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "beállításokLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Beállítások",
-      "xpath": "/html[1]/body[1]/footer-lane[1]/div[1]/div[2]/span[5]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "bejelentkezésÉsRegisztrációLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Bejelentkezés és regisztráció",
-      "xpath": "/html[1]/body[1]/footer-lane[1]/div[1]/div[2]/span[6]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "nyitóoldalLink",
-      "cached": false,
-      "selected": true,
-      "by": "CSS_SELECTOR",
-      "selector": "[title\u003d\u0027Nyitóoldal\u0027]",
-      "xpath": "/html[1]/body[1]/menu-component[1]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "termékLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Termék",
-      "xpath": "/html[1]/body[1]/menu-component[1]/a[2]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "szolgáltatásokLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Szolgáltatások",
-      "xpath": "/html[1]/body[1]/menu-component[1]/a[3]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "rólunkLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Rólunk",
-      "xpath": "/html[1]/body[1]/menu-component[1]/a[4]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "támogatásLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Támogatás",
-      "xpath": "/html[1]/body[1]/menu-component[1]/a[5]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "blogLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Blog",
-      "xpath": "/html[1]/body[1]/menu-component[1]/a[6]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "menuLoginLink",
-      "cached": false,
-      "selected": true,
-      "by": "ID",
-      "selector": "menu-login",
-      "xpath": "/html[1]/body[1]/menu-component[1]/a[7]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "link",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "▼",
-      "xpath": "/html[1]/body[1]/menu-component[1]/div[2]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "összesCikkButton",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Összes cikk",
-      "xpath": "/html[1]/body[1]/router-view[1]/blog-link-lane[1]/div[1]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "miértFontosASzoftverekTeszteléseLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Miért fontos a szoftverek tesztelése?",
-      "xpath": "/html[1]/body[1]/router-view[1]/blog-link-lane[1]/div[1]/div[1]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "aJóHibajelentésTitkaLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "A jó hibajelentés titka",
-      "xpath": "/html[1]/body[1]/router-view[1]/blog-link-lane[1]/div[1]/div[2]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "tesztTörténetekLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Teszt-történetek",
-      "xpath": "/html[1]/body[1]/router-view[1]/blog-link-lane[1]/div[1]/div[3]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "böngészőAutomatizálásIbelloValLink",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Böngésző automatizálás ibello-val",
-      "xpath": "/html[1]/body[1]/router-view[1]/blog-link-lane[1]/div[1]/div[4]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "CLICKABLE",
-      "fieldName": "küldésButton",
-      "cached": false,
-      "selected": true,
-      "by": "BUTTON_TEXT",
-      "selector": "Küldés",
-      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/a[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "TEXTBOX",
-      "fieldName": "contactNameField",
-      "cached": false,
-      "selected": true,
-      "by": "ID",
-      "selector": "contactName",
-      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/field-component[1]/input[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "TEXTBOX",
-      "fieldName": "contactEmailButton",
-      "cached": false,
-      "selected": true,
-      "by": "ID",
-      "selector": "contactEmail",
-      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/field-component[2]/input[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "TEXTBOX",
-      "fieldName": "contactPhoneButton",
-      "cached": false,
-      "selected": true,
-      "by": "ID",
-      "selector": "contactPhone",
-      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/field-component[3]/input[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "TEXTBOX",
-      "fieldName": "contactSubjectField",
-      "cached": false,
-      "selected": true,
-      "by": "ID",
-      "selector": "contactSubject",
-      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/field-component[4]/input[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "TEXTBOX",
-      "fieldName": "contactTextField",
-      "cached": false,
-      "selected": true,
-      "by": "ID",
-      "selector": "contactText",
-      "xpath": "/html[1]/body[1]/router-view[1]/contact-lane[1]/div[1]/div[1]/field-component[5]/textarea[1]",
-      "positions": [],
-      "relations": []
-    },
-    {
-      "kind": "ELEMENT",
-      "fieldName": "a",
-      "cached": false,
-      "selected": true,
-      "by": "TEXT",
-      "selector": "Olvasási idő",
-      "positions": [
-        {
-          "type": "ROW",
-          "by": "CSS_SELECTOR",
-          "selector": "#text"
-        }
-      ],
-      "relations": []
     }
   ]
 }

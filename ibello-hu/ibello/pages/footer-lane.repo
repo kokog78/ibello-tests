@@ -11,12 +11,12 @@
       "selector": "footer-lane"
     },
     {
-      "kind": "ELEMENT",
-      "fieldName": "icon ibello",
+      "kind": "ELEMENTS",
+      "fieldName": "icons",
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "footer-lane.icon ibello"
+      "selector": "footer-lane .icon"
     },
     {
       "kind": "ELEMENT",
@@ -24,15 +24,55 @@
       "cached": false,
       "selected": true,
       "by": "CSS_SELECTOR",
-      "selector": "footer-lane.footer-info"
+      "selector": "footer-lane .footer-info"
     },
     {
       "kind": "ELEMENT",
       "fieldName": "company name",
       "cached": false,
       "selected": true,
-      "by": "CSS_SELECTOR",
-      "selector": "footer-info.span"
+      "by": "TEXT",
+      "selector": "Ark-Sys Kft."
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "email",
+      "cached": false,
+      "selected": true,
+      "by": "TEXT",
+      "selector": "ibello@ibello.eu"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "settings",
+      "cached": false,
+      "selected": true,
+      "by": "PARTIAL_BUTTON_TEXT",
+      "selector": "beállítások"
+    },
+    {
+      "kind": "CLICKABLE",
+      "fieldName": "loginAndRegister",
+      "cached": false,
+      "selected": true,
+      "by": "BUTTON_TEXT",
+      "selector": "Bejelentkezés és regisztráció"
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "location",
+      "cached": false,
+      "selected": true,
+      "by": "TEXT",
+      "selector": "H-2040 Budaörs, József Attila utca 20."
+    },
+    {
+      "kind": "ELEMENT",
+      "fieldName": "phone",
+      "cached": false,
+      "selected": true,
+      "by": "TEXT",
+      "selector": "+36 30 867 4978"
     }
   ]
 }
