@@ -31,8 +31,15 @@
       "fieldName": "company name",
       "cached": false,
       "selected": true,
-      "by": "TEXT",
-      "selector": "Ark-Sys Kft."
+      "by": "CSS_SELECTOR",
+      "selector": "span:first-child",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "footer-info"
+        }
+      ]
     },
     {
       "kind": "ELEMENT",
