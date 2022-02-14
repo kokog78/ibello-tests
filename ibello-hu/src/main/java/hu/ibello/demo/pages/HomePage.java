@@ -124,7 +124,7 @@ public class HomePage extends AbstractPage {
     public void I_open_homepage() {
         browser().resize(2000, 1000);
         browser().maximize();
-        browser().openURL("/home");
+        browser().openURL("/home?client=test");
     }
 
     public void click_meet_us_button() {
