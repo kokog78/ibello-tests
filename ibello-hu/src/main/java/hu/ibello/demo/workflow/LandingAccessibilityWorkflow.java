@@ -19,6 +19,7 @@ public class LandingAccessibilityWorkflow extends StepLibrary {
         navigationSteps.i_navigate_from_homepage_header_to_services_page();
     }
 
+    // TODO felesleges kommentek törlése minden érintett osztályból
     //navigation from sevices page to early testing services page
     public void From_services_page_i_navigate_to_early_testing_services_page() {
         navigationSteps.I_navigate_from_services_page_to_early_testing_services_page();

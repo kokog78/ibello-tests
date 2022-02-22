@@ -20,13 +20,15 @@ public class LandingPage extends PageObject {
     private final String urlDirectAutomationMentoring = "/landing-test-automation-mentoring?client=test";
     private static final String urlMeetingRequest = "https://calendly.com/ibello-automation";
 
-    //WebElements to check page loaded in
+    // TODO túl általános h1 selector lecserélése, pl. h1[t='titles.landing-early-testing-services']
     @Find(by = By.CSS_SELECTOR, using = "h1")
     private WebElement earlyTestingTitle;
 
+    // TODO ugyanaz mint az earlyTestingTitle esetében
     @Find(by = By.CSS_SELECTOR, using = "h1")
     private WebElement automationTestingTitle;
 
+    // TODO ugyanaz mint az earlyTestingTitle esetében
     @Find(by = By.CSS_SELECTOR, using = "h1")
     private WebElement automationMentoringTitle;
 
@@ -70,7 +72,7 @@ public class LandingPage extends PageObject {
     }
 
     //pressing landing-early-testing-services page first offer button
-    public void click_first_request_early_testing_button(){
+    public void click_on_first_request_button_for_early_testing(){
         doWith(firstRequestEarlyTestingButton).click();
     }
 
