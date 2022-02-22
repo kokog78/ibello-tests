@@ -31,6 +31,7 @@ public class NavigationSteps extends StepLibrary {
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
     private BlogPage blogpage;
+    private LandingPage landingPage;
     private static final String homeSupportUrl = "home-support";
     private static final String homeServicesUrl = "home-services";
     private static final String homeIbelloUrl = "home-ibello";
@@ -369,5 +370,20 @@ public class NavigationSteps extends StepLibrary {
     public void I_navigate_from_homepage_to_the_blog_page() {
         navigationBar.click_blog_direct_link();
         blogpage.I_am_on_the_page();
+    }
+
+    public void I_navigate_from_services_page_to_early_testing_services_page(){
+        servicesPage.click_request_early_testing_button();
+        landingPage.I_am_on_the_early_testing_page();
+    }
+
+    public void I_navigate_from_services_page_to_test_automation_services_page(){
+        servicesPage.click_request_automation_services_button();
+        landingPage.I_am_on_the_automation_services_page();
+    }
+
+    public void I_navigate_from_services_page_to_test_automation_mentoring_page(){
+        servicesPage.click_request_automation_mentoring_button();
+        landingPage.I_am_on_the_automation_mentoring_page();
     }
 }

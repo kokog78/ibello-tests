@@ -44,6 +44,18 @@ public class ServicesPage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-service-details")
     private WebElements serviceSectors;
 
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='landing-early-testing-services']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-welcome-services")
+    private WebElement requestEarlyTestingButton;
+
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='landing-test-automation-services']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-welcome-services")
+    private WebElement requestAutomationServicesButton;
+
+    @Find(by = By.CSS_SELECTOR, using = "a[href$='landing-test-automation-mentoring']")
+    @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-welcome-services")
+    private WebElement requestAutomationMentoringButton;
+
     @Override
     public void I_am_on_the_page() {
         expect_url_is_$(url);
@@ -72,6 +84,18 @@ public class ServicesPage extends AbstractPage {
 
     public void click_request_trainings_button() {
         doWith(requestTrainingsButton).click();
+    }
+
+    public void click_request_early_testing_button() {
+        doWith(requestEarlyTestingButton).click();
+    }
+
+    public void click_request_automation_services_button() {
+        doWith(requestAutomationServicesButton).click();
+    }
+
+    public void click_request_automation_mentoring_button() {
+        doWith(requestAutomationMentoringButton).click();
     }
 
     public void open_service_with_index_$(int serviceIndex) {
