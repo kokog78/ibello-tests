@@ -12,9 +12,11 @@ import java.util.regex.Pattern;
 @Name("Landing page")
 public class LandingPage extends PageObject {
 
+	// TODO ezeket tedd ki konfigurációba
     private final String urlEarlyTesting = "/landing-early-testing-services";
     private final String urlAutomationServices = "/landing-test-automation-services";
     private final String urlAutomationMentoring = "/landing-test-automation-mentoring";
+    // TODO ezek csak annyiban különböznek a többitől, hogy a végükön ott a paraméter - ezt kódban oldd meg
     private final String urlDirectEarlyTesting = "/landing-early-testing-services?client=test";
     private final String urlDirectAutomationServices = "/landing-test-automation-services?client=test";
     private final String urlDirectAutomationMentoring = "/landing-test-automation-mentoring?client=test";
@@ -28,21 +30,28 @@ public class LandingPage extends PageObject {
     @Find(by = By.CSS_SELECTOR, using = "h1[t='titles.landing-test-automation-mentoring']")
     private WebElement automationMentoringTitle;
 
+    // TODO ezt eltüntetni
     @Find(by = By.CSS_SELECTOR, using = "early-testing-service-lane .convert .btn")
     private WebElement firstRequestEarlyTestingButton;
 
+    // TODO ezt eltüntetni
     @Find(by = By.CSS_SELECTOR, using = "test-automation-service-lane .convert .btn")
     private WebElement firstRequestAutomationTestingButton;
 
+    // TODO ezt eltüntetni
     @Find(by = By.CSS_SELECTOR, using = "test-automation-mentoring-lane .convert .btn")
     private WebElement firstRequestAutomationMentoringButton;
 
+    // TODO ezt eltüntetni
+    // TODO ebből WebElements-et csinálnék, hátha később több lesz
     @Find(by = By.CSS_SELECTOR, using = ".lane-quick-convert .btn")
     private WebElement secondRequestButton;
 
+    // TODO ezt eltüntetni
     @Find(by = By.CSS_SELECTOR, using = ".lane-convert .btn:nth-child(1)")
     private WebElements thirdAndFourthRequestButtons;
 
+    // TODO legyen dinamikus elemkeresés
     @Find(by = By.CSS_SELECTOR, using = ".lane-convert .btn:nth-child(2)")
     private WebElements meetingButtons;
 
@@ -59,6 +68,15 @@ public class LandingPage extends PageObject {
     public void I_am_on_the_automation_mentoring_page(){
         expect_url_is_$(urlAutomationMentoring);
         expectations().expect(automationMentoringTitle).toBe().displayed();
+    }
+    
+    public int getOfferButtonsCount() {
+    	return requestOfferButtons().size();
+    }
+    
+    @Name("click on ${0}. request button")
+    public void click_on_$_request_button(int index) {
+    	doWith(requestOfferButtons().get(index-1)).click();
     }
 
     public void click_on_first_request_button_for_early_testing(){
@@ -85,6 +103,7 @@ public class LandingPage extends PageObject {
         doWith(thirdAndFourthRequestButtons.get(1)).click();
     }
 
+    // TODO legyen egy olyan kattintós metódus, ami fogadja az indexet
     public void click_on_first_meeting_button(){
         doWith(meetingButtons.get(0)).click();
     }
@@ -108,6 +127,11 @@ public class LandingPage extends PageObject {
     private void expect_url_is_$(String url) {
         Pattern pattern = Pattern.compile(url + ".*");
         expectations().assume(browser()).toHave().url(pattern);
+    }
+    
+    private WebElements requestOfferButtons() {
+    	String text = getConfigurationValue("LandingPage.requestOfferButton.text").toString();
+    	return find().using(By.BUTTON_TEXT, text).all();
     }
 
 }
