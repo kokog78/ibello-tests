@@ -8,12 +8,8 @@ public class MeetingPage extends AbstractPage{
 
     private static final String url = "https://calendly.com/ibello-automation";
 
-    // TODO ez egy elég törékeny szelektor, törölni
-    @Find(by = By.CSS_SELECTOR, using = "img[src$='467994bf.jpg'")
-    private WebElement portraitImage;
-    
     @Find(by = By.CSS_SELECTOR, using = "img[alt='Avatar']")
-	private WebElement calendlyProfilImage;
+	private WebElement calendlyProfileImage;
 
 	@Find(by = By.TEXT, using = "${MeetingPage.calendlyProfileName.text}")
 	private WebElement calendlyProfileName;
@@ -21,7 +17,7 @@ public class MeetingPage extends AbstractPage{
     @Override
     public void I_am_on_the_page(){
         expect_url_is_$(url);
-        // TODO átírni az új mezőkre
-        expectations().expect(portraitImage).toBe().displayed();
+        expectations().expect(calendlyProfileImage).toBe().displayed();
+        expectations().expect(calendlyProfileName).toBe().displayed();
     }
 }

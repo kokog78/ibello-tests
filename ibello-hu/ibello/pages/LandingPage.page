@@ -1,0 +1,86 @@
+{
+  "name": "LandingPage",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "firstButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": "early-testing-service-lane .convert .btn"
+    },
+    {
+      "fieldName": "secondButton",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ".lane-quick-convert .btn"
+    },
+    {
+      "fieldName": "lastButtons",
+      "selected": true,
+      "kind": "ELEMENTS",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ".lane-convert .btn:nth-child(1)"
+    },
+    {
+      "fieldName": "pageTitle",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "TEXT",
+      "selector": "Korai tesztelés bevezetése"
+    },
+    {
+      "fieldName": "",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ""
+    },
+    {
+      "fieldName": "",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ""
+    }
+  ],
+  "methods": [
+    {
+      "name": "click first offer button on early testing page",
+      "selected": true,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "firstButton"
+        }
+      ],
+      "expectations": []
+    },
+    {
+      "name": "click second offer button on early testing page",
+      "selected": true,
+      "actions": [
+        {
+          "kind": "click",
+          "target": "secondButton"
+        }
+      ],
+      "expectations": []
+    }
+  ]
+}

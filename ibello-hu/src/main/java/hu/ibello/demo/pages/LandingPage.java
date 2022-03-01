@@ -12,14 +12,7 @@ import java.util.regex.Pattern;
 @Name("Landing page")
 public class LandingPage extends PageObject {
 
-	// TODO ezeket tedd ki konfigurációba
-    private final String urlEarlyTesting = "/landing-early-testing-services";
-    private final String urlAutomationServices = "/landing-test-automation-services";
-    private final String urlAutomationMentoring = "/landing-test-automation-mentoring";
-    // TODO ezek csak annyiban különböznek a többitől, hogy a végükön ott a paraméter - ezt kódban oldd meg
-    private final String urlDirectEarlyTesting = "/landing-early-testing-services?client=test";
-    private final String urlDirectAutomationServices = "/landing-test-automation-services?client=test";
-    private final String urlDirectAutomationMentoring = "/landing-test-automation-mentoring?client=test";
+    private final String urlTestParameter = "?client=test";
 
     @Find(by = By.CSS_SELECTOR, using = "h1[t='titles.landing-early-testing-services']")
     private WebElement earlyTestingTitle;
@@ -30,43 +23,18 @@ public class LandingPage extends PageObject {
     @Find(by = By.CSS_SELECTOR, using = "h1[t='titles.landing-test-automation-mentoring']")
     private WebElement automationMentoringTitle;
 
-    // TODO ezt eltüntetni
-    @Find(by = By.CSS_SELECTOR, using = "early-testing-service-lane .convert .btn")
-    private WebElement firstRequestEarlyTestingButton;
-
-    // TODO ezt eltüntetni
-    @Find(by = By.CSS_SELECTOR, using = "test-automation-service-lane .convert .btn")
-    private WebElement firstRequestAutomationTestingButton;
-
-    // TODO ezt eltüntetni
-    @Find(by = By.CSS_SELECTOR, using = "test-automation-mentoring-lane .convert .btn")
-    private WebElement firstRequestAutomationMentoringButton;
-
-    // TODO ezt eltüntetni
-    // TODO ebből WebElements-et csinálnék, hátha később több lesz
-    @Find(by = By.CSS_SELECTOR, using = ".lane-quick-convert .btn")
-    private WebElement secondRequestButton;
-
-    // TODO ezt eltüntetni
-    @Find(by = By.CSS_SELECTOR, using = ".lane-convert .btn:nth-child(1)")
-    private WebElements thirdAndFourthRequestButtons;
-
-    // TODO legyen dinamikus elemkeresés
-    @Find(by = By.CSS_SELECTOR, using = ".lane-convert .btn:nth-child(2)")
-    private WebElements meetingButtons;
-
     public void I_am_on_the_early_testing_page() {
-        expect_url_is_$(urlEarlyTesting);
+        expect_url_is_$(getConfigurationValue("LandingPage.urlEarlyTesting.text").toString());
         expectations().expect(earlyTestingTitle).toBe().displayed();
     }
 
     public void I_am_on_the_automation_services_page(){
-        expect_url_is_$(urlAutomationServices);
+        expect_url_is_$(getConfigurationValue("LandingPage.urlAutomationServices.text").toString());
         expectations().expect(automationTestingTitle).toBe().displayed();
     }
 
     public void I_am_on_the_automation_mentoring_page(){
-        expect_url_is_$(urlAutomationMentoring);
+        expect_url_is_$(getConfigurationValue("LandingPage.urlAutomationMentoring.text").toString());
         expectations().expect(automationMentoringTitle).toBe().displayed();
     }
     
@@ -74,54 +42,30 @@ public class LandingPage extends PageObject {
     	return requestOfferButtons().size();
     }
     
-    @Name("click on ${0}. request button")
-    public void click_on_$_request_button(int index) {
+    @Name("click on ${0}. request offer button")
+    public void click_on_$_request_offer_button(int index) {
     	doWith(requestOfferButtons().get(index-1)).click();
     }
 
-    public void click_on_first_request_button_for_early_testing(){
-        doWith(firstRequestEarlyTestingButton).click();
+    public int getMeetingButtonsCount() {
+        return requestMeetingButtons().size();
     }
 
-    public void click_on_first_request_button_for_automation_services(){
-        doWith(firstRequestAutomationTestingButton).click();
-    }
-
-    public void click_on_first_request_button_for_automation_mentoring(){
-        doWith(firstRequestAutomationMentoringButton).click();
-    }
-
-    public void click_on_second_request_button(){
-        doWith(secondRequestButton).click();
-    }
-
-    public void click_on_third_request_button(){
-        doWith(thirdAndFourthRequestButtons.get(0)).click();
-    }
-
-    public void click_on_fourth_request_button(){
-        doWith(thirdAndFourthRequestButtons.get(1)).click();
-    }
-
-    // TODO legyen egy olyan kattintós metódus, ami fogadja az indexet
-    public void click_on_first_meeting_button(){
-        doWith(meetingButtons.get(0)).click();
-    }
-
-    public void click_on_second_meeting_button(){
-        doWith(meetingButtons.get(1)).click();
+    @Name("click on ${0}. request meeting button")
+    public void click_on_$_request_meeting_button(int index) {
+        doWith(requestMeetingButtons().get(index-1)).click();
     }
 
     public void I_directly_return_to_early_testing_page(){
-        browser().openURL(urlDirectEarlyTesting);
+        browser().openURL(getConfigurationValue("LandingPage.urlEarlyTesting.text").toString() + urlTestParameter);
     }
 
     public void I_directly_return_to_automation_services_page(){
-        browser().openURL(urlDirectAutomationServices);
+        browser().openURL(getConfigurationValue("LandingPage.urlAutomationServices.text").toString() + urlTestParameter);
     }
 
     public void I_directly_return_to_automation_mentoring_page(){
-        browser().openURL(urlDirectAutomationMentoring);
+        browser().openURL(getConfigurationValue("LandingPage.urlAutomationMentoring.text").toString() + urlTestParameter);
     }
 
     private void expect_url_is_$(String url) {
@@ -132,6 +76,11 @@ public class LandingPage extends PageObject {
     private WebElements requestOfferButtons() {
     	String text = getConfigurationValue("LandingPage.requestOfferButton.text").toString();
     	return find().using(By.BUTTON_TEXT, text).all();
+    }
+
+    private WebElements requestMeetingButtons() {
+        String text = getConfigurationValue("LandingPage.requestMeetingButton.text").toString();
+        return find().using(By.BUTTON_TEXT, text).all();
     }
 
 }
