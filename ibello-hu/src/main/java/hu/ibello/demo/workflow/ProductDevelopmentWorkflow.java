@@ -11,12 +11,25 @@ public class ProductDevelopmentWorkflow extends StepLibrary {
     private NavigationSteps navigationSteps;
     private ChangesSteps changesSteps;
 
-    public void I_am_on_homepage() {
+    public void I_am_on_product_development_page() {
         navigationSteps.I_open_the_homepage();
+        navigationSteps.i_navigate_from_homepage_to_changes_page();
     }
 
-    public void I_navigate_to_product_development_page() {
-        navigationSteps.i_navigate_from_homepage_to_changes_page();
+    public void I_compare_the_version_numbers() {
+        // TODO auto-generated method
+    }
+
+    public void I_compare_the_release_dates() {
+        // TODO auto-generated method
+    }
+
+    public void I_check_the_version_changes_descriptions() {
+        // TODO auto-generated method
+    }
+
+    public void I_compare_the_version_changes_order() {
+        // TODO auto-generated method
     }
 
     public void The_version_numbers_are_the_same() {
