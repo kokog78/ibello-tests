@@ -96,6 +96,10 @@ public class NavigationSteps extends StepLibrary {
         servicesPage.I_am_on_the_page();
     }
 
+    public void i_navigate_from_homepage_to_changes_page() {
+        homePage.click_changes_button();
+    }
+
     public void i_navigate_to_homepage_directly_from_navbar() {
         navigationBar.click_home_link();
         homePage.I_am_on_the_page();
