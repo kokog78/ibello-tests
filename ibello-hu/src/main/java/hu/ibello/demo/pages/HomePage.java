@@ -83,6 +83,9 @@ public class HomePage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderTeamButton;
 
+    @Find(by = By.CSS_SELECTOR, using="a[href='changes']")
+    private WebElement changesButton;
+
     @Override
     public void I_am_on_the_page() {
         expect_url_is_$(url);
@@ -126,6 +129,8 @@ public class HomePage extends AbstractPage {
         browser().maximize();
         browser().openURL("/home?client=test");
     }
+
+    public void click_changes_button() { doWith(changesButton).click(); }
 
     public void click_meet_us_button() {
         doWith(meetUsButton).click();
