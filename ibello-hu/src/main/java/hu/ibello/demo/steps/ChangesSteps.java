@@ -40,6 +40,9 @@ public class ChangesSteps extends StepLibrary {
     }
 
     public void I_compare_the_dates(List<String> hungarianVersionDates, List<String> englishVersionDates) {
+        if(hungarianVersionDates.isEmpty() || englishVersionDates.isEmpty()) {
+            throw new AssertionError("One language versions not loaded.");
+        }
         if(hungarianVersionDates.size() != englishVersionDates.size() || !hungarianVersionDates.equals(englishVersionDates)) {
             throw new AssertionError("Version dates are not the same.");
         }
@@ -56,6 +59,9 @@ public class ChangesSteps extends StepLibrary {
     }
 
     public void I_compare_the_versions(List<String> hungarianVersions, List<String> englishVersions) {
+        if(hungarianVersions.isEmpty() || englishVersions.isEmpty()) {
+            throw new AssertionError("One language versions not loaded.");
+        }
         if(hungarianVersions.size() != englishVersions.size() || !hungarianVersions.equals(englishVersions)) {
             throw new AssertionError("Versions are not the same.");
         }
@@ -72,6 +78,9 @@ public class ChangesSteps extends StepLibrary {
     }
 
     public void I_compare_the_order(List<String> hungarianIcons, List<String> englishIcons) {
+        if(hungarianIcons.isEmpty() || englishIcons.isEmpty()) {
+            throw new AssertionError("One language versions not loaded.");
+        }
         if(hungarianIcons.size() != englishIcons.size() || !hungarianIcons.equals(englishIcons)) {
             throw new AssertionError("Version changes order are not the same.");
         }
