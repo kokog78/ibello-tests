@@ -17,35 +17,31 @@ public class ProductDevelopmentWorkflow extends StepLibrary {
     }
 
     public void I_compare_the_version_numbers() {
-        // TODO auto-generated method
+        changesSteps.I_compare_the_version_numbers();
+    }
+    public void The_version_numbers_are_the_same() {
+        changesSteps.The_version_numbers_are_same();
     }
 
     public void I_compare_the_release_dates() {
-        // TODO auto-generated method
+        changesSteps.I_compare_the_release_dates();
+    }
+    public void The_version_dates_are_the_same() {
+        changesSteps.The_version_dates_are_same();
     }
 
     public void I_check_the_version_changes_descriptions() {
-        // TODO auto-generated method
+        changesSteps.I_see_the_descriptions();
+    }
+    public void The_version_changes_are_described() {
+        changesSteps.The_version_changes_are_described();
     }
 
     public void I_compare_the_version_changes_order() {
-        // TODO auto-generated method
-    }
-
-    public void The_version_numbers_are_the_same() {
-        changesSteps.I_compare_the_version_numbers();
-    }
-
-    public void The_version_dates_are_the_same() {
-        changesSteps.I_compare_the_version_dates();
-    }
-
-    public void The_version_changes_are_described() {
-        changesSteps.I_see_the_changes_are_described();
-    }
-
-    public void The_version_changes_order_are_the_same() {
         changesSteps.I_compare_the_icons_order();
+    }
+    public void The_version_changes_order_are_the_same() {
+        changesSteps.The_icons_order_are_same();
     }
 
 }
