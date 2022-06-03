@@ -90,11 +90,11 @@ public class NavigationBarPanel extends PageObject {
     }
 
     public void click_hungarian_link() {
-        doWith(hungarianLink).click();
+        doWith(hungarianLink).withPageRefreshWait().click();
     }
 
     public void click_english_link() {
-        doWith(englishLink).click();
+        doWith(englishLink).withPageRefreshWait().click();
     }
 
     public void click_home_link() {
