@@ -25,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    api 'hu.ibello:ibello-api:1.20.1'
+    api 'hu.ibello:ibello-api:1.21.1'
 }
 
 ibello {
