@@ -26,21 +26,21 @@ public class ProductDevelopmentWorkflow extends StepLibrary {
     public void I_compare_the_release_dates() {
         changesSteps.I_compare_the_release_dates();
     }
-    public void The_version_dates_are_the_same() {
+    public void The_release_dates_are_the_same() {
         changesSteps.The_version_dates_are_same();
     }
 
-    public void I_check_the_version_changes_descriptions() {
+    public void I_check_the_version_change_descriptions() {
         changesSteps.I_see_the_descriptions();
     }
     public void The_version_changes_are_described() {
         changesSteps.The_version_changes_are_described();
     }
 
-    public void I_compare_the_version_changes_order() {
+    public void I_compare_the_ordering_of_version_changes() {
         changesSteps.I_compare_the_icons_order();
     }
-    public void The_version_changes_order_are_the_same() {
+    public void The_ordering_of_version_changes_is_the_same() {
         changesSteps.The_icons_order_are_same();
     }
 
