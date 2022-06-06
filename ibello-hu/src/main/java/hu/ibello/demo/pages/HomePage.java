@@ -83,6 +83,7 @@ public class HomePage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderTeamButton;
 
+    // TODO ez itt szuper törékeny
     @Find(by = By.CSS_SELECTOR, using="a[href='changes']")
     private WebElement changesButton;
 
@@ -130,6 +131,8 @@ public class HomePage extends AbstractPage {
         browser().openURL("/home?client=test");
     }
 
+    // TODO egy sorba ne írj így metódust
+    // TODO ez így sajnos szuper törékeny navigáció, más módon kell megoldani
     public void click_changes_button() { doWith(changesButton).click(); }
 
     public void click_meet_us_button() {
