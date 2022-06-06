@@ -27,7 +27,7 @@ public class ProductDevelopmentWorkflow extends StepLibrary {
         changesSteps.I_compare_the_release_dates();
     }
     public void The_release_dates_are_the_same() {
-        changesSteps.The_version_dates_are_same();
+        changesSteps.The_release_dates_are_the_same();
     }
 
     public void I_check_the_version_change_descriptions() {

@@ -98,6 +98,7 @@ public class NavigationSteps extends StepLibrary {
 
     public void i_navigate_from_homepage_to_changes_page() {
         homePage.click_changes_button();
+        // TODO ide kellene egy ellenőrzés arról, hogy megérkeztünk az oldalra
     }
 
     public void i_navigate_to_homepage_directly_from_navbar() {
