@@ -1,119 +1,160 @@
 package hu.ibello.demo.steps;
 
 import hu.ibello.core.Name;
-import hu.ibello.core.TestException;
+import hu.ibello.demo.model.LanguageDetail;
 import hu.ibello.demo.model.Languages;
+import hu.ibello.demo.model.VersionInfo;
 import hu.ibello.demo.pages.ChangesPage;
 import hu.ibello.steps.StepLibrary;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
-// TODO a "steps" szükségtelen
-@Name("Changes steps")
+@Name("Changes")
 public class ChangesSteps extends StepLibrary {
 
     private ChangesPage changesPage;
     private LanguageSteps languageSteps;
 
-    List<String> hungarianVersions;
-    List<String> englishVersions;
-    List<String> hungarianVersionDates;
-    List<String> englishVersionDates;
-    List<String> hungarianIcons;
-    List<String> englishIcons;
-    List<String> descriptions = new ArrayList<>();
-
-    // TODO rossz a metódus neve, nem azt csinálja, amit a névben leírsz
-    // TODO ezt esetleg ketté lehetne szedni
-    public void I_compare_the_version_numbers() {
-        languageSteps.I_select_$_language(Languages.HUNGARIAN);
-        // TODO a beállítás inkább a page object magánügye
-        hungarianVersions = changesPage.getProductVersions(getConfigurationValue("ChangesPage.hu.versionNumberPrefix").toString());
-        // TODO itt érdemes lenne kiírni, milyen adatot szedtél össze
-        languageSteps.I_select_$_language(Languages.ENGLISH);
-        // TODO a beállítás inkább a page object magánügye
-        englishVersions = changesPage.getProductVersions(getConfigurationValue("ChangesPage.en.versionNumberPrefix").toString());
-        // TODO itt érdemes lenne kiírni, milyen adatot szedtél össze
+    public void I_collect_the_version_numbers() {
+        I_collect_the_version_infos_on_all_language("version");
     }
-    
-    public void The_version_numbers_are_same() {
-    	// TODO érdemes lenne kiírni, melyik nyelvvel van gond
-        if (hungarianVersions.isEmpty() || englishVersions.isEmpty()) {
-        	// TODO helyesírási hiba az üzenetben
-            throw new TestException("One language versions not loaded.");
-        }
-        // TODO biztos kell ide a size() összehasonlítás is?
-        if (hungarianVersions.size() != englishVersions.size() || !hungarianVersions.equals(englishVersions)) {
-        	// TODO érdemes lenne kiírni, mely verziószámok hiányoznak honnan
-            throw new AssertionError("Versions are not the same.");
-        }
+    public void I_collect_the_version_dates() {
+        I_collect_the_version_infos_on_all_language("dates");
+    }
+    public void I_collect_the_version_descriptions() {
+        I_collect_the_version_infos_on_all_language(null);
+    }
+    public void I_collect_the_version_icons() {
+        I_collect_the_version_infos_on_all_language(null);
     }
 
-    // TODO rossz a metódus neve, nem azt csinálja, amit a névben leírsz
-    // TODO ezt esetleg ketté lehetne szedni
-    public void I_compare_the_release_dates() {
-        languageSteps.I_select_$_language(Languages.HUNGARIAN);
-        hungarianVersionDates = changesPage.getProductVersionDates();
-        // TODO itt érdemes lenne kiírni, milyen adatot szedtél össze
-        languageSteps.I_select_$_language(Languages.ENGLISH);
-        englishVersionDates = changesPage.getProductVersionDates();
-        // TODO itt érdemes lenne kiírni, milyen adatot szedtél össze
-    }
-    
-    public void The_release_dates_are_the_same() {
-    	// TODO érdemes lenne kiírni, melyik nyelvvel van gond
-        if (hungarianVersionDates.isEmpty() || englishVersionDates.isEmpty()) {
-            throw new TestException("One language versions not loaded.");
+    public void The_version_numbers_are_the_same() {
+        Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
+        Set<String> errorMessages = new HashSet<>();
+        for(Map.Entry<String, List<VersionInfo>> entry: results.entrySet()) {
+            List<String> versions = entry.getValue()
+                    .stream()
+                    .map(VersionInfo::getVersionNumber)
+                    .collect(Collectors.toList());
+            for(Map.Entry<String, List<VersionInfo>> nextEntry: results.entrySet()) {
+                if (!entry.getKey().equals(nextEntry.getKey())) {
+                    List<String> anotherVersions = nextEntry.getValue()
+                            .stream()
+                            .map(VersionInfo::getVersionNumber)
+                            .collect(Collectors.toList());
+                    if(!versions.equals(anotherVersions)) {
+                        List<String> diff1 = new ArrayList<>(versions);
+                        List<String> diff2 = new ArrayList<>(anotherVersions);
+                        diff1.removeAll(anotherVersions);
+                        diff2.removeAll(versions);
+                        if(!diff1.isEmpty()) {
+                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff1, nextEntry.getKey()));
+                        }
+                        if(!diff2.isEmpty()) {
+                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff2, entry.getKey()));
+                        }
+                    }
+                }
+            }
         }
-        // TODO biztos kell ide a size() összehasonlítás is?
-        if (hungarianVersionDates.size() != englishVersionDates.size() || !hungarianVersionDates.equals(englishVersionDates)) {
-        	// TODO a hibaüzenet rossz, nem "version dates", hanem "release dates"
-        	// TODO érdemes lenne kiírni, mely dátumok hiányoznak honnan
-            throw new AssertionError("Version dates are not the same.");
+        if(errorMessages.size() > 0) {
+            throw new AssertionError(String.join("\n", errorMessages));
         }
     }
 
-    // TODO rossz a metódus neve
-    // TODO ezt esetleg ketté lehetne szedni
-    public void I_see_the_descriptions() {
-        languageSteps.I_select_$_language(Languages.HUNGARIAN);
-        // TODO itt bővítgeted a descriptions listát, de ez egy újrafelhasználható tesztlépés! ha ezt csinálod, az hibához vezethet
-        descriptions.addAll(changesPage.getProductVersionChangesDescription());
-        languageSteps.I_select_$_language(Languages.ENGLISH);
-        // TODO itt bővítgeted a descriptions listát, de ez egy újrafelhasználható tesztlépés! ha ezt csinálod, az hibához vezethet
-        descriptions.addAll(changesPage.getProductVersionChangesDescription());
+    public void The_version_dates_are_the_same() {
+
+        Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
+        Set<String> errorMessages = new HashSet<>();
+
+        for(Map.Entry<String, List<VersionInfo>> entry: results.entrySet()) {
+            List<String> dates = entry
+                    .getValue()
+                    .stream()
+                    .map(VersionInfo::getVersionDate)
+                    .collect(Collectors.toList());
+            for(Map.Entry<String, List<VersionInfo>> nextEntry: results.entrySet()) {
+                if (!entry.equals(nextEntry)) {
+                    List<String> anotherDates = nextEntry
+                            .getValue()
+                            .stream()
+                            .map(VersionInfo::getVersionDate)
+                            .collect(Collectors.toList());
+                    if(!dates.equals(anotherDates)) {
+                        List<String> diff1 = new ArrayList<>(dates);
+                        List<String> diff2 = new ArrayList<>(anotherDates);
+                        diff1.removeAll(anotherDates);
+                        diff2.removeAll(dates);
+                        if(diff1.size() > 0) {
+                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff1, nextEntry.getKey()));
+                        }
+                        if(diff2.size() > 0) {
+                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff2, entry.getKey()));
+                        }
+                    }
+                }
+            }
+        }
+        throw new AssertionError(String.join("\n", errorMessages));
+    }
+
+    public void The_version_descriptions_are_filled() {
+        Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
+        Set<String> errorMessages = new HashSet<>();
+        for(Map.Entry<String, List<VersionInfo>> entry: results.entrySet()) {
+            entry.getValue().forEach(versionInfo -> {
+                if(versionInfo.getDescriptions().contains("")) {
+                    errorMessages.add(String.format("Description is missing on %s language at %s version.", entry.getKey(), versionInfo.getVersionNumber()));
+                }
+            });
+        }
+        if(errorMessages.size() > 0) {
+            throw new AssertionError(String.join("\n", errorMessages));
+        }
     }
     
-    public void The_version_changes_are_described() {
-        if (descriptions.isEmpty()) {
-            throw new TestException("Details are not loaded!");
+    public void The_version_icons_order_are_the_same() {
+        Set<String> errorMessages = new HashSet<>();
+        Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
+        for(Map.Entry<String, List<VersionInfo>> language: results.entrySet()) {
+            Map<String, List<String>> versionsWithIcons = language
+                        .getValue()
+                        .stream()
+                        .collect(Collectors.toMap(VersionInfo::getVersionNumber, VersionInfo::getIconNames));
+            for(Map.Entry<String, List<VersionInfo>> anotherLanguage: results.entrySet()) {
+                if(!language.getKey().equals(anotherLanguage.getKey())) {
+                    Map<String, List<String>> anotherVersionsWithIcons = anotherLanguage
+                            .getValue()
+                            .stream()
+                            .collect(Collectors.toMap(VersionInfo::getVersionNumber, VersionInfo::getIconNames));
+                    for(Map.Entry<String, List<String>> vie: versionsWithIcons.entrySet()) {
+                        if(!vie.getValue().equals((anotherVersionsWithIcons.get(vie.getKey())))) {
+                            errorMessages.add(String.format("Ordering on %s [%s] and %s [%s] language at version %s is not the same.",language.getKey(),vie.getValue(),anotherLanguage.getKey(),anotherVersionsWithIcons.get(vie.getKey()), vie.getKey()));
+                        }
+                    }
+                }
+            }
         }
-        if (descriptions.contains("") || descriptions.contains(null)) {
-        	// TODO itt ki kellene írni, pontosan melyik leírással van gond
-            throw new AssertionError("Not all changes are described!");
+        if(errorMessages.size() > 0) {
+            throw new AssertionError(String.join("\n", errorMessages));
         }
     }
 
-    // TODO rossz a metódus neve, nem azt csinálja, amit a névben leírsz
-    // TODO ezt esetleg ketté lehetne szedni
-    public void I_compare_the_icons_order() {
-        languageSteps.I_select_$_language(Languages.HUNGARIAN);
-        hungarianIcons = changesPage.getProductVersionIcons();
-        // TODO itt érdemes lenne kiírni, milyen adatot szedtél össze
-        languageSteps.I_select_$_language(Languages.ENGLISH);
-        englishIcons = changesPage.getProductVersionIcons();
-        // TODO itt érdemes lenne kiírni, milyen adatot szedtél össze
-    }
-    
-    public void The_icons_order_are_same() {
-    	// TODO érdemes lenne kiírni, melyik nyelvvel van gond
-        if (hungarianIcons.isEmpty() || englishIcons.isEmpty()) {
-            throw new TestException("One language versions not loaded.");
-        }
-        if (hungarianIcons.size() != englishIcons.size() || !hungarianIcons.equals(englishIcons)) {
-        	// TODO érdemes lenne kiírni, mely ikonok hiányoznak honnan
-            throw new AssertionError("Version changes order are not the same.");
-        }
+    public void I_collect_the_version_infos_on_all_language(String whatToOutput) {
+        testData().fromJson(LanguageDetail.class).load().languageDetails.forEach(detail -> {
+            languageSteps.I_select_$_language(Languages.valueOf(detail.getLanguage()));
+            changesPage.I_collect_the_version_infos_on_$_language(detail.getLanguage(), detail.getVersionPrefix());
+
+            if(whatToOutput != null) {
+                List<String> output = changesPage
+                        .getLanguagesWithVersionInfos()
+                        .get(detail.getLanguage())
+                        .stream()
+                        .map(versionInfo -> versionInfo.getInfo(whatToOutput))
+                        .collect(Collectors.toList());
+                output().recordCustomAction(output.toString());
+            }
+        });
     }
 }

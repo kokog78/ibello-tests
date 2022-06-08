@@ -1,0 +1,12 @@
+{
+  "languageDetails": [
+    {
+      "language": "HUNGARIAN",
+      "versionPrefix": "Verzió: "
+    },
+    {
+      "language": "ENGLISH",
+      "versionPrefix": "Version: "
+    }
+  ]
+}

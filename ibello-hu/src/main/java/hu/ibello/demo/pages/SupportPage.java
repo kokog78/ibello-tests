@@ -37,11 +37,18 @@ public class SupportPage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-docs")
     private WebElement readItButton;
 
+    @Find(by = By.CSS_SELECTOR, using = "a[href='changes']")
+    private WebElement earlierDevelopmentsButton;
+
     @Override
     public void I_am_on_the_page() {
         expect_url_is_$(url);
         expectations().expect(welcomeLane).toBe().displayed();
         expectations().expect(loginLane).toBe().displayed();
+    }
+
+    public void click_on_earlier_developments_button() {
+        doWith(earlierDevelopmentsButton).click();
     }
 
     public void click_our_product_button() {

@@ -1,17 +1,20 @@
 package hu.ibello.demo.pages;
 
 import hu.ibello.core.Name;
+import hu.ibello.demo.model.VersionInfo;
 import hu.ibello.elements.WebElement;
+import hu.ibello.elements.WebElements;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Name("Changes Page")
 public class ChangesPage extends AbstractPage {
 
     private final String url = "/changes";
+    private Map<String, List<VersionInfo>> languagesWithVersionInfos = new LinkedHashMap<>();
 
     @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.changes']")
     private WebElement changesTitle;
@@ -22,39 +25,66 @@ public class ChangesPage extends AbstractPage {
         expectations().expect(changesTitle).toBe().displayed();
     }
 
-    public List<String> getProductVersions(String prefix) {
+    public Map<String, List<VersionInfo>> getLanguagesWithVersionInfos() {
+        return languagesWithVersionInfos;
+    }
+
+    public void I_collect_the_version_infos_on_$_language(String language, String prefix) {
+
+        List<VersionInfo> versionInfos = new ArrayList<>();
+
+        getChangesSections().forEach(section -> {
+            VersionInfo versionInfo = new VersionInfo();
+            versionInfo.setVersionNumber(getVersionNumber(prefix, section));
+            versionInfo.setVersionDate(getVersionDate(section));
+            versionInfo.setDescriptions(getVersionDescriptions(section));
+            versionInfo.setIconNames(getVersionIcons(section));
+            versionInfos.add(versionInfo);
+        });
+
+        languagesWithVersionInfos.put(language, versionInfos);
+    }
+
+
+    public WebElements getChangesSections() {
         return find()
+                .using(By.CSS_SELECTOR, ".change-section")
+                .all();
+    }
+
+    public String getVersionNumber(String prefix, WebElement section) {
+        WebElement versionElement = section
+                .find()
                 .using(By.CSS_SELECTOR, ".change-version > span:first-child")
-                .all()
-                .stream()
-                .map(version -> get(version).text().replace(prefix, ""))
-                .collect(Collectors.toList());
+                .first();
+        return get(versionElement).text().replace(prefix, "");
     }
 
-    public List<String> getProductVersionDates() {
-        return find()
+    public String getVersionDate(WebElement section) {
+        WebElement versionElement = section
+                .find()
                 .using(By.CSS_SELECTOR, ".change-date")
-                .all()
-                .stream()
-                .map(versionDate -> get(versionDate).text())
-                .collect(Collectors.toList());
+                .first();
+        return get(versionElement).text();
     }
 
-    public List<String> getProductVersionChangesDescription() {
-        return find()
-                .using(By.CSS_SELECTOR, ".change-item-texts")
+    public List<String> getVersionDescriptions(WebElement section) {
+        return section
+                .find()
+                .using(By.CSS_SELECTOR, ".change-item > .change-item-texts")
                 .all()
                 .stream()
                 .map(desc -> get(desc).text())
                 .collect(Collectors.toList());
     }
 
-    public List<String> getProductVersionIcons() {
-        return find()
+    public List<String> getVersionIcons(WebElement section) {
+        return section
+                .find()
                 .using(By.CSS_SELECTOR, ".change-item > i")
                 .all()
                 .stream()
-                .map(icon -> get(icon).text())
+                .map(desc -> get(desc).text())
                 .collect(Collectors.toList());
     }
 }

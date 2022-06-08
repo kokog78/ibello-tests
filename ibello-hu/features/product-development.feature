@@ -2,22 +2,22 @@
 @full-test @prodev
 Feature: Test the product development page
 
-	Scenario: Version numbers are same for both languages
+	Scenario: Version numbers are same for all languages
 		Given Product development: I am on product development page
-		When Product development: I compare the version numbers
+		When Product development: I collect the version numbers
 		Then Product development: The version numbers are the same
 
-	Scenario: Version release dates are same for both languages
+	Scenario: Version release dates are same for all languages
 		Given Product development: I am on product development page
-		When Product development: I compare the release dates
-		Then Product development: The release dates are the same
+		When Product development: I collect the version dates
+		Then Product development: The version dates are the same
 
 	Scenario: Version changes are described
 		Given Product development: I am on product development page
-		When Product development: I check the version change descriptions
-		Then Product development: The version changes are described
+		When Product development: I collect the version descriptions
+		Then Product development: The version descriptions are filled
 
-	Scenario: Ordering of version changes is the same for both languages
+	Scenario: Ordering of version changes is the same for all languages
 		Given Product development: I am on product development page
-		When Product development: I compare the ordering of version changes
+		When Product development: I collect the version changes
 		Then Product development: The ordering of version changes is the same

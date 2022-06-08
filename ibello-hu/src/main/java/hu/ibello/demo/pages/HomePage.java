@@ -2,6 +2,7 @@ package hu.ibello.demo.pages;
 
 import hu.ibello.core.Name;
 import hu.ibello.elements.WebElement;
+import hu.ibello.elements.WebElements;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 import hu.ibello.search.Relation;
@@ -11,6 +12,7 @@ import hu.ibello.search.RelationType;
 public class HomePage extends AbstractPage {
 
     private static final String url = "";
+    private int actualMainLaneButtonIndex = 1;
 
     @Find(by = By.CSS_SELECTOR, using = "welcome-image-lane")
     private WebElement mainLane;
@@ -83,9 +85,8 @@ public class HomePage extends AbstractPage {
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "lane-prices")
     private WebElement orderTeamButton;
 
-    // TODO ez itt szuper törékeny
-    @Find(by = By.CSS_SELECTOR, using="a[href='changes']")
-    private WebElement changesButton;
+    @Find(by = By.CSS_SELECTOR, using = "[id^='welcome-main-lane']")
+    private WebElements welcomeMainLaneButtons;
 
     @Override
     public void I_am_on_the_page() {
@@ -131,9 +132,10 @@ public class HomePage extends AbstractPage {
         browser().openURL("/home?client=test");
     }
 
-    // TODO egy sorba ne írj így metódust
-    // TODO ez így sajnos szuper törékeny navigáció, más módon kell megoldani
-    public void click_changes_button() { doWith(changesButton).click(); }
+    public void click_welcome_lane_button(int index) {
+        doWith(welcomeMainLaneButtons.get(index)).click();
+    }
+
 
     public void click_meet_us_button() {
         doWith(meetUsButton).click();
