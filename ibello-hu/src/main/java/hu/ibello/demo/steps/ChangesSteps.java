@@ -73,16 +73,18 @@ public class ChangesSteps extends StepLibrary {
                         diff1.removeAll(anotherDates);
                         diff2.removeAll(dates);
                         if(diff1.size() > 0) {
-                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff1, key1));
+                            errorMessages.add(String.format("%s date(s) missing on %s language.", diff1, key1));
                         }
                         if(diff2.size() > 0) {
-                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff2, key));
+                            errorMessages.add(String.format("%s date(s) missing on %s language.", diff2, key));
                         }
                     }
                 }
             });
         });
-        throw new AssertionError(String.join("\r\n", errorMessages));
+        if(errorMessages.size() > 0) {
+            throw new AssertionError(String.join("\r\n", errorMessages));
+        }
     }
 
     public void The_version_descriptions_are_filled() {
@@ -99,7 +101,7 @@ public class ChangesSteps extends StepLibrary {
     }
     
     public void The_version_icons_order_are_the_same() {
-        Set<String> errorMessages = new HashSet<>(Arrays.asList("Ordering differences: "));
+        Set<String> errorMessages = new HashSet<>(Collections.singletonList("Ordering differences: "));
         Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
 
         results.forEach((key, value) -> {
