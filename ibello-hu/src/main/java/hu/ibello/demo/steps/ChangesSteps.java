@@ -109,11 +109,11 @@ public class ChangesSteps extends StepLibrary {
             results.forEach((key1, value1) -> {
                 if (!key.equals(key1)) {
                     Map<String, List<String>> anotherVersionsWithIcons = value1.stream().collect(Collectors.toMap(VersionInfo::getVersionNumber, VersionInfo::getIconNames));
-                    for (Map.Entry<String, List<String>> vie : versionsWithIcons.entrySet()) {
-                        if (!vie.getValue().equals((anotherVersionsWithIcons.get(vie.getKey())))) {
-                            errorMessages.add(String.format("%s [%s] - %s [%s] at version: %s.", key, vie.getValue(), key1, anotherVersionsWithIcons.get(vie.getKey()), vie.getKey()));
+                    versionsWithIcons.forEach((key2, value2) -> {
+                        if (!value2.equals((anotherVersionsWithIcons.get(key2)))) {
+                            errorMessages.add(String.format("%s [%s] - %s [%s] at version: %s.", key, value2, key1, anotherVersionsWithIcons.get(key2), key2));
                         }
-                    }
+                    });
                 }
             });
         });

@@ -34,6 +34,7 @@ public class ChangesPage extends AbstractPage {
         List<VersionInfo> versionInfos = new ArrayList<>();
 
         getChangesSections().forEach(section -> {
+            doWith(section).moveTo();
             VersionInfo versionInfo = new VersionInfo();
             versionInfo.setVersionNumber(getVersionNumber(prefix, section));
             versionInfo.setVersionDate(getVersionDate(section));
@@ -44,7 +45,6 @@ public class ChangesPage extends AbstractPage {
 
         languagesWithVersionInfos.put(language, versionInfos);
     }
-
 
     public WebElements getChangesSections() {
         return find()
