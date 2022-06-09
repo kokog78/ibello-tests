@@ -43,10 +43,10 @@ public class ChangesSteps extends StepLibrary {
                         diff1.removeAll(anotherVersions);
                         diff2.removeAll(versions);
                         if(!diff1.isEmpty()) {
-                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff1, key1));
+                            errorMessages.add(String.format("%s version(s) missing on %s language.", diff1, key1));
                         }
                         if(!diff2.isEmpty()) {
-                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff2, key));
+                            errorMessages.add(String.format("%s version(s) missing on %s language.", diff2, key));
                         }
                     }
                 }
