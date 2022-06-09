@@ -32,34 +32,28 @@ public class ChangesSteps extends StepLibrary {
     public void The_version_numbers_are_the_same() {
         Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
         Set<String> errorMessages = new HashSet<>();
-        for(Map.Entry<String, List<VersionInfo>> entry: results.entrySet()) {
-            List<String> versions = entry.getValue()
-                    .stream()
-                    .map(VersionInfo::getVersionNumber)
-                    .collect(Collectors.toList());
-            for(Map.Entry<String, List<VersionInfo>> nextEntry: results.entrySet()) {
-                if (!entry.getKey().equals(nextEntry.getKey())) {
-                    List<String> anotherVersions = nextEntry.getValue()
-                            .stream()
-                            .map(VersionInfo::getVersionNumber)
-                            .collect(Collectors.toList());
+        results.forEach((key, value) ->  {
+            List<String> versions = value.stream().map(VersionInfo::getVersionNumber).collect(Collectors.toList());
+            results.forEach((key1, value1) ->  {
+                if (!key.equals(key1)) {
+                    List<String> anotherVersions = value1.stream().map(VersionInfo::getVersionNumber).collect(Collectors.toList());
                     if(!versions.equals(anotherVersions)) {
                         List<String> diff1 = new ArrayList<>(versions);
                         List<String> diff2 = new ArrayList<>(anotherVersions);
                         diff1.removeAll(anotherVersions);
                         diff2.removeAll(versions);
                         if(!diff1.isEmpty()) {
-                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff1, nextEntry.getKey()));
+                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff1, key1));
                         }
                         if(!diff2.isEmpty()) {
-                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff2, entry.getKey()));
+                            errorMessages.add(String.format("%s version(s) missing on %s language.\n", diff2, key));
                         }
                     }
                 }
-            }
-        }
+            });
+        });
         if(errorMessages.size() > 0) {
-            throw new AssertionError(String.join("\n", errorMessages));
+            throw new AssertionError(String.join("\r\n", errorMessages));
         }
     }
 
@@ -68,76 +62,61 @@ public class ChangesSteps extends StepLibrary {
         Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
         Set<String> errorMessages = new HashSet<>();
 
-        for(Map.Entry<String, List<VersionInfo>> entry: results.entrySet()) {
-            List<String> dates = entry
-                    .getValue()
-                    .stream()
-                    .map(VersionInfo::getVersionDate)
-                    .collect(Collectors.toList());
-            for(Map.Entry<String, List<VersionInfo>> nextEntry: results.entrySet()) {
-                if (!entry.equals(nextEntry)) {
-                    List<String> anotherDates = nextEntry
-                            .getValue()
-                            .stream()
-                            .map(VersionInfo::getVersionDate)
-                            .collect(Collectors.toList());
+        results.forEach((key, value) ->  {
+            List<String> dates = value.stream().map(VersionInfo::getVersionDate).collect(Collectors.toList());
+            results.forEach((key1, value1) -> {
+                if (!key.equals(key1)) {
+                    List<String> anotherDates = value1.stream().map(VersionInfo::getVersionDate).collect(Collectors.toList());
                     if(!dates.equals(anotherDates)) {
                         List<String> diff1 = new ArrayList<>(dates);
                         List<String> diff2 = new ArrayList<>(anotherDates);
                         diff1.removeAll(anotherDates);
                         diff2.removeAll(dates);
                         if(diff1.size() > 0) {
-                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff1, nextEntry.getKey()));
+                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff1, key1));
                         }
                         if(diff2.size() > 0) {
-                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff2, entry.getKey()));
+                            errorMessages.add(String.format("%s dates(s) missing on %s language.", diff2, key));
                         }
                     }
                 }
-            }
-        }
-        throw new AssertionError(String.join("\n", errorMessages));
+            });
+        });
+        throw new AssertionError(String.join("\r\n", errorMessages));
     }
 
     public void The_version_descriptions_are_filled() {
         Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
         Set<String> errorMessages = new HashSet<>();
-        for(Map.Entry<String, List<VersionInfo>> entry: results.entrySet()) {
-            entry.getValue().forEach(versionInfo -> {
-                if(versionInfo.getDescriptions().contains("")) {
-                    errorMessages.add(String.format("Description is missing on %s language at %s version.", entry.getKey(), versionInfo.getVersionNumber()));
-                }
-            });
-        }
+        results.forEach((key, value) -> value.forEach(versionInfo -> {
+            if (versionInfo.getDescriptions().contains("")) {
+                errorMessages.add(String.format("Description is missing on %s language at %s version.", key, versionInfo.getVersionNumber()));
+            }
+        }));
         if(errorMessages.size() > 0) {
-            throw new AssertionError(String.join("\n", errorMessages));
+            throw new AssertionError(String.join("\r\n", errorMessages));
         }
     }
     
     public void The_version_icons_order_are_the_same() {
-        Set<String> errorMessages = new HashSet<>();
+        Set<String> errorMessages = new HashSet<>(Arrays.asList("Ordering differences: "));
         Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
-        for(Map.Entry<String, List<VersionInfo>> language: results.entrySet()) {
-            Map<String, List<String>> versionsWithIcons = language
-                        .getValue()
-                        .stream()
-                        .collect(Collectors.toMap(VersionInfo::getVersionNumber, VersionInfo::getIconNames));
-            for(Map.Entry<String, List<VersionInfo>> anotherLanguage: results.entrySet()) {
-                if(!language.getKey().equals(anotherLanguage.getKey())) {
-                    Map<String, List<String>> anotherVersionsWithIcons = anotherLanguage
-                            .getValue()
-                            .stream()
-                            .collect(Collectors.toMap(VersionInfo::getVersionNumber, VersionInfo::getIconNames));
-                    for(Map.Entry<String, List<String>> vie: versionsWithIcons.entrySet()) {
-                        if(!vie.getValue().equals((anotherVersionsWithIcons.get(vie.getKey())))) {
-                            errorMessages.add(String.format("Ordering on %s [%s] and %s [%s] language at version %s is not the same.",language.getKey(),vie.getValue(),anotherLanguage.getKey(),anotherVersionsWithIcons.get(vie.getKey()), vie.getKey()));
+
+        results.forEach((key, value) -> {
+            Map<String, List<String>> versionsWithIcons = value.stream().collect(Collectors.toMap(VersionInfo::getVersionNumber, VersionInfo::getIconNames));
+            results.forEach((key1, value1) -> {
+                if (!key.equals(key1)) {
+                    Map<String, List<String>> anotherVersionsWithIcons = value1.stream().collect(Collectors.toMap(VersionInfo::getVersionNumber, VersionInfo::getIconNames));
+                    for (Map.Entry<String, List<String>> vie : versionsWithIcons.entrySet()) {
+                        if (!vie.getValue().equals((anotherVersionsWithIcons.get(vie.getKey())))) {
+                            errorMessages.add(String.format("%s [%s] - %s [%s] at version: %s.", key, vie.getValue(), key1, anotherVersionsWithIcons.get(vie.getKey()), vie.getKey()));
                         }
                     }
                 }
-            }
-        }
-        if(errorMessages.size() > 0) {
-            throw new AssertionError(String.join("\n", errorMessages));
+            });
+        });
+        if(errorMessages.size() > 1) {
+            throw new AssertionError(String.join("\r\n", errorMessages));
         }
     }
 
