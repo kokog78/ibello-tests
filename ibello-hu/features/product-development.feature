@@ -7,7 +7,7 @@ Feature: Test the product development page
 		When Product development: I collect the version numbers
 		Then Product development: The version numbers are the same
 
-	Scenario: Version release dates are same for all languages
+	Scenario: Version dates are same for all languages
 		Given Product development: I am on product development page
 		When Product development: I collect the version dates
 		Then Product development: The version dates are the same
