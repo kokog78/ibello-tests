@@ -7,7 +7,10 @@ import hu.ibello.elements.WebElements;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Name("Changes Page")
@@ -34,6 +37,7 @@ public class ChangesPage extends AbstractPage {
         List<VersionInfo> versionInfos = new ArrayList<>();
 
         getChangesSections().forEach(section -> {
+            // TODO ha ezt a mobeTo() lépést kihagyod, akkor már csomó időt megspórolhatsz
             doWith(section).moveTo();
             VersionInfo versionInfo = new VersionInfo();
             versionInfo.setVersionNumber(getVersionNumber(prefix, section));

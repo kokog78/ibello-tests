@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 public class ChangesSteps extends StepLibrary {
 
     private ChangesPage changesPage;
+
+    // TODO nem jó pattern egy steps osztályba más steps osztályokat bekebverni hacsak nem nagyon indokolt.
+    //  Ebben az esetben megtehetnéd azt, hogy a workflow osztályodban iterálsz végig a tesztadaton és az alapján gyűjtögeted ki a különböző infokat.
     private LanguageSteps languageSteps;
 
     public void I_collect_the_version_numbers() {
@@ -32,6 +35,10 @@ public class ChangesSteps extends StepLibrary {
     public void The_version_numbers_are_the_same() {
         Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
         Set<String> errorMessages = new HashSet<>();
+        // TODO ez kicsit bonyolult lett, itt egy for ciklus használata könnyebb és gyorsabb lenne.
+        // Pl. csinálsz egy listát a verziószámoknak, kezdetben null értékkel
+        // Végigiterálsz egy ciklusban a map-en, ha a verziószámos lista null akkor feltöltöd az első nyelvhez tartozó verzió számokkal
+        // a következő iterációban megnézed, hogy a megjegyzett lista egyezik-e az aktuális nyelvhez tartozóval
         results.forEach((key, value) ->  {
             List<String> versions = value.stream().map(VersionInfo::getVersionNumber).collect(Collectors.toList());
             results.forEach((key1, value1) ->  {
@@ -57,11 +64,13 @@ public class ChangesSteps extends StepLibrary {
         }
     }
 
+    // TODO felesleges üres sorok
     public void The_version_dates_are_the_same() {
 
         Map<String, List<VersionInfo>> results = changesPage.getLanguagesWithVersionInfos();
         Set<String> errorMessages = new HashSet<>();
 
+        // TODO for ciklus hazsnálata, lásd korábbi megjegyzés
         results.forEach((key, value) ->  {
             List<String> dates = value.stream().map(VersionInfo::getVersionDate).collect(Collectors.toList());
             results.forEach((key1, value1) -> {
@@ -123,6 +132,7 @@ public class ChangesSteps extends StepLibrary {
     }
 
     public void I_collect_the_version_infos_on_all_language(String whatToOutput) {
+        // TODO a nyelvválasztással kapcsolatos lépések lehetnének a workflowban, itt csak a version info kigyűjtése kellene
         testData().fromJson(LanguageDetail.class).load().languageDetails.forEach(detail -> {
             languageSteps.I_select_$_language(Languages.valueOf(detail.getLanguage()));
             changesPage.I_collect_the_version_infos_on_$_language(detail.getLanguage(), detail.getVersionPrefix());
