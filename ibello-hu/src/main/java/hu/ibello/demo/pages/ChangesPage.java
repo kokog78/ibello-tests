@@ -55,6 +55,7 @@ public class ChangesPage extends AbstractPage {
     }
 
     public String getVersionNumber(String prefix, WebElement section) {
+//        Pattern p = Pattern.compile("^.+:+\\s+(\\d+.\\d.+\\d+)$");
         WebElement versionElement = section
                 .find()
                 .using(By.CSS_SELECTOR, ".change-version > span:first-child")

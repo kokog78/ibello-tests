@@ -27,11 +27,25 @@ public class ProductDevelopmentWorkflow extends StepLibrary {
         navigationSteps.i_navigate_from_homepage_to_changes_page();
     }
 
+    // Lehetne egy közös lépés, I_collect_the_version_info (van többesszáma angolul az infonak?)
     public void I_collect_the_version_numbers() {
+        if (languagesWithVersionInfos == null) {
+            // List<String> languages = betölteni a nyelveket egy listába getLanguages();
+//            for (String l : languages) {
+//                languageSteps.I_select_$_language(l);
+//                az érintett steps osztályban összeállítani és visszaadni languagesWithVersionInfos mapet, itt lehet logolni a szükséges dolgokat
+//            }
+        }
         collectVersionInfo("version");
     }
 
+//    @Name("I check if blablaba with ${1} number")
+//    public void I_check_if_the_version_numbers_are_the_same(Map<String, List<VersionInfo>> map, int num) {
+//
+//    }
+
     public void The_version_numbers_are_the_same() {
+        // Ez az ellenőrzés a steps osztályban legyen, add át neki a map-et
         Set<String> errorMessages = new HashSet<>();
         List<String> savedVersions = null;
         String savedLanguage = null;
