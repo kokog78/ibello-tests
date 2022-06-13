@@ -37,8 +37,6 @@ public class ChangesPage extends AbstractPage {
         List<VersionInfo> versionInfos = new ArrayList<>();
 
         getChangesSections().forEach(section -> {
-            // TODO ha ezt a mobeTo() lépést kihagyod, akkor már csomó időt megspórolhatsz
-            doWith(section).moveTo();
             VersionInfo versionInfo = new VersionInfo();
             versionInfo.setVersionNumber(getVersionNumber(prefix, section));
             versionInfo.setVersionDate(getVersionDate(section));
@@ -88,7 +86,7 @@ public class ChangesPage extends AbstractPage {
                 .using(By.CSS_SELECTOR, ".change-item > i")
                 .all()
                 .stream()
-                .map(desc -> get(desc).text())
+                .map(icon -> get(icon).text())
                 .collect(Collectors.toList());
     }
 }
