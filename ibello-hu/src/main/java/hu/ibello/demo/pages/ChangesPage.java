@@ -7,14 +7,14 @@ import hu.ibello.elements.WebElements;
 import hu.ibello.search.By;
 import hu.ibello.search.Find;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Name("Changes Page")
 public class ChangesPage extends AbstractPage {
 
     private final String url = "/changes";
-    private Map<String, List<VersionInfo>> languagesWithVersionInfos = new LinkedHashMap<>();
 
     @Find(by = By.CSS_SELECTOR, using = "title-lane[key='titles.changes']")
     private WebElement changesTitle;
@@ -25,26 +25,22 @@ public class ChangesPage extends AbstractPage {
         expectations().expect(changesTitle).toBe().displayed();
     }
 
-    public Map<String, List<VersionInfo>> getLanguagesWithVersionInfos() {
-        return languagesWithVersionInfos;
+    public List<VersionInfo> collectVersionInfo() {
+        List<VersionInfo> versionInfo = new ArrayList<>();
+        for(WebElement section: getChangesSections()) {
+            versionInfo.add(getVersionInfo(section));
+        }
+        return versionInfo;
     }
 
-    public void I_collect_the_version_infos_on_$_language(String language, String prefix) {
-
-        List<VersionInfo> versionInfos = new ArrayList<>();
-
-        getChangesSections().forEach(section -> {
-            VersionInfo versionInfo = new VersionInfo();
-            versionInfo.setVersionNumber(getVersionNumber(prefix, section));
-            versionInfo.setVersionDate(getVersionDate(section));
-            versionInfo.setDescriptions(getVersionDescriptions(section));
-            versionInfo.setIconNames(getVersionIcons(section));
-            versionInfos.add(versionInfo);
-        });
-
-        languagesWithVersionInfos.put(language, versionInfos);
+    private VersionInfo getVersionInfo(WebElement section) {
+        VersionInfo versionInfo = new VersionInfo();
+        versionInfo.setVersionNumber(getVersionNumber(section));
+        versionInfo.setVersionDate(getVersionDate(section));
+        versionInfo.setDescriptions(getVersionDescriptions(section));
+        versionInfo.setIconNames(getVersionIcons(section));
+        return versionInfo;
     }
-
 
     public WebElements getChangesSections() {
         return find()
@@ -52,12 +48,12 @@ public class ChangesPage extends AbstractPage {
                 .all();
     }
 
-    public String getVersionNumber(String prefix, WebElement section) {
+    public String getVersionNumber(WebElement section) {
         WebElement versionElement = section
                 .find()
                 .using(By.CSS_SELECTOR, ".change-version > span:first-child")
                 .first();
-        return get(versionElement).text().replace(prefix, "");
+        return get(versionElement).text().split(": ")[1];
     }
 
     public String getVersionDate(WebElement section) {
@@ -84,7 +80,7 @@ public class ChangesPage extends AbstractPage {
                 .using(By.CSS_SELECTOR, ".change-item > i")
                 .all()
                 .stream()
-                .map(desc -> get(desc).text())
+                .map(icon -> get(icon).text())
                 .collect(Collectors.toList());
     }
 }
