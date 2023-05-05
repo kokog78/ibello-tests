@@ -35,5 +35,9 @@ public class PopUpMessagesPanel extends PageObject {
                     , displayedErrors, expectedNumberOfErrors));
         }
     }
+    
+    public void acknowledge_the_error_message() {
+        doWith(errorMessage).click();
+    }
 
 }

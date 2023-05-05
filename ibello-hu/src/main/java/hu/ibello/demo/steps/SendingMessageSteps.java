@@ -1,10 +1,10 @@
 package hu.ibello.demo.steps;
 
 import hu.ibello.core.Name;
-import hu.ibello.demo.pages.MessageSentPage;
-import hu.ibello.demo.panel.PopUpMessagesPanel;
 import hu.ibello.demo.model.ContactData;
 import hu.ibello.demo.pages.HomePage;
+import hu.ibello.demo.pages.MessageSentPage;
+import hu.ibello.demo.panel.PopUpMessagesPanel;
 import hu.ibello.steps.StepLibrary;
 
 @Name("Sending message steps")
@@ -38,6 +38,7 @@ public class SendingMessageSteps extends StepLibrary {
     public void i_see_$_error_messages(int number) {
         popUpMessagesPanel.assume_error_message_is_displayed();
         popUpMessagesPanel.assume_$_error_messages_are_displayed(number);
+        popUpMessagesPanel.acknowledge_the_error_message();
         popUpMessagesPanel.assume_error_message_is_not_displayed();
     }
 
