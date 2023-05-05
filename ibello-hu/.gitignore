@@ -6,7 +6,7 @@
 /ibello/*.pid
 /ibello/results/
 
-/.gradle/
+.gradle/
 /.idea/
 /.settings/
 /features/sandbox-*.feature
